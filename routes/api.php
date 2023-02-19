@@ -17,10 +17,18 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+// Area (Khu)
+Route::get('/get-area', 'AreaController@areas');
+Route::post('/post-create-area', 'AreaController@create_area');
 
-    Route::get('/get-area', 'AreaController@areas');
-    Route::post('/post-create-area', 'AreaController@create_area');
-    // Route::get('{post}', 'PostController@show')->name('show') //Chi tiết;
-    // Route::post('{post}', 'PostController@update')->name('update') //Cập nhập;
-    // Route::post('delete/{post}', 'PostController@delete')->name('delete') //Xóa;
+// Range (Dãy)
+Route::get('/get-range', 'RangeController@ranges');
+Route::post('/post-create-range', 'RangeController@create_range');
+
+
+
+
+// Route::get('{post}', 'PostController@show')->name('show') //Chi tiết;
+// Route::post('{post}', 'PostController@update')->name('update') //Cập nhập;
+// Route::post('delete/{post}', 'PostController@delete')->name('delete') //Xóa;
 

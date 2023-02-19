@@ -10,21 +10,21 @@ function MenuAdmin() {
       <div>
         <DropdownButton
           align={{ lg: 'start' }}
-          title="Left-aligned but right aligned when large screen"
+          title="Quản lý khu"
           id="dropdown-menu-align-responsive-1"
         >
-          <Dropdown.Item eventKey="1"><Link to='create'>Thêm khu</Link></Dropdown.Item>
-          <Dropdown.Item eventKey="2">Action 2</Dropdown.Item>
+          <Dropdown.Item eventKey="1"><Link to='add-area'>Thêm khu</Link></Dropdown.Item>
+          <Dropdown.Item eventKey="2"><Link to='list-area'>Liệt kê khu</Link></Dropdown.Item>
         </DropdownButton>
       </div>
       <div className="mt-2">
         <SplitButton
           align={{ lg: 'start' }}
-          title="Right-aligned but left aligned when large screen"
+          title="Quản lý dãy"
           id="dropdown-menu-align-responsive-2"
         >
-          <Dropdown.Item eventKey="1">Action 1</Dropdown.Item>
-          <Dropdown.Item eventKey="2">Action 2</Dropdown.Item>
+          <Dropdown.Item eventKey="1"><Link to='add-range'>Thêm dãy</Link></Dropdown.Item>
+          <Dropdown.Item eventKey="2"><Link to='list-range'>Liệt kê dãy</Link></Dropdown.Item>
         </SplitButton>
       </div>
     </>
