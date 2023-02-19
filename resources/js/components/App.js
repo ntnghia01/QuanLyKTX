@@ -1,24 +1,32 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HeaderAdmin from './HeaderAdmin';
+import MenuAdmin from './MenuAdmin';
+import AddArea from './AddArea';
 
 export default class App extends Component {
     render() {
         return (
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-header">Example Component</div>
-
-                            <div className="card-body">I'm an example component!</div>
-                        </div>
+            <BrowserRouter>
+                <div>
+                    <div>
+                        <HeaderAdmin />
                     </div>
+                    <div>
+                        <MenuAdmin />
+                        <Routes>
+                            <Route path="create" element={<AddArea />} ></Route>
+                        </Routes>
+                    </div>
+                    
                 </div>
-            </div>
+            </BrowserRouter>
         );
     }
 }
 
 
-    ReactDOM.render(<App />, document.getElementById('App'));
+ReactDOM.render(<App />, document.getElementById('app'));
 

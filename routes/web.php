@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/admin', 'WelcomeController@index');
+Route::get('/', 'WelcomeStudent@index');
+// Route::post('/post-create-area', 'AreaController@create_area');
