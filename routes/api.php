@@ -17,6 +17,8 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+// Route::get()
+
 // Area (Khu)
 Route::get('/get-area', 'AreaController@areas');
 Route::post('/post-create-area', 'AreaController@create_area');

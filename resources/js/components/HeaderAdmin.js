@@ -11,8 +11,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function HeaderAdmin() {
   return (
     <>
-      {[false].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+      {['lg'].map((expand) => (
+        <Navbar key={expand} bg="dark" variant="dark" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand href="/admin"><i class="fa-regular fa-user-shield"></i>ADMIN</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -28,7 +28,7 @@ function HeaderAdmin() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Trang chủ</Nav.Link>
+                  <Nav.Link href="/admin">Trang chủ</Nav.Link>
                   <Nav.Link href="#action2">Đăng xuất</Nav.Link>
                   <NavDropdown
                     title="Dropdown"

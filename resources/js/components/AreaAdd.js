@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom';
 function AreaAdd() {
     const [area_name, setAreaName]=useState('');
     const [area_desc, setAreaDesc]=useState('');
