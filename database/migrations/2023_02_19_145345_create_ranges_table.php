@@ -16,7 +16,7 @@ class CreateRangesTable extends Migration
         Schema::create('ranges', function (Blueprint $table) {
             $table->increments('range_id');
             $table->string('range_name');
-            $table->integer('range_area');
+            $table->unsignedInteger('range_area');
             $table->string('range_desc');
             $table->timestamps();
         });

@@ -14,6 +14,9 @@ import RangeEdit from './RangeEdit';
 import AreaEdit from './AreaEdit';
 import TypeRoomList from './TypeRoomList';
 import TypeRoomEdit from './TypeRoomEdit';
+import RoomAdd from './RoomAdd';
+import RoomList from './RoomList';
+import RoomEdit from './RoomEdit';
 
 
 export default class App extends Component {
@@ -60,6 +63,9 @@ export default class App extends Component {
                                     <Route path="add-type-room" element={<TypeRoomAdd />} ></Route>
                                     <Route path="list-type-room" element={<TypeRoomList />} ></Route>
                                     <Route path="edit-type-room/:type_id" element={<TypeRoomEdit />} ></Route>
+                                    <Route path="add-room" element={<RoomAdd />} ></Route>
+                                    <Route path="list-room" element={<RoomList />} ></Route>
+                                    <Route path="edit-room/:room_id" element={<RoomEdit />} ></Route>
                                 </Routes>
                                 {/* <!-- /.container-fluid --> */}
 

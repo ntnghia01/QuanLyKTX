@@ -86,6 +86,25 @@ function MenuAdmin() {
                     </div>
                 </li>
 
+                {/* <!-- Nav Item - Utilities Collapse Menu --> */}
+                <li className="nav-item">
+                    <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesFour"
+                        aria-expanded="true" aria-controls="collapseUtilitiesFour">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Quản Lý Phòng</span>
+                    </a>
+                    <div id="collapseUtilitiesFour" className="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div className="bg-white py-2 collapse-inner rounded">
+                            <h6 className="collapse-header">Lựa chọn:</h6>
+                            <Link to='add-room' className="collapse-item">Thêm phòng</Link>
+                            <Link to='list-room' className="collapse-item">Liệt kê phòng</Link>
+                            <a className="collapse-item" href="utilities-animation.html">Animations</a>
+                            <a className="collapse-item" href="utilities-other.html">Other</a>
+                        </div>
+                    </div>
+                </li>
+
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider" />
 

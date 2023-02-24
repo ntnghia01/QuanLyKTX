@@ -94,7 +94,7 @@ function TypeRoomAdd() {
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                 </div>
                 <div class="form-group">
-                  <label for="type_price">Sức chứa của phòng</label>
+                  <label for="type_price">Đơn giá của phòng</label>
                   <select onChange={e => { setPriceType(e.target.value) }} name="type_price" class="form-control" id="exampleFormControlSelect1">
                     <option value="500000">-- Chọn đơn giá cho loại phòng --</option>
                     <option value="500000">4</option>

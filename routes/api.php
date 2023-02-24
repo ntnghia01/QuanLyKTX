@@ -40,6 +40,12 @@ Route::post('/post-create-type-room', 'TypeRoomController@create_type_room');
 Route::get('/get-only-type-room/{type_id}', 'TypeRoomController@get_only_type_room');
 Route::put('/update-type-room/{type_id}', 'TypeRoomController@update_type_room');
 
+// Room (Phòng)
+Route::get('/get-room', 'RoomController@rooms');
+Route::post('/post-create-room', 'RoomController@create_room');
+Route::get('/get-only-room/{room_id}', 'RoomController@get_only_room');
+Route::put('/update-room/{room_id}', 'RoomController@update_room');
+
 
 
 // Route::get('{post}', 'PostController@show')->name('show') //Chi tiết;
