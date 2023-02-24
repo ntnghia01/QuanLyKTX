@@ -25,4 +25,19 @@ class AreaController extends Controller
         $data = Area::all();
         return $data;
     }
+
+    public function get_only_area($area_id) {
+        $area = Area::where(['area_id'=>$area_id])->first();
+        return $area;
+    }
+
+    public function update_area(Request $request, $area_id) {
+        $area = Area::where(['area_id'=>$area_id])->update([
+                                                            'area_name'=> $request->area_name,
+                                                            'area_desc'=> $request->area_desc
+        ]);
+        return $area;
+
+    }
+
 }

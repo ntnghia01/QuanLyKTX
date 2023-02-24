@@ -12,6 +12,7 @@ class RangeController extends Controller
         $data = $request->all();
         $post = Range::create([
             'range_name'=> $request->range_name,
+            'range_area'=> $request->range_area,
             'range_desc'=> $request->range_desc
         ]);
 
@@ -21,7 +22,26 @@ class RangeController extends Controller
     }
 
     public function ranges() {
-        $data = Range::all();
-        return $data;
+        // $data = Range::all();
+        $ranges = Range::with('range_area')->get();
+        foreach ($ranges as $range) {
+            $range->range_area;
+        }
+        return $ranges;
+    }
+
+    public function get_only_range($range_id) {
+        $range = Range::where(['range_id'=>$range_id])->with('range_area')->first();
+        return $range;
+    }
+
+    public function update_range(Request $request, $range_id) {
+        $range = Range::where(['range_id'=>$range_id])->update([
+                                                                'range_name'=> $request->range_name,
+                                                                'range_area'=> $request->range_area,
+                                                                'range_desc'=> $request->range_desc
+        ]);
+        return $range;
+
     }
 }

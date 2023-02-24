@@ -2,27 +2,23 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-function RangeAdd() {
 
-  const [range_name, setRangeName] = useState('');
-  const [range_desc, setRangeDesc] = useState('');
-  const [range_area, setRangeArea] = useState('');
+function TypeRoomAdd() {
+
+  const [type_name, setNameType] = useState('');
+  const [type_gender, setGenderType] = useState('');
+  const [type_cook, setCookType] = useState('');
+  const [type_capacity, setCapacityType] = useState('');
+  const [type_desc, setDescType] = useState('');
+  const [type_price, setPriceType] = useState('');
+
   const [data, setData] = useState({});
   const [area, setArea] = useState([]);
 
-  useEffect(() => {
-    {
-        axios.get('api/get-area').then(
-            res => {
-                setArea(res.data)
-            }
-        )
-    }
-  }, [])
 
   const submit = (e) => {
     e.preventDefault()
-    axios.post('api/post-create-range', { range_name, range_area, range_desc }).then(
+    axios.post('api/post-create-type-room', { type_name, type_gender, type_cook, type_capacity, type_desc, type_price }).then(
       res => {
         setData(res.data);
       }
@@ -32,16 +28,15 @@ function RangeAdd() {
     <>
       {/* <!-- Page Heading --> */}
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Thêm Dãy</h1>
+        <h1 className="h3 mb-0 text-gray-800">Thêm Loại Phòng</h1>
       </div>
-      <div className="row">
+      <div className="container-fluid">
         {/* <!-- Area Chart --> */}
-        <div className="col-xl-8 col-lg-7">
           <div className="card shadow mb-4">
             {/* <!-- Card Header - Dropdown --> */}
             <div
               className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-              <h6 className="m-0 font-weight-bold text-primary">Nhập Thông Tin Dãy Muốn Thêm Vào Form Sau</h6>
+              <h6 className="m-0 font-weight-bold text-primary">Nhập Thông Tin Loại Phòng Muốn Thêm Vào Form Sau</h6>
               <div className="dropdown no-arrow">
                 <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,41 +55,68 @@ function RangeAdd() {
             {/* <!-- Card Body --> */}
             <div className="card-body">
               <form onSubmit={(e) => { submit(e) }}>
-              {data.range_name}
+              {data.type_name}
                 <div class="form-group">
-                  <label for="area_name">Tên Dãy</label>
-                  <input onChange={e => { setRangeName(e.target.value) }} value={range_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <label for="type_name">Tên Loại Phòng</label>
+                  <input onChange={e => { setNameType(e.target.value) }} value={type_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                 </div>
                 <div class="form-group">
-                  <label for="range_area">Thuộc Khu</label>
-                  <select onChange={e => { setRangeArea(e.target.value) }} name="range_area" class="form-control" id="exampleFormControlSelect1">
-                    <option value="1">-- Chọn Khu --</option>
-                    {area.map((item) => <>
-                      <option value={item.area_id}>{item.area_name}</option>
-                    </>)}
+                  <label for="type_gender">Nam / Nữ</label>
+                  <select onChange={e => { setGenderType(e.target.value) }} name="type_gender" class="form-control" id="exampleFormControlSelect1">
+                    <option value="Nam">-- Chọn giới tính cho loại phòng --</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="area_desc">Mô Tả Dãy</label>
-                  <input onChange={e => { setRangeDesc(e.target.value) }} value={range_desc} type="text" class="form-control" id="area_desc_id" />
+                  <label for="type_cook">Khả năng nấu ăn</label>
+                  <select onChange={e => { setCookType(e.target.value) }} name="type_cook" class="form-control" id="exampleFormControlSelect1">
+                    <option value="Nấu ăn">-- Cho phép nấu ăn hay không --</option>
+                    <option value="Nấu ăn">Nấu ăn</option>
+                    <option value="Không nấu ăn">Không nấu ăn</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="type_capacity">Sức chứa của phòng</label>
+                  <select onChange={e => { setCapacityType(e.target.value) }} name="type_capacity" class="form-control" id="exampleFormControlSelect1">
+                    <option value="4">-- Chọn sức chứa cho loại phòng --</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="area_desc">Mô Tả Loại Phòng</label>
+                  <input onChange={e => { setDescType(e.target.value) }} value={type_desc} type="text" class="form-control" id="area_desc_id" />
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
+                </div>
+                <div class="form-group">
+                  <label for="type_price">Sức chứa của phòng</label>
+                  <select onChange={e => { setPriceType(e.target.value) }} name="type_price" class="form-control" id="exampleFormControlSelect1">
+                    <option value="500000">-- Chọn đơn giá cho loại phòng --</option>
+                    <option value="500000">4</option>
+                    <option value="400000">5</option>
+                    <option value="300000">6</option>
+                    <option value="200000">7</option>
+                    <option value="100000">8</option>
+                  </select>
                 </div>
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                   <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Thêm Dãy</button>
+                <button type="submit" class="btn btn-primary">Thêm Loại Phòng</button>
               </form>
             </div>
           </div>
         </div>
-      </div>
 
-      <Form onSubmit={(e) => { submit(e) }}>
-        {/* TÊN DÃY */}
+      {/* <Form onSubmit={(e) => { submit(e) }}>
         <Form.Text className="text-muted">
-          {data.range_name}
+          {data.type_name}
         </Form.Text>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Tên Dãy</Form.Label>
@@ -103,7 +125,6 @@ function RangeAdd() {
             Vui lòng kiểm tra trước khi nhấn thêm.
           </Form.Text>
         </Form.Group>
-        {/* Khu dãy */}
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Thuộc khu</Form.Label>
           <Form.Control onChange={e => { setRangeArea(e.target.value) }} type="range_area" placeholder="Điền mô tả dãy" value={range_area} />
@@ -111,7 +132,6 @@ function RangeAdd() {
             Vui lòng kiểm tra trước khi nhấn thêm.
           </Form.Text>
         </Form.Group>
-        {/* MÔ TẢ DÃY */}
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Mô tả Dãy</Form.Label>
           <Form.Control onChange={e => { setRangeDesc(e.target.value) }} type="range_desc" placeholder="Điền mô tả dãy" value={range_desc} />
@@ -122,13 +142,12 @@ function RangeAdd() {
 
 
         <Button variant="primary" type='submit'
-        //   onClick={()=>{submit}}
         >
           Thêm dãy
         </Button>
-      </Form>
+      </Form> */}
     </>
   );
 }
 
-export default RangeAdd;
+export default TypeRoomAdd;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Hệ thống quản lý KTX</title>
+    <title>Hệ thống quản lý KTX - ADMIN</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
@@ -18,6 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/Admin.css') }}" rel="stylesheet">
 </head>
 <body>
   
@@ -33,21 +34,21 @@
   <script
     src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
     crossorigin></script>
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+  <!-- Page level plugins -->
+  <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+  <!-- Page level custom scripts -->
+  <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+  <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
 </body>
 </html>
