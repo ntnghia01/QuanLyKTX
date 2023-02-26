@@ -80,8 +80,6 @@ function MenuAdmin() {
                             <h6 className="collapse-header">Lựa chọn:</h6>
                             <Link to='add-type-room' className="collapse-item">Thêm loại phòng</Link>
                             <Link to='list-type-room' className="collapse-item">Liệt kê loại phòng</Link>
-                            <a className="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a className="collapse-item" href="utilities-other.html">Other</a>
                         </div>
                     </div>
                 </li>
@@ -99,6 +97,22 @@ function MenuAdmin() {
                             <h6 className="collapse-header">Lựa chọn:</h6>
                             <Link to='add-room' className="collapse-item">Thêm phòng</Link>
                             <Link to='list-room' className="collapse-item">Liệt kê phòng</Link>
+                        </div>
+                    </div>
+                </li>
+                {/* <!-- Nav Item - Utilities Collapse Menu --> */}
+                <li className="nav-item">
+                    <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesFive"
+                        aria-expanded="true" aria-controls="collapseUtilitiesFive">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Quản Lý Hóa Đơn Điện Nước</span>
+                    </a>
+                    <div id="collapseUtilitiesFive" className="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div className="bg-white py-2 collapse-inner rounded">
+                            <h6 className="collapse-header">Lựa chọn:</h6>
+                            <Link to='add-elec-water-bill' className="collapse-item">Thêm hóa đơn</Link>
+                            <Link to='list-elec-water-bill' className="collapse-item">Liệt kê hóa đơn</Link>
                             <a className="collapse-item" href="utilities-animation.html">Animations</a>
                             <a className="collapse-item" href="utilities-other.html">Other</a>
                         </div>

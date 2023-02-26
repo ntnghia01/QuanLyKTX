@@ -17,10 +17,8 @@ function RoomEdit() {
     const [room_desc, setRoomDesc] = useState('');
     const [range_name, setRangeName] = useState('');
     const [type_name, setTypeName] = useState('');
-    // const [data, setData] = useState({});
     const [range_data, setRangeData] = useState([]);
     const [type_room_data, setTypeData] = useState([]);
-    // const [range, setRange]
     useEffect(() => {
         {
             axios.get(`../api/get-only-room/${room_id}`).then(
@@ -57,7 +55,6 @@ function RoomEdit() {
         e.preventDefault()
         axios.put(`../api/update-room/${room_id}`, { room_name, room_range, room_type, room_quantity, room_status, room_desc }).then(
             res => {
-                // res.data;
                 console.log(res)
             }
         )

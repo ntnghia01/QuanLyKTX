@@ -17,6 +17,9 @@ import TypeRoomEdit from './TypeRoomEdit';
 import RoomAdd from './RoomAdd';
 import RoomList from './RoomList';
 import RoomEdit from './RoomEdit';
+import ElecWaterBillAdd from './ElecWaterBillAdd';
+import ElecWaterBillList from './ElecWaterBillList';
+import ElecWaterBillEdit from './ElecWaterBillEdit';
 
 
 export default class App extends Component {
@@ -31,12 +34,6 @@ export default class App extends Component {
                         {/* <!-- Sidebar --> */}
                         <div>
                         <MenuAdmin />
-                        <Routes>
-                            {/* <Route path="add-area" element={<AreaAdd />} ></Route> */}
-                            {/* <Route path="list-area" element={<AreaList />} ></Route> */}
-                            {/* <Route path="add-range" element={<RangeAdd />} ></Route> */}
-                            {/* <Route path="list-range" element={<RangeList />} ></Route> */}
-                        </Routes>
                     </div>
                         {/* <!-- End of Sidebar --> */}
 
@@ -66,6 +63,9 @@ export default class App extends Component {
                                     <Route path="add-room" element={<RoomAdd />} ></Route>
                                     <Route path="list-room" element={<RoomList />} ></Route>
                                     <Route path="edit-room/:room_id" element={<RoomEdit />} ></Route>
+                                    <Route path="add-elec-water-bill" element={<ElecWaterBillAdd />} ></Route>
+                                    <Route path="list-elec-water-bill" element={<ElecWaterBillList />} ></Route>
+                                    <Route path="edit-elec-water-bill/:elec_water_bill_id" element={<ElecWaterBillEdit />} ></Route>
                                 </Routes>
                                 {/* <!-- /.container-fluid --> */}
 
@@ -114,23 +114,6 @@ export default class App extends Component {
                     </div>
 
                 </div>
-                {/* <div>
-
-                    <div>
-                        <HeaderAdmin />
-                    </div>
-                    <div>
-                        <MenuAdmin />
-                        <Routes>
-                            <Route path="add-area" element={<AreaAdd />} ></Route>
-                            <Route path="list-area" element={<AreaList />} ></Route>
-                            <Route path="add-range" element={<RangeAdd />} ></Route>
-                            <Route path="list-range" element={<RangeList />} ></Route>
-                            <Route path="add-type-room" element={<TypeRoomAdd />} ></Route>
-                        </Routes>
-                    </div>
-
-                </div> */}
             </BrowserRouter>
 
         );

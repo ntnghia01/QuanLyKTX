@@ -46,6 +46,11 @@ Route::post('/post-create-room', 'RoomController@create_room');
 Route::get('/get-only-room/{room_id}', 'RoomController@get_only_room');
 Route::put('/update-room/{room_id}', 'RoomController@update_room');
 
+// Electricity Water Bill (Hóa đơn điện nước)
+Route::get('/get-elec-water-bill', 'ElecWaterBillController@elec_water_bills');
+Route::post('/post-create-elec-water-bill', 'ElecWaterBillController@create_elec_water_bill');
+Route::get('/get-only-elec-water-bill/{elec_water_bill_id}', 'ElecWaterBillController@get_only_elec_water_bill');
+Route::put('/update-elec-water-bill/{elec_water_bill_id}', 'ElecWaterBillController@update_elec_water_bill');
 
 
 // Route::get('{post}', 'PostController@show')->name('show') //Chi tiết;
