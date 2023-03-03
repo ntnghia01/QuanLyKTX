@@ -53,6 +53,17 @@ Route::get('/get-only-elec-water-bill/{elec_water_bill_id}', 'ElecWaterBillContr
 Route::put('/update-elec-water-bill/{elec_water_bill_id}', 'ElecWaterBillController@update_elec_water_bill');
 
 
+Route::post('/register', 'AdminController@register');
+// use Illuminate\Support\Facades\Session;
+
+// Route::get('/get-session', function () {
+//     return response()->json([
+//         'user_id' => Session::get('user_id')
+//     ]);
+// });
+
+
+
 // Route::get('{post}', 'PostController@show')->name('show') //Chi tiết;
 // Route::post('{post}', 'PostController@update')->name('update') //Cập nhập;
 // Route::post('delete/{post}', 'PostController@delete')->name('delete') //Xóa;

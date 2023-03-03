@@ -14,7 +14,23 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use App\User;
+session_start();
+Route::get('login', 'LoginController@login_page');
+Route::post('login/user', 'LoginController@login');
+Route::get('logout/user', 'LoginController@logout');
 
-Route::get('/admin', 'WelcomeController@index');
-Route::get('/', 'WelcomeStudent@index');
+// Route::middleware('isAdmin')->group(function(){ 
+    Route::get('/', 'AdminController@index');
+// });
+
+// Route::middleware('isStudent')->group(function(){ 
+    Route::get('/student', 'StudentController@index');
+// });
+Route::get('/get-session', 'AdminController@get_session');
+
 // Route::post('/post-create-area', 'AreaController@create_area');
+

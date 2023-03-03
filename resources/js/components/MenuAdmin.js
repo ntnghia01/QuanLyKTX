@@ -11,11 +11,11 @@ function MenuAdmin() {
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/* <!-- Sidebar - Brand --> */}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon rotate-n-15">
                         <i className="fas fa-laugh-wink"></i>
                     </div>
-                    <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                    <div className="sidebar-brand-text mx-3"> Admin <sup>ID</sup></div>
                 </a>
 
                 {/* <!-- Divider --> */}
