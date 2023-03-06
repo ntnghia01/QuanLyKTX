@@ -98290,61 +98290,43 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function RegisterRoom() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState2 = _slicedToArray(_useState, 2),
-    room_name = _useState2[0],
-    setRoomName = _useState2[1];
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+    regis_room = _useState2[0],
+    setRegisRoom = _useState2[1];
+  // const [regis_student, setRegisStudent] = useState('');
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
     _useState4 = _slicedToArray(_useState3, 2),
-    room_range = _useState4[0],
-    setRoomRange = _useState4[1];
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+    data = _useState4[0],
+    setData = _useState4[1];
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
     _useState6 = _slicedToArray(_useState5, 2),
-    room_type = _useState6[0],
-    setRoomType = _useState6[1];
+    room_data = _useState6[0],
+    setRoomData = _useState6[1];
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState8 = _slicedToArray(_useState7, 2),
-    room_quantity = _useState8[0],
-    setRoomQuantity = _useState8[1];
+    regis_student = _useState8[0],
+    setUserID = _useState8[1];
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState10 = _slicedToArray(_useState9, 2),
-    room_status = _useState10[0],
-    setRoomStatus = _useState10[1];
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-    _useState12 = _slicedToArray(_useState11, 2),
-    room_desc = _useState12[0],
-    setRoomDesc = _useState12[1];
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
-    _useState14 = _slicedToArray(_useState13, 2),
-    data = _useState14[0],
-    setData = _useState14[1];
-  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-    _useState16 = _slicedToArray(_useState15, 2),
-    range_data = _useState16[0],
-    setRangeData = _useState16[1];
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-    _useState18 = _slicedToArray(_useState17, 2),
-    type_room_data = _useState18[0],
-    setTypeRoomData = _useState18[1];
+    user_role = _useState10[0],
+    setUserRole = _useState10[1];
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     {
-      axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('api/get-range').then(function (res) {
-        setRangeData(res.data);
+      axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('/get-session').then(function (res) {
+        setUserID(res.data.user_id);
       });
     }
     {
-      axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('api/get-type-room').then(function (res) {
-        setTypeRoomData(res.data);
+      axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('api/get-room').then(function (res) {
+        setRoomData(res.data);
       });
     }
   }, []);
   var submit = function submit(e) {
     e.preventDefault();
-    axios__WEBPACK_IMPORTED_MODULE_3__["default"].post('api/post-create-room', {
-      room_name: room_name,
-      room_range: room_range,
-      room_type: room_type,
-      room_quantity: room_quantity,
-      room_status: room_status,
-      room_desc: room_desc
+    axios__WEBPACK_IMPORTED_MODULE_3__["default"].post('api/post-registration', {
+      regis_room: regis_room,
+      regis_student: regis_student
     }).then(function (res) {
       setData(res.data);
     });
@@ -98401,118 +98383,34 @@ function RegisterRoom() {
     className: "form-group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "room_name"
-  }, "T\xEAn Ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    onChange: function onChange(e) {
-      setRoomName(e.target.value);
-    },
-    value: room_name,
+  }, "Sinh vi\xEAn \u0111\u0103ng k\xFD (ID)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: regis_student,
     type: "text",
     className: "form-control",
     id: "exampleInputEmail1",
-    "aria-describedby": "emailHelp"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    "aria-describedby": "emailHelp",
+    readOnly: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "regisroom"
+  }, "Ch\u1ECDn ph\xF2ng mu\u1ED1n \u0111\u0103ng k\xFD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    onChange: function onChange(e) {
+      setRegisRoom(e.target.value);
+    },
+    name: "regis_room",
+    className: "form-control",
+    id: "exampleFormControlSelect1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1"
+  }, "-- Ch\u1ECDn Ph\xF2ng --"), room_data.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: item.room_id
+    }, item.room_name));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
     id: "emailHelp",
     className: "form-text text-muted"
-  }, "Vui l\xF2ng ki\u1EC3m tra d\u1EEF li\u1EC7u nh\u1EADp tr\u01B0\u1EDBc khi x\xE1c nh\u1EADn.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "room_range"
-  }, "Thu\u1ED9c D\xE3y"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    onChange: function onChange(e) {
-      setRoomRange(e.target.value);
-    },
-    name: "room_range",
-    className: "form-control",
-    id: "exampleFormControlSelect1"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "1"
-  }, "-- Ch\u1ECDn D\xE3y --"), range_data.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: item.range_id
-    }, item.range_name));
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "range_area"
-  }, "Thu\u1ED9c Lo\u1EA1i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    onChange: function onChange(e) {
-      setRoomType(e.target.value);
-    },
-    name: "range_area",
-    className: "form-control",
-    id: "exampleFormControlSelect1"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "1"
-  }, "-- Ch\u1ECDn Lo\u1EA1i Ph\xF2ng --"), type_room_data.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: item.type_id
-    }, item.type_name));
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "room_quantity"
-  }, "C\xF2n Tr\u1ED1ng (ch\u1ED7)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    onChange: function onChange(e) {
-      setRoomQuantity(e.target.value);
-    },
-    name: "room_quantity",
-    className: "form-control",
-    id: "exampleFormControlSelect1"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "8"
-  }, "-- S\u1ED1 ch\u1ED7 c\xF2n tr\u1ED1ng c\u1EE7a ph\xF2ng --"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "0"
-  }, "0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "1"
-  }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "2"
-  }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "3"
-  }, "3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "4"
-  }, "4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "5"
-  }, "5"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "6"
-  }, "6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "7"
-  }, "7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "8"
-  }, "8"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "room_status"
-  }, "Tr\u1EA1ng Th\xE1i Ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    onChange: function onChange(e) {
-      setRoomStatus(e.target.value);
-    },
-    name: "room_status",
-    className: "form-control",
-    id: "exampleFormControlSelect1"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "C\xF2n tr\u1ED1ng"
-  }, "-- Ch\u1ECDn Lo\u1EA1i Ph\xF2ng --"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "C\xF2n tr\u1ED1ng"
-  }, "C\xF2n tr\u1ED1ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "\u0110\xE3 \u0111\u1EA7y"
-  }, "\u0110\xE3 \u0111\u1EA7y"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "\u0110ang s\u1EEDa ch\u1EEFa"
-  }, "\u0110ang s\u1EEDa ch\u1EEFa"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "room_desc"
-  }, "M\xF4 T\u1EA3 Ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    onChange: function onChange(e) {
-      setRoomDesc(e.target.value);
-    },
-    value: room_desc,
-    type: "text",
-    className: "form-control",
-    id: "area_desc_id"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    id: "emailHelp",
-    className: "form-text text-muted"
-  }, "Vui l\xF2ng ki\u1EC3m tra d\u1EEF li\u1EC7u nh\u1EADp tr\u01B0\u1EDBc khi x\xE1c nh\u1EADn.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Vui l\xF2ng ki\u1EC3m tra d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp tr\u01B0\u1EDBc khi x\xE1c nh\u1EADn.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group form-check"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
@@ -98524,7 +98422,7 @@ function RegisterRoom() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Th\xEAm Ph\xF2ng")))))));
+  }, "\u0110\u0103ng K\xFD Ph\xF2ng")))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (RegisterRoom);
 
