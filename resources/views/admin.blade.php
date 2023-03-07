@@ -21,7 +21,7 @@
     <link href="{{ asset('css/Admin.css') }}" rel="stylesheet">
 </head>
 <body>
-  {{@session('user_id')}}
+  <!-- {{@session('user_id')}} -->
   <div id="app"></div>
 
   <script src="{{ asset('js/app.js') }}"></script>

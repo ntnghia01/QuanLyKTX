@@ -62,7 +62,11 @@ function MenuStudent() {
                 <div className="sidebar-heading">
                     Addons
                 </div>
-
+                <li className="nav-item">
+                    <a className="nav-link" href="/logout/user">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Đăng xuất</span></a>
+                </li>
                 
 
                 

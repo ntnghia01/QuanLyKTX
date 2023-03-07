@@ -17,6 +17,7 @@ class CreateRegistrationTable extends Migration
             $table->increments('regis_id');
             $table->unsignedInteger('regis_room');
             $table->unsignedInteger('regis_student');
+            $table->string('regis_status');
             $table->timestamps();
 
             $table->foreign('regis_room')->references('room_id')->on('rooms');

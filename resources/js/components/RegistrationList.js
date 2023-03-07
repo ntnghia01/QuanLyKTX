@@ -3,15 +3,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-function RoomList() {
+function RegistrationList() {
 
-    const [room_data, setRoomData] = useState([]);
+    const [registration_data, setRegistrationData] = useState([]);
 
     useEffect(() => {
         {
-            axios.get('api/get-room').then(
+            axios.get('api/get-registration').then(
                 res => {
-                    setRoomData(res.data)
+                    setRegistrationData(res.data)
                 }
             )
         }
@@ -21,7 +21,7 @@ function RoomList() {
         <>
             {/* <!-- Page Heading --> */}
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Phòng Trong Hệ Thống</h1>
+                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Đăng Ký Trong Hệ Thống</h1>
             </div>
             <div class="container-fluid">
 
@@ -33,20 +33,18 @@ function RoomList() {
                 {/* <!-- DataTales Example --> */}
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Phòng</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Đơn Đăng Ký</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>ID Phòng</th>
+                                        <th>ID Đơn</th>
+                                        <th>Mã Sinh Viên</th>
+                                        <th>Tên Sinh Viên</th>
                                         <th>Tên Phòng</th>
-                                        <th>Thuộc Dãy</th>
-                                        <th>Thuộc Loại</th>
-                                        <th>Còn trống</th>
                                         <th>Trạng thái</th>
-                                        <th>Mô tả phòng</th>
                                         <th>Ngày Tạo</th>
                                         <th>Ngày Cập Nhật</th>
                                         <th>Thao Tác</th>
@@ -54,38 +52,32 @@ function RoomList() {
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>ID Phòng</th>
+                                        <th>ID Đơn</th>
+                                        <th>Mã Sinh Viên</th>
+                                        <th>Tên Sinh Viên</th>
                                         <th>Tên Phòng</th>
-                                        <th>Thuộc Dãy</th>
-                                        <th>Thuộc Loại</th>
-                                        <th>Còn trống</th>
                                         <th>Trạng thái</th>
-                                        <th>Mô tả phòng</th>
                                         <th>Ngày Tạo</th>
                                         <th>Ngày Cập Nhật</th>
                                         <th>Thao Tác</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    {room_data.map((item) => <>
+                                    {registration_data.map((item) => <>
                                         <tr>
-                                            <td>{item.room_id}</td>
-                                            <td>{item.room_name}</td>
-                                            <td>{item.room_range.range_name}</td>
-                                            <td>{item.room_type.type_name}</td>
-                                            <td>{item.room_quantity}</td>
+                                            <td>{item.regis_id}</td>
+                                            <td>{item.regis_student.user_name}</td>
+                                            <td>{item.regis_student.user_fullname}</td>
+                                            <td>{item.regis_room.room_name}</td>
                                             <td>
                                                 <div class="form-group">
-                                                    <select name="room_status" class="form-control" id="exampleFormControlSelect1">
-                                                        <option value={item.room_status}>{item.room_status}</option>
+                                                    <select  name="registration_status" class="form-control" id="exampleFormControlSelect1">
+                                                        <option value={item.regis_status}>{item.regis_status}</option>
                                                         {/* <option value="Chưa đóng">Chưa đóng</option> */}
-                                                        <option value="Còn trống">Còn trống</option>
-                                                        <option value="Đã đầy">Đã đầy</option>
-                                                        <option value="Đang sửa chữa">Đang sửa chữa</option>
+                                                        <option value="Đã duyệt">Đã duyệt</option>
                                                     </select>
                                                 </div>
                                             </td>
-                                            <td>{item.room_desc}</td>
                                             <td>{item.created_at}</td>
                                             <td>{item.updated_at}</td>
                                             <td>
@@ -99,7 +91,7 @@ function RoomList() {
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
-                                                    <span class="text">Xóa</span>
+                                                    <span class="text">Hủy</span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -115,4 +107,4 @@ function RoomList() {
     );
 }
 
-export default RoomList;
+export default RegistrationList;

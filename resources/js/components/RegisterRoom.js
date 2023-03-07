@@ -5,7 +5,8 @@ import axios from 'axios';
 function RegisterRoom() {
 
   const [regis_room, setRegisRoom] = useState('');
-  // const [regis_student, setRegisStudent] = useState('');
+  const [regis_status, setRegisStatus] = useState('Đang chờ xử lý');
+  
 
   const [data, setData] = useState({});
   const [room_data, setRoomData] = useState([]);
@@ -34,7 +35,7 @@ function RegisterRoom() {
 
   const submit = (e) => {
     e.preventDefault()
-    axios.post('api/post-registration', { regis_room, regis_student }).then(
+    axios.post('api/post-registration', { regis_room, regis_student, regis_status }).then(
       res => {
         setData(res.data);
       }

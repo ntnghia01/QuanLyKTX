@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import SplitButton from 'react-bootstrap/SplitButton';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 function MenuAdmin() {
+
+    const [user_id, setUserID] = useState('');
+    const [user_role, setUserRole] = useState('');
+
+    useEffect(() => {
+        {
+            axios.get('/get-session').then(
+                res => {
+                    setUserID(res.data.user_id)
+                }
+            )
+        }
+    }, [])
     return (
         <>
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -15,7 +29,7 @@ function MenuAdmin() {
                     <div className="sidebar-brand-icon rotate-n-15">
                         <i className="fas fa-laugh-wink"></i>
                     </div>
-                    <div className="sidebar-brand-text mx-3"> Admin <sup>ID</sup></div>
+                    <div className="sidebar-brand-text mx-3"> Admin <sup>{user_id}</sup></div>
                 </a>
 
                 {/* <!-- Divider --> */}
@@ -119,6 +133,12 @@ function MenuAdmin() {
                     </div>
                 </li>
 
+                <li className="nav-item">
+                    <Link to='list-registration' className="nav-link">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Quản Lý Đơn Đăng Ký</span></Link>
+                </li>
+
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider" />
 
@@ -157,9 +177,9 @@ function MenuAdmin() {
 
                 {/* <!-- Nav Item - Tables --> */}
                 <li className="nav-item">
-                    <a className="nav-link" href="tables.html">
+                    <a className="nav-link" href="/logout/user">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></a>
+                        <span>Đăng xuất</span></a>
                 </li>
 
                 {/* <!-- Divider --> */}

@@ -24,10 +24,17 @@ class AdminController extends Controller
 
     public function register(Request $req) {
         $user = User::create([
-            'user_name' => $req->user_name,
-            'email' => $req->email,
-            'user_role' => $req->user_role,
-            'password' => bcrypt($req->password)
+            'user_name'     => $req->user_name,
+            'email'         => $req->email,
+            'user_role'     => $req->user_role,
+            'password'      => bcrypt($req->password),
+            'user_fullname' => $req->user_fullname,
+            'user_major'    => $req->user_major,
+            'user_address'  => $req->user_address,
+            'user_phone'    => $req->user_phone,
+            'user_birthday' => $req->user_birthday,
+            'user_class'    => $req->user_class,
+            'user_course'   => $req->user_course
         ]);
         return $user;
     }

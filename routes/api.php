@@ -56,6 +56,7 @@ Route::put('/update-elec-water-bill/{elec_water_bill_id}', 'ElecWaterBillControl
 Route::post('/register', 'AdminController@register');
 
 // Registration (Đăng ký phòng ở)
+Route::get('/get-registration', 'RegisterController@registrations');
 Route::post('/post-registration', 'RegisterController@create_registration');
 
 
