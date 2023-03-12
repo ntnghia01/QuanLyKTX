@@ -27,6 +27,7 @@ import ElecWaterBillEdit from './ElecWaterBillEdit';
 import Student from './Student';
 import axios from 'axios';
 import RegistrationList from './RegistrationList';
+import FeedBackList from './FeedBackList';
 
 function Admin() {
     return (
@@ -73,6 +74,7 @@ function Admin() {
                                     <Route path="list-elec-water-bill" element={<ElecWaterBillList />} ></Route>
                                     <Route path="edit-elec-water-bill/:elec_water_bill_id" element={<ElecWaterBillEdit />} ></Route>
                                     <Route path="list-registration" element={<RegistrationList />} ></Route>
+                                    <Route path="list-feedback" element={<FeedBackList />} ></Route>
                                 </Routes>
                                 {/* <!-- /.container-fluid --> */}
 

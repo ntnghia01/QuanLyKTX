@@ -2,27 +2,28 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-function RangeAdd() {
+function FeedBack() {
 
-  const [range_name, setRangeName] = useState('');
-  const [range_desc, setRangeDesc] = useState('');
-  const [range_area, setRangeArea] = useState('');
+  const [feedback_user, setUserID] = useState('');
+  const [feedback_type, setFeedbackType] = useState('');
+  const [feedback_title, setFeedbackTitle] = useState('');
+  const [feedback_content, setFeedbackContent] = useState('');
+  const [feedback_status, setFeedbackStatus] = useState('Đang chờ xử lý');
   const [data, setData] = useState({});
-  const [area, setArea] = useState([]);
 
   useEffect(() => {
     {
-        axios.get('api/get-area').then(
-            res => {
-                setArea(res.data)
-            }
-        )
+      axios.get('/get-session').then(
+        res => {
+          setUserID(res.data.user_id)
+        }
+      )
     }
   }, [])
 
   const submit = (e) => {
     e.preventDefault()
-    axios.post('api/post-create-range', { range_name, range_area, range_desc }).then(
+    axios.post('api/post-feedback', { feedback_user, feedback_type, feedback_title, feedback_content, feedback_status }).then(
       res => {
         setData(res.data);
       }
@@ -32,7 +33,7 @@ function RangeAdd() {
     <>
       {/* <!-- Page Heading --> */}
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Thêm Dãy</h1>
+        <h1 className="h3 mb-0 text-gray-800">Ý Kiến, Phản Hồi</h1>
       </div>
       <div className="row">
         {/* <!-- Area Chart --> */}
@@ -41,7 +42,7 @@ function RangeAdd() {
             {/* <!-- Card Header - Dropdown --> */}
             <div
               className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-              <h6 className="m-0 font-weight-bold text-primary">Nhập Thông Tin Dãy Muốn Thêm Vào Form Sau</h6>
+              <h6 className="m-0 font-weight-bold text-primary">Nhập Thông Tin Muốn Phản Hồi Vào Form Sau</h6>
               <div className="dropdown no-arrow">
                 <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,31 +61,30 @@ function RangeAdd() {
             {/* <!-- Card Body --> */}
             <div className="card-body">
               <form onSubmit={(e) => { submit(e) }}>
-              {data.range_name}
+              {data.feedback_title}
                 <div class="form-group">
-                  <label for="area_name">Tên Dãy</label>
-                  <input onChange={e => { setRangeName(e.target.value) }} value={range_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                  <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
-                </div>
-                <div class="form-group">
-                  <label for="range_area">Thuộc Khu</label>
-                  <select onChange={e => { setRangeArea(e.target.value) }} name="range_area" class="form-control" id="exampleFormControlSelect1">
-                    <option value="1">-- Chọn Khu --</option>
-                    {area.map((item) => <>
-                      <option value={item.area_id}>{item.area_name}</option>
-                    </>)}
+                  <label for="range_area">Loại phản hồi</label>
+                  <select onChange={e => { setFeedbackType(e.target.value) }} name="range_area" class="form-control" id="exampleFormControlSelect1">
+                    <option value="Ý kiến, phản hồi">-- Chọn loại phản hồi --</option>
+                    <option value="Ý kiến, phản hồi">Ý kiến, phản hồi</option>
+                    <option value="Sửa chữa CSVC">Sửa chữa CSVC</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="area_desc">Mô Tả Dãy</label>
-                  <input onChange={e => { setRangeDesc(e.target.value) }} value={range_desc} type="text" class="form-control" id="area_desc_id" />
+                  <label for="area_name">Tiêu đề</label>
+                  <input onChange={e => { setFeedbackTitle(e.target.value) }} value={feedback_title} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
+                </div>
+                <div class="form-group">
+                  <label for="area_desc">Nội dung</label>
+                  <input onChange={e => { setFeedbackContent(e.target.value) }} value={feedback_content} type="text" class="form-control" id="area_desc_id" />
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                 </div>
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                   <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Thêm Dãy</button>
+                <button type="submit" class="btn btn-primary">Gửi</button>
               </form>
             </div>
           </div>
@@ -94,4 +94,4 @@ function RangeAdd() {
   );
 }
 
-export default RangeAdd;
+export default FeedBack;

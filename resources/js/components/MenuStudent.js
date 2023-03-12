@@ -44,12 +44,12 @@ function MenuStudent() {
                         <span>Đăng ký ở</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='' className="nav-link" href="charts.html">
+                    <Link to='' className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Xem thông tin phòng</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='' className="nav-link" href="charts.html">
+                    <Link to='/feedback' className="nav-link">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>Sửa chữa CSVC</span></Link>
                 </li>

@@ -18,7 +18,7 @@ export default class App extends Component {
             axios.get('/get-session').then(
                 res => {
                     this.setState({
-                        user_id: res.data.user_id,
+                        user_id: res.data.id,
                         user_role: res.data.user_role
                     })
                     console.log(res.data);

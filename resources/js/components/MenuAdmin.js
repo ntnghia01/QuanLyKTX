@@ -119,7 +119,7 @@ function MenuAdmin() {
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesFive"
                         aria-expanded="true" aria-controls="collapseUtilitiesFive">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Quản Lý Hóa Đơn Điện Nước</span>
+                        <span>QL Hóa Đơn Điện Nước</span>
                     </a>
                     <div id="collapseUtilitiesFive" className="collapse" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
@@ -137,6 +137,12 @@ function MenuAdmin() {
                     <Link to='list-registration' className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Quản Lý Đơn Đăng Ký</span></Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link to='list-feedback' className="nav-link">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Quản Lý Ý Kiến Phản Hồi</span></Link>
                 </li>
 
                 {/* <!-- Divider --> */}

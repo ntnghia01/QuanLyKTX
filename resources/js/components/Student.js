@@ -22,6 +22,7 @@ import ElecWaterBillList from './ElecWaterBillList';
 import ElecWaterBillEdit from './ElecWaterBillEdit';
 import RoomListStudent from './RoomListStudent';
 import RegisterRoom from './RegisterRoom';
+import FeedBack from './FeedBack';
 
 
 function Student() {
@@ -54,22 +55,7 @@ function Student() {
                             <Routes>
                                 <Route path="list-room-student" element={<RoomListStudent />} ></Route>
                                 <Route path="register-room" element={<RegisterRoom />} ></Route>
-                                {/* <Route path="dashboard" element={<Dashboard />} ></Route> */}
-                                {/* <Route path="add-area" element={<AreaAdd />} ></Route> */}
-                                {/* <Route path="list-area" element={<AreaList />} ></Route> */}
-                                {/* <Route path="edit-area/:area_id" element={<AreaEdit />} ></Route> */}
-                                {/* <Route path="add-range" element={<RangeAdd />} ></Route> */}
-                                {/* <Route path="list-range" element={<RangeList />} ></Route> */}
-                                {/* <Route path="edit-range/:range_id" element={<RangeEdit />} ></Route> */}
-                                {/* <Route path="add-type-room" element={<TypeRoomAdd />} ></Route> */}
-                                {/* <Route path="list-type-room" element={<TypeRoomList />} ></Route> */}
-                                {/* <Route path="edit-type-room/:type_id" element={<TypeRoomEdit />} ></Route> */}
-                                {/* <Route path="add-room" element={<RoomAdd />} ></Route> */}
-                                {/* <Route path="list-room" element={<RoomList />} ></Route> */}
-                                {/* <Route path="edit-room/:room_id" element={<RoomEdit />} ></Route> */}
-                                {/* <Route path="add-elec-water-bill" element={<ElecWaterBillAdd />} ></Route> */}
-                                {/* <Route path="list-elec-water-bill" element={<ElecWaterBillList />} ></Route> */}
-                                {/* <Route path="edit-elec-water-bill/:elec_water_bill_id" element={<ElecWaterBillEdit />} ></Route> */}
+                                <Route path="feedback" element={<FeedBack />} ></Route>
                             </Routes>
                             {/* <!-- /.container-fluid --> */}
 

@@ -59,6 +59,10 @@ Route::post('/register', 'AdminController@register');
 Route::get('/get-registration', 'RegisterController@registrations');
 Route::post('/post-registration', 'RegisterController@create_registration');
 
+// Feedback (Ý kiến phản hồi)
+Route::get('/get-feedback', 'FeedBackController@feedbacks');
+Route::post('/post-feedback', 'FeedBackController@create_feedback');
+
 
 
 // use Illuminate\Support\Facades\Session;
