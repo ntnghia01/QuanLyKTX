@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function RangeAdd() {
+
+  const navigate = useNavigate();
 
   const [range_name, setRangeName] = useState('');
   const [range_desc, setRangeDesc] = useState('');
@@ -25,6 +28,7 @@ function RangeAdd() {
     axios.post('api/post-create-range', { range_name, range_area, range_desc }).then(
       res => {
         setData(res.data);
+        navigate('../list-range');
       }
     )
   }

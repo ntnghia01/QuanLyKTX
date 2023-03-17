@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function AreaList() {
-    const [area_name, setAreaName] = useState('');
-    const [area_desc, setAreaDesc] = useState('');
 
+    const navigate = useNavigate();
+
+    const [delete_id, setDID] = useState('');
     const [area, setArea] = useState([]);
-    const [data, setData] = useState({});
     useEffect(() => {
         {
             axios.get('api/get-area').then(
@@ -18,12 +18,10 @@ function AreaList() {
             )
         }
     }, [])
-    const submit = (e) => {
-        e.preventDefault()
-        axios.post('api/area/post-create-area', { area_name, area_desc }).then(
-            res => {
-                setData(res.data);
-            }
+    const handleDelete = (area_id) => {
+        axios.delete(`api/delete-area/${area_id}`).then(
+            
+            navigate('../list-area')
         )
     }
     return (
@@ -37,7 +35,7 @@ function AreaList() {
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800">Khu</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                        href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
 
                 {/* <!-- DataTales Example --> */}
                 <div class="card shadow mb-4">
@@ -68,47 +66,54 @@ function AreaList() {
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                {area.map((item) => <>
-                                    <tr>
-                                        <td>{item.area_id}</td>
-                                        <td>{item.area_name}</td>
-                                        <td>{item.area_desc}</td>
-                                        <td>{item.created_at}</td>
-                                        <td>{item.updated_at}</td>
-                                        <td>
-                                            <Link to={`../edit-area/${item.area_id}`} className="btn btn-sm btn-warning btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-exclamation-triangle"></i>
-                                                </span>
-                                                <span class="text">Cập nhật</span>
-                                            </Link>
-                                            <a class="btn btn-sm btn-danger btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-trash"></i>
-                                                </span>
-                                                <span class="text">Xóa</span>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    {area.map((item) => <>
+                                        <tr>
+                                            <td>{item.area_id}</td>
+                                            <td>{item.area_name}</td>
+                                            <td>{item.area_desc}</td>
+                                            <td>{item.created_at}</td>
+                                            <td>{item.updated_at}</td>
+                                            <td>
+                                                <Link to={`../edit-area/${item.area_id}`} className="btn btn-sm btn-warning btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-exclamation-triangle"></i>
+                                                    </span>
+                                                    <span class="text">Cập nhật</span>
+                                                </Link>
+                                                <a type="button" onClick={() => { setDID(item.area_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger btn-icon-split" >
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Xóa</span>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </>
-                                )}
-                                    
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>2009/01/12</td>
-                                    </tr>
+                                    )}
+
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc muốn xóa Khu ID:{delete_id}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                            <button type="button" onClick={() => { handleDelete(delete_id) }} class="btn btn-danger" data-dismiss="modal">Xóa</button>
                         </div>
                     </div>
                 </div>

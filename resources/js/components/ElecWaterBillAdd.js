@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function ElecWaterBillAdd() {
+
+  const navigate = useNavigate();
 
   const [elec_water_bill_name, setElecWaterBillName] = useState('');
   const [elec_water_bill_room, setElecWaterBillRoom] = useState('');
@@ -43,6 +46,7 @@ function ElecWaterBillAdd() {
                                                     elec_water_bill_status}).then(
       res => {
         setData(res.data);
+        navigate('../list-elec-water-bill');
       }
     )
   }
@@ -123,17 +127,26 @@ function ElecWaterBillAdd() {
                 </div>
                 <div class="form-group">
                   <label for="area_name">Điện Tiêu Thụ</label>
-                  <input onChange={e => { setElecWaterBillElec(e.target.value) }} value={elec_water_bill_elec} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <input onChange={e => { 
+                    setElecWaterBillElec(e.target.value);
+                  // if(elec_water_bill_water!==''){
+                  //   setElecWaterBillMoney(elec_water_bill_elec*10 + elec_water_bill_water*5)
+                  // };
+                  }} value={elec_water_bill_elec} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                 </div>
                 <div class="form-group">
                   <label for="area_name">Nước Tiêu Thụ</label>
-                  <input onChange={e => { setElecWaterBillWater(e.target.value) }} value={elec_water_bill_water} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <input onChange={e => { setElecWaterBillWater(e.target.value)
+                  // if(elec_water_bill_elec!==''){
+                  //   setElecWaterBillMoney(elec_water_bill_elec*10 + elec_water_bill_water*5)
+                  // };
+                  }} value={elec_water_bill_water} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                 </div>
                 <div class="form-group">
                   <label for="area_name">Thành Tiền</label>
-                  <input onChange={e => { setElecWaterBillMoney(e.target.value) }} value={elec_water_bill_money} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <input onChange={e => { setElecWaterBillMoney(e.target.value) }} value={elec_water_bill_elec*10 + elec_water_bill_water*5} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                 </div>
                 <div class="form-group">

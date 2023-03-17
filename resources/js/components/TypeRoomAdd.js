@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function TypeRoomAdd() {
+
+  const navigate = useNavigate();
 
   const [type_name, setNameType] = useState('');
   const [type_gender, setGenderType] = useState('');
@@ -21,6 +24,7 @@ function TypeRoomAdd() {
     axios.post('api/post-create-type-room', { type_name, type_gender, type_cook, type_capacity, type_desc, type_price }).then(
       res => {
         setData(res.data);
+        navigate('../list-type-room');
       }
     )
   }
@@ -97,11 +101,11 @@ function TypeRoomAdd() {
                   <label for="type_price">Đơn giá của phòng</label>
                   <select onChange={e => { setPriceType(e.target.value) }} name="type_price" class="form-control" id="exampleFormControlSelect1">
                     <option value="500000">-- Chọn đơn giá cho loại phòng --</option>
-                    <option value="500000">4</option>
-                    <option value="400000">5</option>
-                    <option value="300000">6</option>
-                    <option value="200000">7</option>
-                    <option value="100000">8</option>
+                    <option value="500000">500000</option>
+                    <option value="400000">400000</option>
+                    <option value="300000">300000</option>
+                    <option value="200000">200000</option>
+                    <option value="100000">100000</option>
                   </select>
                 </div>
                 <div class="form-group form-check">

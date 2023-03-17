@@ -27,6 +27,7 @@ Route::get('/get-area', 'AreaController@areas');
 Route::post('/post-create-area', 'AreaController@create_area');
 Route::get('/get-only-area/{area_id}', 'AreaController@get_only_area');
 Route::put('/update-area/{area_id}', 'AreaController@update_area');
+Route::delete('/delete-area/{area_id}', 'AreaController@delete_area');
 
 // Range (Dãy)
 Route::get('/get-range', 'RangeController@ranges');
@@ -58,11 +59,15 @@ Route::post('/register', 'AdminController@register');
 // Registration (Đăng ký phòng ở)
 Route::get('/get-registration', 'RegisterController@registrations');
 Route::post('/post-registration', 'RegisterController@create_registration');
+Route::get('/get-only-registration/{regis_id}', 'RegisterController@get_only_registration');
 
 // Feedback (Ý kiến phản hồi)
 Route::get('/get-feedback', 'FeedBackController@feedbacks');
 Route::post('/post-feedback', 'FeedBackController@create_feedback');
 
+// Room Bill (Hóa đơn tiền phòng)
+
+Route::post('/post-room-bill', 'RoomBillController@create_room_bill');
 
 
 // use Illuminate\Support\Facades\Session;

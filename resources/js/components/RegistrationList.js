@@ -93,6 +93,12 @@ function RegistrationList() {
                                                     </span>
                                                     <span class="text">Hủy</span>
                                                 </a>
+                                                <Link to={`../add-room-bill/${item.regis_id}`} className="btn btn-sm btn-primary btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-exclamation-triangle"></i>
+                                                    </span>
+                                                    <span class="text">Tạo hóa đơn</span>
+                                                </Link>
                                             </td>
                                         </tr>
                                     </>

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function RoomAdd() {
+
+  const navigate = useNavigate();
 
   const [room_name, setRoomName] = useState('');
   const [room_range, setRoomRange] = useState('');
@@ -36,6 +39,7 @@ function RoomAdd() {
     axios.post('api/post-create-room', { room_name, room_range, room_type, room_quantity, room_status, room_desc }).then(
       res => {
         setData(res.data);
+        navigate('../list-room');
       }
     )
   }

@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function TypeRoomEdit() {
+
+    const navigate = useNavigate();
 
     const { type_id } = useParams();
 
@@ -44,6 +46,7 @@ function TypeRoomEdit() {
             res => {
                 // res.data;
                 console.log(res)
+                navigate('../list-type-room');
             }
         )
     }

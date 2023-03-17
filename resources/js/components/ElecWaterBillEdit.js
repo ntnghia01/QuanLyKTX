@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function ElecWaterBillEdit() {
+
+    const navigate = useNavigate();
 
     const { elec_water_bill_id } = useParams();
 
@@ -72,6 +74,7 @@ function ElecWaterBillEdit() {
                                                                             elec_water_bill_status }).then(
             res => {
                 console.log(res)
+                navigate('../list-elec-water-bill');
             }
         )
     }
@@ -146,7 +149,7 @@ function ElecWaterBillEdit() {
                                         <option value="1, 2022-2023">1, 2022-2023</option>
                                         <option value="2, 2022-2023">2, 2022-2023</option>
                                         <option value="1, 2023-2024">1, 2023-2024</option>
-                                        <option value="1, 2023-2024">1, 2023-2024</option>
+                                        <option value="1, 2023-2024">2, 2023-2024</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -191,7 +194,7 @@ function ElecWaterBillEdit() {
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Thêm hóa đơn</button>
+                                <button type="submit" class="btn btn-primary">Cập Nhật Hóa Đơn</button>
                             </form>
                         </div>
                     </div>

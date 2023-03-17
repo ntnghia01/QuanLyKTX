@@ -12,8 +12,8 @@ function MenuStudent() {
 
                 {/* <!-- Sidebar - Brand --> */}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                    <div className="sidebar-brand-icon rotate-n-15">
-                        <i className="fas fa-laugh-wink"></i>
+                    <div className="sidebar-brand-icon">
+                    <img src="img/LOGOv2.png" width="80" height="80"/>
                     </div>
                     <div className="sidebar-brand-text mx-3"> Student <sup>ID</sup></div>
                 </a>

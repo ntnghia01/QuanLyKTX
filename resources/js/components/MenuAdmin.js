@@ -26,9 +26,9 @@ function MenuAdmin() {
 
                 {/* <!-- Sidebar - Brand --> */}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                    <div className="sidebar-brand-icon rotate-n-15">
-                        <i className="fas fa-laugh-wink"></i>
-                    </div>
+                    <div className="sidebar-brand-icon">
+                        <img src="img/LOGOv2.png" width="80" height="80"/>
+                    </div><br/>
                     <div className="sidebar-brand-text mx-3"> Admin <sup>{user_id}</sup></div>
                 </a>
 
@@ -127,6 +127,23 @@ function MenuAdmin() {
                             <h6 className="collapse-header">Lựa chọn:</h6>
                             <Link to='add-elec-water-bill' className="collapse-item">Thêm hóa đơn</Link>
                             <Link to='list-elec-water-bill' className="collapse-item">Liệt kê hóa đơn</Link>
+                        </div>
+                    </div>
+                </li>
+
+                {/* <!-- Nav Item - Utilities Collapse Menu --> */}
+                <li className="nav-item">
+                    <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesSix"
+                        aria-expanded="true" aria-controls="collapseUtilitiesSix">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>QL Hóa Đơn Tiền Phòng</span>
+                    </a>
+                    <div id="collapseUtilitiesSix" className="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div className="bg-white py-2 collapse-inner rounded">
+                            <h6 className="collapse-header">Lựa chọn:</h6>
+                            <Link to='add-room-bill' className="collapse-item">Thêm hóa đơn</Link>
+                            <Link to='list-room-bill' className="collapse-item">Liệt kê hóa đơn</Link>
                             <a className="collapse-item" href="utilities-animation.html">Animations</a>
                             <a className="collapse-item" href="utilities-other.html">Other</a>
                         </div>
@@ -144,6 +161,7 @@ function MenuAdmin() {
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Quản Lý Ý Kiến Phản Hồi</span></Link>
                 </li>
+                
 
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider" />

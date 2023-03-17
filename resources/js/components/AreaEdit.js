@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function AreaEdit() {
+
+    const navigate = useNavigate();
 
     const {area_id} = useParams();
 
@@ -35,7 +37,7 @@ function AreaEdit() {
         e.preventDefault()
         axios.put(`../api/update-area/${area_id}`, { area_name, area_desc }).then(
             res => {
-                // res.data;
+                navigate('../list-area');
                 console.log(res)
             }
         )
@@ -87,7 +89,7 @@ function AreaEdit() {
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Thêm Dãy</button>
+                                <button type="submit" class="btn btn-primary">Cập Nhật Dãy</button>
                             </form>
                         </div>
                     </div>

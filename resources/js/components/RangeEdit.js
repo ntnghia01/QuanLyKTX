@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function RangeEdit() {
+
+    const navigate = useNavigate();
 
     const {range_id} = useParams();
 
@@ -41,7 +43,7 @@ function RangeEdit() {
         e.preventDefault()
         axios.put(`../api/update-range/${range_id}`, { range_name, range_area, range_desc }).then(
             res => {
-                // res.data;
+                navigate('../list-range');
                 console.log(res)
             }
         )
@@ -102,7 +104,7 @@ function RangeEdit() {
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Thêm Dãy</button>
+                                <button type="submit" class="btn btn-primary">Cập Nhật Dãy</button>
                             </form>
                         </div>
                     </div>

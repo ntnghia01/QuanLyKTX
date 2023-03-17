@@ -3,16 +3,20 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function AreaAdd() {
+  const navigate = useNavigate();
+
   const [area_name, setAreaName] = useState('');
   const [area_desc, setAreaDesc] = useState('');
   const [data, setData] = useState({})
   const submit = (e) => {
+
     e.preventDefault()
     axios.post('api/post-create-area', { area_name, area_desc }).then(
       res => {
         setData(res.data);
+        navigate('../list-area');
       }
     )
   }
@@ -67,9 +71,6 @@ function AreaAdd() {
                     Vui lòng kiểm tra trước khi nhấn thêm.
                   </Form.Text>
                 </Form.Group>
-
-
-               
                 <Button variant="primary" type='submit' class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-flag"></i>

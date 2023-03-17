@@ -40,4 +40,9 @@ class AreaController extends Controller
 
     }
 
+    public function delete_area($area_id) {
+        $area = Area::where(['area_id'=>$area_id])->delete();
+        return $area;
+    }
+
 }

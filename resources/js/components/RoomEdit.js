@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function RoomEdit() {
 
+    const navigate = useNavigate();
+
+    const [success, setS] = useState(false);
+    const [loading, setLoading] = useState(false);
     const { room_id } = useParams();
 
     console.log(room_id);
@@ -53,11 +57,19 @@ function RoomEdit() {
 
     const submit = (e) => {
         e.preventDefault()
+        // console.log( { room_name, room_range, room_type, room_quantity, room_status, room_desc });
+        setLoading(true)
         axios.put(`../api/update-room/${room_id}`, { room_name, room_range, room_type, room_quantity, room_status, room_desc }).then(
             res => {
-                console.log(res)
+                setLoading(false)
+                setS(true)
+                console.log(res.data)
+                // navigate('../list-room');
             }
-        )
+        ).catch(e => {
+            setS(false)
+            setLoading(false)
+        })
     }
     return (
         <>
@@ -148,14 +160,38 @@ function RoomEdit() {
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Thêm Phòng</button>
+                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Cập Nhật Phòng</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {loading ? (<div class="modal-body">
+                            <p>loading...</p>
+                        </div>) :
+                            (success ? (<div class="modal-body">
+                                <p>thanh cong</p>
+                            </div>) : (<div class="modal-body">
+                                <p>that bai</p>
+                            </div>))}
 
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" onClick={() => { navigate('../list-room'); }} class="btn btn-primary" data-dismiss="modal">Understood</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
