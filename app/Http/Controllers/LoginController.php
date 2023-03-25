@@ -26,6 +26,7 @@ class LoginController extends Controller
          if(Auth::attempt(['email'=>$req->email,'password'=>$req->password])){
             $user = User::where(['email'=>$req->email])->first();
             Session::put('user_name',$user->user_name);
+            Session::put('user_fullname',$user->user_fullname);
             Session::put('user_id', $user->id);
             Session::put('email',$user->email);
             Session::put('user_role',$user->user_role);

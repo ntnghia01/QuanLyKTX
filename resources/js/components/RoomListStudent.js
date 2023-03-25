@@ -5,6 +5,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 function RoomListStudent() {
 
+    const [student, setUserID] = useState('');
+
     const [room_data, setRoomData] = useState([]);
 
     useEffect(() => {
@@ -13,6 +15,13 @@ function RoomListStudent() {
                 res => {
                     setRoomData(res.data)
                 }
+            )
+        }
+        {
+            axios.get('/get-session').then(
+              res => {
+                setUserID(res.data.user_id)
+              }
             )
         }
     }, [])
@@ -26,7 +35,7 @@ function RoomListStudent() {
             <div class="container-fluid">
 
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Dãy</h1>
+                <h1 class="h3 mb-2 text-gray-800">Phòng</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
                     href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
 
@@ -63,21 +72,23 @@ function RoomListStudent() {
                                             <td>{item.room_type.type_gender}</td>
                                             <td>{item.room_type.type_cook}</td>
                                             <td>{item.room_type.type_capacity}</td>
-                                            <td>{item.room_type.type_capacity - item.room_quantity}</td>
                                             <td>{item.room_quantity}</td>
+                                            <td>{item.room_type.type_capacity - item.room_quantity}</td>
                                             <td>{item.room_status}</td>
                                             <td>{item.room_desc}</td>
                                             <td>{item.room_type.type_price}</td>
                                             <td>
-                                                {item.room_quantity == 0 ?
-                                                    <><Link to='' className="btn btn-sm btn-danger btn-icon-split">
-                                                        <span class="icon text-white-50">
-                                                            <i class="fas fa-exclamation-triangle"></i>
-                                                        </span>
-                                                        <span class="text">Đã đầy</span>
-                                                    </Link></>
-                                                    :
-                                                    <Link to={`../register-room/${item.room_id}`} className="btn btn-sm btn-success btn-icon-split">
+                                                {item.room_quantity == item.room_type.type_capacity
+                                                    ?
+                                                    <><span class="text-danger">
+                                                    <i class="fas fa-exclamation-triangle"></i> Đã đầy
+                                                </span></>
+                                                    : item.room_status == "Đang sửa chữa" ?
+                                                    <><span class="text-warning">
+                                                    <i class="fas fa-exclamation-triangle"></i> Đang sửa chữa
+                                                </span></>
+                                                :
+                                                    <Link to='../register-room' className="btn btn-sm btn-success btn-icon-split">
                                                         <span class="icon text-white-50">
                                                             <i class="fas fa-flag"></i>
                                                         </span>

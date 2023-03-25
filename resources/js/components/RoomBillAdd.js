@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function RoomBillAdd() {
 
     const { regis_id } = useParams();
+
+    const navigate = useNavigate();
 
     console.log(regis_id);
 
@@ -27,14 +29,14 @@ function RoomBillAdd() {
         {
             axios.get(`../api/get-only-registration/${regis_id}`).then(
                 res => {
-                    setRoomBillName(res.data.room_bill_name)
-                    setRoomBillRegis(regis_id)
-                    setRoomBillSemester(res.data.room_bill_semester)
+                    // setRoomBillName(res.data.room_bill_name)
+                    setRoomBillRegis(res.data.regis_id)
+                    // setRoomBillSemester(res.data.room_bill_semester)
                     setRoomBillMoney(res.data.type_price)
-                    setRoomBillDue(res.data.room_bill_due)
-                    setRoomBillPay(res.data.room_bill_pay)
-                    setRoomBillNote(res.data.room_bill_note)
-                    setRoomBillStatus(res.data.room_bill_status)
+                    // setRoomBillDue(res.data.room_bill_due)
+                    // setRoomBillPay(res.data.room_bill_pay)
+                    // setRoomBillNote(res.data.room_bill_note)
+                    // setRoomBillStatus(res.data.room_bill_status)
 
                     setStudent(res.data.user_name)
                     setRoom(res.data.room_name)
@@ -46,7 +48,7 @@ function RoomBillAdd() {
 
     const submit = (e) => {
         e.preventDefault()
-        axios.put(`../api/post-room-bill`, {    room_bill_name, 
+        axios.post(`../api/post-room-bill`, {    room_bill_name, 
                                                 room_bill_regis, 
                                                 room_bill_semester, 
                                                 room_bill_money, 
@@ -57,6 +59,7 @@ function RoomBillAdd() {
         }).then(
             res => {
                 setCreatedData(res.data)
+                navigate('../list-room-bill');
             }
         )
     }
@@ -117,7 +120,7 @@ function RoomBillAdd() {
                                 </div>
                                 <div class="form-group">
                                     <label for="room_name">Đơn giá</label>
-                                    <input value={room_bill_money} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
+                                    <input value={room_bill_money*5} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
                                 </div>
                                 <div class="form-group">
                                     <label for="area_name">Ngày Hết Hạn</label>

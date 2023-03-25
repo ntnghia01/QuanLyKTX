@@ -44,4 +44,9 @@ class RangeController extends Controller
         return $range;
 
     }
+
+    public function delete_range($range_id) {
+        $range = Range::where(['range_id'=>$range_id])->delete();
+        return $range;
+    }
 }

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -9,6 +10,16 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function HeaderStudent() {
+  const [fullname, setUser] = useState('');
+    useEffect(() => {
+        {
+            axios.get('/get-session').then(
+                res => {
+                    setUser(res.data.user_fullname)
+                }
+            )
+        }
+    }, [])
   return (
     <>
       <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -182,7 +193,7 @@ function HeaderStudent() {
           <li className="nav-item dropdown no-arrow">
             <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span className="mr-2 d-none d-lg-inline text-gray-600 small">Hello Student</span>
+              <span className="mr-2 d-none d-lg-inline text-gray-600 small">Hello {fullname}</span>
               <img className="img-profile rounded-circle"
                 src="img/undraw_profile.svg" />
             </a>

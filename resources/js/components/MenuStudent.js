@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import SplitButton from 'react-bootstrap/SplitButton';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 function MenuStudent() {
+    const [user_id, setUserID] = useState('');
+    useEffect(() => {
+        {
+            axios.get('/get-session').then(
+                res => {
+                    setUserID(res.data.user_id)
+                }
+            )
+        }
+    }, [])
     return (
         <>
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -15,7 +26,7 @@ function MenuStudent() {
                     <div className="sidebar-brand-icon">
                     <img src="img/LOGOv2.png" width="80" height="80"/>
                     </div>
-                    <div className="sidebar-brand-text mx-3"> Student <sup>ID</sup></div>
+                    <div className="sidebar-brand-text mx-3"> Student <sup>{user_id}</sup></div>
                 </a>
 
                 {/* <!-- Divider --> */}
@@ -49,9 +60,19 @@ function MenuStudent() {
                         <span>Xem thông tin phòng</span></Link>
                 </li>
                 <li className="nav-item">
+                    <Link to='' className="nav-link">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Xem thông tin cá nhân</span></Link>
+                </li>
+                <li className="nav-item">
                     <Link to='/feedback' className="nav-link">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>Sửa chữa CSVC</span></Link>
+                </li>
+                <li className="nav-item">
+                    <Link to='' className="nav-link">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Rút đơn ở KTX</span></Link>
                 </li>
                 
 
@@ -69,7 +90,13 @@ function MenuStudent() {
                 </li>
                 
 
-                
+                {/* <!-- Divider --> */}
+                <hr className="sidebar-divider d-none d-md-block" />
+
+                {/* <!-- Sidebar Toggler (Sidebar) --> */}
+                <div className="text-center d-none d-md-inline">
+                    <button className="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
 
                 
 

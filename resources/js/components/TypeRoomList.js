@@ -22,6 +22,14 @@ function TypeRoomList() {
             )
         }
     }, [])
+
+    const [delete_id, setDID] = useState('');
+    const handleDelete = (type_room_id) => {
+        axios.delete(`api/delete-type-room/${type_room_id}`).then(
+            
+            navigate('../list-type-room')
+        )
+    }
     // const submit = (e) => {
     //     e.preventDefault()
     //     axios.post('api/area/post-create-area', { area_name, area_desc }).then(
@@ -98,7 +106,7 @@ function TypeRoomList() {
                                                 </span>
                                                 <span class="text">Cập nhật</span>
                                             </Link>
-                                            <a class="btn btn-sm btn-danger btn-icon-split">
+                                            <a type="button" onClick={() => { setDID(item.type_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger btn-icon-split" >
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-trash"></i>
                                                 </span>
@@ -111,6 +119,26 @@ function TypeRoomList() {
                                     
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc muốn xóa LOẠI PHÒNG ID:{delete_id}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                            <button type="button" onClick={() => { handleDelete(delete_id) }} class="btn btn-danger" data-dismiss="modal">Xóa</button>
                         </div>
                     </div>
                 </div>

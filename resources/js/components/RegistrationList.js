@@ -17,6 +17,8 @@ function RegistrationList() {
         }
     }, [])
 
+   
+
     return (
         <>
             {/* <!-- Page Heading --> */}
@@ -26,7 +28,7 @@ function RegistrationList() {
             <div class="container-fluid">
 
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Dãy</h1>
+                <h1 class="h3 mb-2 text-gray-800">Danh Sách Đơn Đăng Ký</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
                     href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
 
@@ -63,45 +65,11 @@ function RegistrationList() {
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    {registration_data.map((item) => <>
-                                        <tr>
-                                            <td>{item.regis_id}</td>
-                                            <td>{item.regis_student.user_name}</td>
-                                            <td>{item.regis_student.user_fullname}</td>
-                                            <td>{item.regis_room.room_name}</td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select  name="registration_status" class="form-control" id="exampleFormControlSelect1">
-                                                        <option value={item.regis_status}>{item.regis_status}</option>
-                                                        {/* <option value="Chưa đóng">Chưa đóng</option> */}
-                                                        <option value="Đã duyệt">Đã duyệt</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <td>{item.created_at}</td>
-                                            <td>{item.updated_at}</td>
-                                            <td>
-                                                <Link to={`../edit-room/${item.room_id}`} className="btn btn-sm btn-warning btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-exclamation-triangle"></i>
-                                                    </span>
-                                                    <span class="text">Cập nhật</span>
-                                                </Link>
-                                                <a class="btn btn-sm btn-danger btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Hủy</span>
-                                                </a>
-                                                <Link to={`../add-room-bill/${item.regis_id}`} className="btn btn-sm btn-primary btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-exclamation-triangle"></i>
-                                                    </span>
-                                                    <span class="text">Tạo hóa đơn</span>
-                                                </Link>
-                                            </td>
-                                        </tr>
-                                    </>
+                                    {registration_data.map((item) => 
+                                        <RegistrationRow 
+                                            item = {item} 
+                                            // handleApprove= {handleApprove}
+                                        />
                                     )}
                                 </tbody>
                             </table>
@@ -111,6 +79,68 @@ function RegistrationList() {
             </div>
         </>
     );
+}
+
+function RegistrationRow({item} ) {
+    const [regis,setRegis] = useState(item);
+    const handleApprove = (approve_id, room_id, app_ref) => {
+        axios.put(`api/register-approve/${approve_id}`, { regis_status: app_ref, room_id: room_id}).then(
+            res => {
+                setRegis(res.data)
+            }
+        )
+    }
+    return (
+        <>
+            <tr>
+                <td>{regis.regis_id}</td>
+                <td>{regis.regis_student.user_name}</td>
+                <td>{regis.regis_student.user_fullname}</td>
+                <td>{regis.regis_room.room_name}</td>
+                <td>
+                    <div class="form-group">
+                        <select name="registration_status" class="form-control" id="exampleFormControlSelect1">
+                            <option value={regis.regis_status}>{regis.regis_status}</option>
+                            <option value="Đã duyệt">Đã duyệt</option>
+                        </select>
+                    </div>
+                </td>
+                <td>{regis.created_at}</td>
+                <td>{regis.updated_at}</td>
+                <td>
+                    {regis.regis_status == 'Đang chờ xử lý'
+                        ?
+                        <><a onClick={() => handleApprove(regis.regis_id, regis.regis_room.room_id, "Đã duyệt")} className="btn btn-sm btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text">Duyệt</span>
+                        </a>
+                            <a onClick={() => handleApprove(regis.regis_id, regis.regis_room.room_id, "Đã từ chối")} class="btn btn-sm btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                                <span class="text">Từ chối</span>
+                            </a></>
+                        : regis.regis_status == 'Đã duyệt' ?
+                            <Link to={`../add-room-bill/${regis.regis_id}`} className="btn btn-sm btn-primary btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                                <span class="text">Tạo hóa đơn</span>
+                            </Link>
+                            :
+                            <span class="text-warning">
+                                <i class="fas fa-check"></i> Đã từ chối
+                            </span>
+
+                    }
+
+
+                </td>
+            </tr>
+        </>
+    )
 }
 
 export default RegistrationList;

@@ -17,6 +17,17 @@ function RoomList() {
         }
     }, [])
 
+    const [delete_id, setDID] = useState('');
+    const handleDelete = (room_id) => {
+        axios.delete(`api/delete-room/${room_id}`).then(
+            res => {
+                setRoomData(room_data.filter(room_data => room_data.room_id !==room_id))
+
+            }
+            
+        )
+    }
+
     return (
         <>
             {/* <!-- Page Heading --> */}
@@ -44,7 +55,7 @@ function RoomList() {
                                         <th>Tên Phòng</th>
                                         <th>Thuộc Dãy</th>
                                         <th>Thuộc Loại</th>
-                                        <th>Còn trống</th>
+                                        <th>Đã ở</th>
                                         <th>Trạng thái</th>
                                         <th>Mô tả phòng</th>
                                         <th>Ngày Tạo</th>
@@ -58,7 +69,7 @@ function RoomList() {
                                         <th>Tên Phòng</th>
                                         <th>Thuộc Dãy</th>
                                         <th>Thuộc Loại</th>
-                                        <th>Còn trống</th>
+                                        <th>Đã ở</th>
                                         <th>Trạng thái</th>
                                         <th>Mô tả phòng</th>
                                         <th>Ngày Tạo</th>
@@ -95,7 +106,7 @@ function RoomList() {
                                                     </span>
                                                     <span class="text">Cập nhật</span>
                                                 </Link>
-                                                <a class="btn btn-sm btn-danger btn-icon-split">
+                                                <a type="button" onClick={() => { setDID(item.room_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger btn-icon-split" >
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
@@ -107,6 +118,27 @@ function RoomList() {
                                     )}
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Xóa Phòng</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc muốn xóa PHÒNG ID:{delete_id}
+                            <p>Hãy chắc rằng không có dữ liệu nào khác liên quan đến dữ liệu bạn sắp xóa. Nếu không, việc xóa sẽ thất bại!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                            <button type="button" onClick={() => { handleDelete(delete_id) }} class="btn btn-danger" data-dismiss="modal">Xóa</button>
                         </div>
                     </div>
                 </div>

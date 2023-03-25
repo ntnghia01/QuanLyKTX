@@ -48,6 +48,11 @@ class RoomController extends Controller
                                                                 'room_desc'=> $request->room_desc
         ]);
         return $room;
-
     }
+
+    public function delete_room($room_id) {
+        $room = Room::where(['room_id'=>$room_id])->delete();
+        return $room;
+    }
+
 }

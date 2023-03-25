@@ -29,6 +29,8 @@ import axios from 'axios';
 import RegistrationList from './RegistrationList';
 import FeedBackList from './FeedBackList';
 import RoomBillAdd from './RoomBillAdd';
+import RoomBillList from './RoomBillList';
+import Account from './Account';
 
 function Admin() {
     return (
@@ -59,24 +61,35 @@ function Admin() {
                                 {/* <Dashboard /> */}
                                 <Routes>
                                     <Route path="dashboard" element={<Dashboard />} ></Route>
+
                                     <Route path="add-area" element={<AreaAdd />} ></Route>
                                     <Route path="list-area" element={<AreaList />} ></Route>
                                     <Route path="edit-area/:area_id" element={<AreaEdit />} ></Route>
+
                                     <Route path="add-range" element={<RangeAdd />} ></Route>
                                     <Route path="list-range" element={<RangeList />} ></Route>
                                     <Route path="edit-range/:range_id" element={<RangeEdit />} ></Route>
+
                                     <Route path="add-type-room" element={<TypeRoomAdd />} ></Route>
                                     <Route path="list-type-room" element={<TypeRoomList />} ></Route>
                                     <Route path="edit-type-room/:type_id" element={<TypeRoomEdit />} ></Route>
+
                                     <Route path="add-room" element={<RoomAdd />} ></Route>
                                     <Route path="list-room" element={<RoomList />} ></Route>
                                     <Route path="edit-room/:room_id" element={<RoomEdit />} ></Route>
+
                                     <Route path="add-elec-water-bill" element={<ElecWaterBillAdd />} ></Route>
                                     <Route path="list-elec-water-bill" element={<ElecWaterBillList />} ></Route>
                                     <Route path="edit-elec-water-bill/:elec_water_bill_id" element={<ElecWaterBillEdit />} ></Route>
+
                                     <Route path="list-registration" element={<RegistrationList />} ></Route>
+                                    
                                     <Route path="list-feedback" element={<FeedBackList />} ></Route>
+
                                     <Route path="add-room-bill/:regis_id" element={<RoomBillAdd />} ></Route>
+                                    <Route path="list-room-bill" element={<RoomBillList />} ></Route>
+
+                                    <Route path="list-account" element={<Account />} ></Route>
                                 </Routes>
                                 {/* <!-- /.container-fluid --> */}
 

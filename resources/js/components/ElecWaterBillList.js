@@ -16,7 +16,19 @@ function ElecWaterBillList() {
             )
         }
     }, [])
+
+    const handleDelete = (elec_water_bill_id) => {
+        axios.delete(`api/delete-elec-water-bill/${elec_water_bill_id}`).then(
+            
+            res => {
+                // console.log(elec_water_bill_id);
+                setElecWaterBillData(elec_water_bill_data.filter(elec_water_bill_data => elec_water_bill_data.elec_water_bill_id !== elec_water_bill_id))
+            }
+        )
+    }
     
+    
+
     return (
         <>
             {/* <!-- Page Heading --> */}
@@ -53,13 +65,13 @@ function ElecWaterBillList() {
                                         <th>Ghi chú</th>
                                         <th>Trạng thái</th>
                                         <th>Ngày Tạo</th>
-                                        <th>Ngày Cập Nhật</th>
+                                        {/* <th>Ngày Cập Nhật</th> */}
                                         <th>Thao Tác</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                    <th>ID hóa đơn</th>
+                                        <th>ID hóa đơn</th>
                                         <th>Tên hóa đơn</th>
                                         <th>Của phòng</th>
                                         <th>Vào tháng</th>
@@ -72,52 +84,16 @@ function ElecWaterBillList() {
                                         <th>Ghi chú</th>
                                         <th>Trạng thái</th>
                                         <th>Ngày Tạo</th>
-                                        <th>Ngày Cập Nhật</th>
+                                        {/* <th>Ngày Cập Nhật</th> */}
                                         <th>Thao Tác</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    {elec_water_bill_data.map((item) => <>
-                                        <tr>
-                                            <td>{item.elec_water_bill_id}</td>
-                                            <td>{item.elec_water_bill_name}</td>
-                                            <td>{item.elec_water_bill_room.room_name}</td>
-                                            <td>{item.elec_water_bill_month}</td>
-                                            <td>{item.elec_water_bill_semester}</td>
-                                            <td>{item.elec_water_bill_elec}</td>
-                                            <td>{item.elec_water_bill_water}</td>
-                                            <td>{item.elec_water_bill_money}</td>
-                                            <td>{item.elec_water_bill_due}</td>
-                                            <td>{item.elec_water_bill_pay}</td>
-                                            <td>{item.elec_water_bill_note}</td>
-                                            {/* <td>{item.elec_water_bill_status}</td> */}
-                                            <td>
-                                                <div class="form-group">
-                                                    <select onChange={e => { setElecWaterBillStatus(e.target.value) }} name="elec_water_bill_status" class="form-control" id="exampleFormControlSelect1">
-                                                        <option value={item.elec_water_bill_status}>{item.elec_water_bill_status}</option>
-                                                        {/* <option value="Chưa đóng">Chưa đóng</option> */}
-                                                        <option value="Đã đóng">Đã đóng</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <td>{item.created_at}</td>
-                                            <td>{item.updated_at}</td>
-                                            <td>
-                                                <Link to={`../edit-elec-water-bill/${item.elec_water_bill_id}`} className="btn btn-sm btn-warning btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-exclamation-triangle"></i>
-                                                    </span>
-                                                    <span class="text">Cập nhật</span>
-                                                </Link>
-                                                <a class="btn btn-sm btn-danger btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Xóa</span>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </>
+                                    {elec_water_bill_data.map((item) =>
+                                        <ElecWaterBillRow key={item.id}
+                                            item={item}
+                                            handleDelete={handleDelete}
+                                        />
                                     )}
                                 </tbody>
                             </table>
@@ -125,8 +101,97 @@ function ElecWaterBillList() {
                     </div>
                 </div>
             </div>
+
+            
         </>
     );
+}
+
+function ElecWaterBillRow({ item, handleDelete }) {
+
+    const [elec_water_bill_new, setElecWaterBillNew] = useState(item);
+    const handlePay = (elec_water_bill_id, app_ref) => {
+        axios.put(`api/pay-elec-water-bill/${elec_water_bill_id}`, { elec_water_bill_status: app_ref }).then(
+            res => {
+                setElecWaterBillNew(res.data)
+            }
+        )
+    }
+   
+    const [delete_id, setDID] = useState(item.elec_water_bill_id);
+    console.log(delete_id)
+    
+
+    return (
+        <>
+            <tr>
+                <td>{elec_water_bill_new.elec_water_bill_id}</td>
+                <td>{elec_water_bill_new.elec_water_bill_name}</td>
+                <td>{elec_water_bill_new.elec_water_bill_room.room_name}</td>
+                <td>{elec_water_bill_new.elec_water_bill_month}</td>
+                <td>{elec_water_bill_new.elec_water_bill_semester}</td>
+                <td>{elec_water_bill_new.elec_water_bill_elec}</td>
+                <td>{elec_water_bill_new.elec_water_bill_water}</td>
+                <td>{elec_water_bill_new.elec_water_bill_money}</td>
+                <td>{elec_water_bill_new.elec_water_bill_due}</td>
+                <td>{elec_water_bill_new.elec_water_bill_pay}</td>
+                <td>{elec_water_bill_new.elec_water_bill_note}</td>
+                {/* <td>{elec_water_bill_new.elec_water_bill_status}</td> */}
+                <td>{elec_water_bill_new.elec_water_bill_status}</td>
+                <td>{elec_water_bill_new.created_at}</td>
+                <td>
+                    {elec_water_bill_new.elec_water_bill_status == "Chưa đóng" 
+                    ? 
+                    <>
+                        <a onClick={() => handlePay(elec_water_bill_new.elec_water_bill_id, "Đã đóng")} className="btn btn-sm btn-primary btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text">Đã đóng</span>
+                        </a>
+                        <Link to={`../edit-elec-water-bill/${elec_water_bill_new.elec_water_bill_id}`} className="btn btn-sm btn-warning btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                            <span class="text">Cập nhật</span>
+                        </Link>
+                    <a type="button" data-toggle="modal" data-target={"#staticBackdrop"+delete_id} className="btn btn-sm btn-danger btn-icon-split" >
+                            <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                            </span>
+                            <span class="text">Xóa</span>
+                        </a>
+                    </>
+                    :
+                    <span class="text-success">
+                        <i class="fas fa-check"></i> Đã đóng
+                    </span>
+                
+                }
+                    
+                </td>
+            </tr>
+            <div class="modal" id={"staticBackdrop"+delete_id} data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Xóa Hóa Đơn {delete_id}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc muốn xóa Hóa Đơn ID:{delete_id}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                            <button type="button" onClick={() => { handleDelete(delete_id) }} class="btn btn-danger" data-dismiss="modal">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default ElecWaterBillList;

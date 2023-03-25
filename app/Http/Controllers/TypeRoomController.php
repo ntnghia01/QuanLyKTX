@@ -46,4 +46,10 @@ class TypeRoomController extends Controller
         return $type;
 
     }
+
+    public function delete_type_room($type_id) {
+        $type_room = TypeRoom::where(['type_id'=>$type_id])->delete();
+        return $type_room;
+    }
+
 }

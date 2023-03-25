@@ -29,4 +29,14 @@ class FeedBackController extends Controller
         }
         return $feedbacks;
     }
+
+    public function approve_feedback($feedback_id, Request $request) {
+
+        $feedback = FeedBack::with('feedback_user')->find($feedback_id);
+        $feedback->feedback_status=$request->feedback_status;
+        $feedback->save();
+
+        return $feedback;
+
+    }
 }

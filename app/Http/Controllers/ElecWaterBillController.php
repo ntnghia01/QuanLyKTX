@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ElecWaterBill;
+use Carbon\Carbon;
 
 class ElecWaterBillController extends Controller
 {
@@ -58,6 +59,23 @@ class ElecWaterBillController extends Controller
                                                                                             'elec_water_bill_status'    => $request->elec_water_bill_status
         ]);
         return $elec_water_bill;
+    }
+
+    public function delete_elec_water_bill($elec_water_bill_id) {
+        $elec_water_bill = ElecWaterBill::where(['elec_water_bill_id'=>$elec_water_bill_id])->delete();
+        // $elec_water_bill->save();
+        return $elec_water_bill;
+    }
+
+    public function pay_elec_water_bill($elec_water_bill_id, Request $request) {
+
+        $elec_water_bill = ElecWaterBill::with('elec_water_bill_room')->find($elec_water_bill_id);
+        $elec_water_bill->elec_water_bill_status=$request->elec_water_bill_status;
+        $elec_water_bill->elec_water_bill_pay = Carbon::now()->toDateString();
+        $elec_water_bill->save();
+
+        return $elec_water_bill;
 
     }
+
 }

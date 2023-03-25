@@ -30,7 +30,7 @@ function RoomEdit() {
                     setRoomName(res.data.room_name)
                     setRoomRange(res.data.room_range.range_id)
                     setRangeName(res.data.room_range.range_name)
-                    setRoomType(res.data.room_type.area_name)
+                    setRoomType(res.data.room_type.type_id)
                     setTypeName(res.data.room_type.type_name)
                     setRoomQuantity(res.data.room_quantity)
                     setRoomStatus(res.data.room_status)
@@ -128,7 +128,7 @@ function RoomEdit() {
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="room_quantity">Còn Trống (chỗ)</label>
+                                    <label for="room_quantity">Đã ở (chỗ)</label>
                                     <select onChange={e => { setRoomQuantity(e.target.value) }} name="room_quantity" class="form-control" id="exampleFormControlSelect1">
                                         <option value={room_quantity}>{room_quantity}</option>
                                         <option value="0">0</option>
@@ -180,14 +180,14 @@ function RoomEdit() {
                             <p>loading...</p>
                         </div>) :
                             (success ? (<div class="modal-body">
-                                <p>thanh cong</p>
+                                <p>Cập Nhật Thành Công</p>
                             </div>) : (<div class="modal-body">
-                                <p>that bai</p>
+                                <p>Cập Nhật Thất Bại. Vui lòng kiểm tra lại dữ liệu</p>
                             </div>))}
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" onClick={() => { navigate('../list-room'); }} class="btn btn-primary" data-dismiss="modal">Understood</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="button" onClick={() => { navigate('../list-room'); }} class="btn btn-primary" data-dismiss="modal">Đã hiểu</button>
                         </div>
                     </div>
                 </div>

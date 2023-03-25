@@ -32,6 +32,7 @@ function ElecWaterBillAdd() {
   }, [])
 
   const submit = (e) => {
+    const elec_water_bill_money = (elec_water_bill_elec*10 + elec_water_bill_water*5)*1000;
     e.preventDefault()
     axios.post('api/post-create-elec-water-bill', { elec_water_bill_name, 
                                                     elec_water_bill_room, 
@@ -146,7 +147,7 @@ function ElecWaterBillAdd() {
                 </div>
                 <div class="form-group">
                   <label for="area_name">Thành Tiền</label>
-                  <input onChange={e => { setElecWaterBillMoney(e.target.value) }} value={elec_water_bill_elec*10 + elec_water_bill_water*5} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <input onChange={e => { setElecWaterBillMoney(e.target.value) }} value={(elec_water_bill_elec*10 + elec_water_bill_water*10)*1000} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                   <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                 </div>
                 <div class="form-group">

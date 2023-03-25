@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 function RegisterRoom() {
+
+  const navigate = useNavigate();
 
   const [regis_room, setRegisRoom] = useState('');
   const [regis_status, setRegisStatus] = useState('Đang chờ xử lý');
@@ -38,6 +41,7 @@ function RegisterRoom() {
     axios.post('api/post-registration', { regis_room, regis_student, regis_status }).then(
       res => {
         setData(res.data);
+        navigate('../list-room-student');
       }
     )
   }

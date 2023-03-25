@@ -7,7 +7,7 @@ function AreaList() {
 
     const navigate = useNavigate();
 
-    const [delete_id, setDID] = useState('');
+
     const [area, setArea] = useState([]);
     useEffect(() => {
         {
@@ -18,10 +18,12 @@ function AreaList() {
             )
         }
     }, [])
+
+    const [delete_id, setDID] = useState('');
     const handleDelete = (area_id) => {
         axios.delete(`api/delete-area/${area_id}`).then(
             
-            navigate('../list-area')
+            setArea(area.filter(area => area.area_id !== area_id))
         )
     }
     return (
@@ -103,7 +105,7 @@ function AreaList() {
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">Xóa Khu</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

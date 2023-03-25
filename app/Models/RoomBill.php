@@ -24,7 +24,7 @@ class RoomBill extends Model
     ];
     
     public function room_bill_regis() {
-        return $this->belongsTo(Registrattion::class, 'room_bill_regis');
+        return $this->belongsTo(Registration::class, 'room_bill_regis');
     }
 
 }

@@ -65,40 +65,11 @@ function FeedBackList() {
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    {feedback_data.map((item) => <>
-                                        <tr>
-                                            <td>{item.feedback_id}</td>
-                                            <td>{item.feedback_user.user_name}</td>
-                                            <td>{item.feedback_user.user_fullname}</td>
-                                            <td>{item.feedback_title}</td>
-                                            <td>{item.feedback_content}</td>
-                                            <td>
-                                                <div class="form-group">
-                                                    <select name="feedback_status" class="form-control" id="exampleFormControlSelect1">
-                                                        <option value={item.feedback_status}>{item.feedback_status}</option>
-                                                        {/* <option value="Chưa đóng">Chưa đóng</option> */}
-                                                        <option value="Đã duyệt">Đã duyệt</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                            <td>{item.created_at}</td>
-                                            <td>{item.updated_at}</td>
-                                            <td>
-                                                <Link to={`../edit-room/${item.room_id}`} className="btn btn-sm btn-warning btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-exclamation-triangle"></i>
-                                                    </span>
-                                                    <span class="text">Cập nhật</span>
-                                                </Link>
-                                                <a class="btn btn-sm btn-danger btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Hủy</span>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </>
+                                    {feedback_data.map((item) =>
+                                        <FeedBackRow
+                                            item={item}
+                                        // handleApprove= {handleApprove}
+                                        />
                                     )}
                                 </tbody>
                             </table>
@@ -108,6 +79,73 @@ function FeedBackList() {
             </div>
         </>
     );
+}
+
+function FeedBackRow({ item }) {
+
+    const [feedback, setFeedBack] = useState(item);
+    const handleApprove = (feedback_id, app_ref) => {
+        axios.put(`api/approve-feedback/${feedback_id}`, { feedback_status: app_ref }).then(
+            res => {
+                setFeedBack(res.data)
+            }
+        )
+    }
+
+    return (
+        <>
+            <tr>
+                <td>{feedback.feedback_id}</td>
+                <td>{feedback.feedback_user.user_name}</td>
+                <td>{feedback.feedback_user.user_fullname}</td>
+                <td>{feedback.feedback_title}</td>
+                <td>{feedback.feedback_content}</td>
+                <td>
+                    {feedback.feedback_status}
+                    {/* <div class="form-group">
+                        <select name="feedback_status" class="form-control" id="exampleFormControlSelect1">
+                            <option value={feedback.feedback_status}>{feedback.feedback_status}</option>
+                            <option value="Đã duyệt">Đã duyệt</option>
+                        </select>
+                    </div> */}
+                </td>
+                <td>{feedback.created_at}</td>
+                <td>{feedback.updated_at}</td>
+                <td>
+                    {feedback.feedback_status == 'Đang chờ xử lý'
+                        ?
+                        <><a onClick={() => handleApprove(feedback.feedback_id, "Đã duyệt")} className="btn btn-sm btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text">Duyệt</span>
+                        </a>
+                            <a onClick={() => handleApprove(feedback.feedback_id, "Đã từ chối")} class="btn btn-sm btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                                <span class="text">Từ chối</span>
+                            </a></>
+                        : feedback.feedback_status == 'Đã duyệt' ?
+                            <span class="text-success">
+                                <i class="fas fa-check"></i> Đã duyệt
+                            </span>
+                            :
+                            <span class="text-warning">
+                                <i class="fas fa-check"></i> Đã từ chối
+                            </span>
+                            // <a className="btn btn-sm btn-primary btn-icon-split">
+                            //     <span class="icon text-white-50">
+                            //         <i class="fas fa-exclamation-triangle"></i>
+                            //     </span>
+                            //     <span class="text">Đã từ chối</span>
+                            // </a>
+
+                    }
+                </td>
+            </tr>
+        </>
+    )
 }
 
 export default FeedBackList;

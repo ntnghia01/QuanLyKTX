@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Registration;
+use App\Models\Room;
+use App\Models\TypeRoom;
 
 class RegisterController extends Controller
 {
@@ -15,6 +17,8 @@ class RegisterController extends Controller
             'regis_student'=> $request->regis_student,
             'regis_status'=> $request->regis_status
         ]);
+        // Room::find($request->regis_room)->update(['room_quantity' => 'room_quantity'-1]);
+        
 
         return response()->json($post, 200);
         
@@ -48,6 +52,30 @@ class RegisterController extends Controller
         //     $query->with('room_type');
         // })->get();
         // return $regis;
+    }
+
+    public function register_approve($regis_id, Request $request) {
+
+        $regis = Registration::with('regis_room')->with('regis_student')->find($regis_id);
+        $regis->regis_status=$request->regis_status;
+        $regis->save();
+
+        $room = Room::find($request->room_id);
+        $room->room_quantity=$room->room_quantity+1;
+        $room->save();
+
+        $type_room = TypeRoom::find($room->room_type);
+        $room = Room::find($request->room_id);
+        if ($room->room_quantity == $type_room->type_capacity) {
+            $room->room_status = "Đã đầy";
+        }
+        $room->save();
+        // return response()->json(($room->room_quantity == $type_room->type_capacity), 200);
+        // return $room->room_status;
+        return $regis;
+
+        // $regis = Registration::find($regis_id)->update(['regis_status'=>$request->regis_status]);
+        // return response()->json($regis, 200);
     }
 
     

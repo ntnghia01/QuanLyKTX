@@ -161,6 +161,12 @@ function MenuAdmin() {
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Quản Lý Ý Kiến Phản Hồi</span></Link>
                 </li>
+
+                <li className="nav-item">
+                    <Link to='list-account' className="nav-link">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Quản Lý Tài Khoản</span></Link>
+                </li>
                 
 
                 {/* <!-- Divider --> */}
@@ -172,7 +178,7 @@ function MenuAdmin() {
                 </div>
 
                 {/* <!-- Nav Item - Pages Collapse Menu --> */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                         aria-expanded="true" aria-controls="collapsePages">
                         <i className="fas fa-fw fa-folder"></i>
@@ -190,21 +196,21 @@ function MenuAdmin() {
                             <a className="collapse-item" href="blank.html">Blank Page</a>
                         </div>
                     </div>
-                </li>
+                </li> */}
 
                 {/* <!-- Nav Item - Charts --> */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <a className="nav-link" href="charts.html">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Charts</span></a>
-                </li>
+                </li> */}
 
                 {/* <!-- Nav Item - Tables --> */}
-                <li className="nav-item">
-                    <a className="nav-link" href="/logout/user">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Đăng xuất</span></a>
-                </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/logout/user">
+                            <i className="fas fa-fw fa-table"></i>
+                            <span>Đăng xuất</span></a>
+                    </li>
 
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider d-none d-md-block" />
@@ -222,26 +228,6 @@ function MenuAdmin() {
                 </div> */}
 
             </ul>
-            {/* <div>
-                <DropdownButton
-                    align={{ lg: 'start' }}
-                    title="Quản lý khu"
-                    id="dropdown-menu-align-responsive-1"
-                >
-                    <Dropdown.Item eventKey="1"><Link to='add-area'>Thêm khu</Link></Dropdown.Item>
-                    <Dropdown.Item eventKey="2"><Link to='list-area'>Liệt kê khu</Link></Dropdown.Item>
-                </DropdownButton>
-            </div>
-            <div className="mt-2">
-                <SplitButton
-                    align={{ lg: 'start' }}
-                    title="Quản lý dãy"
-                    id="dropdown-menu-align-responsive-2"
-                >
-                    <Dropdown.Item eventKey="1"><Link to='add-range'>Thêm dãy</Link></Dropdown.Item>
-                    <Dropdown.Item eventKey="2"><Link to='list-range'>Liệt kê dãy</Link></Dropdown.Item>
-                </SplitButton>
-            </div> */}
         </>
     );
 }

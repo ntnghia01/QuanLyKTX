@@ -100,9 +100,9 @@ function RoomAdd() {
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="room_quantity">Còn Trống (chỗ)</label>
+                  <label for="room_quantity">Đã ở (chỗ)</label>
                   <select onChange={e => { setRoomQuantity(e.target.value) }} name="room_quantity" class="form-control" id="exampleFormControlSelect1">
-                    <option value="8">-- Số chỗ còn trống của phòng --</option>
+                    <option value="0">-- Số chỗ đã ở của phòng --</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
