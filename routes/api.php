@@ -69,6 +69,7 @@ Route::post('/post-registration', 'RegisterController@create_registration');
 Route::get('/get-only-registration/{regis_id}', 'RegisterController@get_only_registration');
 Route::post('/register-room/{item.room_id}', 'RegisterController@register_room');
 Route::put('/register-approve/{regis_id}', 'RegisterController@register_approve');
+Route::get('/get-student-registration/{student_id}', 'RegisterController@get_student_registration');
 
 // Feedback (Ý kiến phản hồi)
 Route::get('/get-feedback', 'FeedBackController@feedbacks');

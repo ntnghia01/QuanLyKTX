@@ -8,6 +8,7 @@ import MenuStudent from './MenuStudent';
 import RoomListStudent from './RoomListStudent';
 import RegisterRoom from './RegisterRoom';
 import FeedBack from './FeedBack';
+import RoomInfo from './RoomInfo';
 
 
 function Student() {
@@ -40,7 +41,9 @@ function Student() {
                             <Routes>
                                 <Route path="list-room-student" element={<RoomListStudent />} ></Route>
                                 <Route path="register-room" element={<RegisterRoom />} ></Route>
+                                <Route path="room-infomation" element={<RoomInfo />} ></Route>
                                 <Route path="feedback" element={<FeedBack />} ></Route>
+                                
                             </Routes>
                             {/* <!-- /.container-fluid --> */}
 
