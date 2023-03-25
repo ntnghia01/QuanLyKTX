@@ -34,7 +34,7 @@ function MenuStudent() {
 
                 {/* <!-- Nav Item - Dashboard --> */}
                 <li className="nav-item">
-                    <Link to='dashboard' className="nav-link"><i className="fas fa-fw fa-tachometer-alt"></i><span>Trang chủ</span></Link>
+                    <Link to='welcome' className="nav-link"><i className="fas fa-fw fa-tachometer-alt"></i><span>Trang chủ</span></Link>
                 </li>
 
                 {/* <!-- Divider --> */}

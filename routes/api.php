@@ -86,7 +86,7 @@ Route::put('/pay-room-bill/{room_bill_id}', 'RoomBillController@pay_room_bill');
 Route::get('/get-registration-by-student/{student_id}', 'RegisterController@get_registration_by_student');
 Route::get('/yes-no-registration/{student_id}', 'RegisterController@yes_no_registration');
 Route::get('/elec-water-bill-by-room/{room_id}', 'ElecWaterBillController@elec_water_bill_by_room');
-
+Route::get('/room-bill-by-regis/{regis_id}', 'RoomBillController@room_bill_by_regis');
 
 
 // use Illuminate\Support\Facades\Session;

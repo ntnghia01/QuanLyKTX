@@ -58,4 +58,9 @@ class RoomBillController extends Controller
 
     }
 
+    public function room_bill_by_regis($regis_id) {
+        $room_bill_by_regis = RoomBill::where(['room_bill_regis'=>$regis_id])->get();
+        return $room_bill_by_regis;
+    }
+
 }
