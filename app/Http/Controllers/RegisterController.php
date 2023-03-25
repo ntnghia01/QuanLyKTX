@@ -76,16 +76,19 @@ class RegisterController extends Controller
     }
 
     public function get_student_registration($student_id) {
-        // $regis = Registration::where(['regis_id'=>$regis_id])->with('regis_student')->with('regis_room')->first();
         $regis = Registration::where(['regis_student'=>$student_id])
                             ->join('users', 'registration.regis_student', '=', 'users.id')
                             ->join('rooms', 'registration.regis_room', '=', 'rooms.room_id')
                             ->join('ranges', 'rooms.room_range', '=', 'ranges.range_id')//range
                             ->join('area', 'ranges.range_area', '=', 'area.area_id')//area
                             ->join('type_rooms', 'rooms.room_type', '=', 'type_rooms.type_id')
-                            ->join('elec_water_bills', 'rooms.room_id', '=', 'elec_water_bills.elec_water_bill_id') // chi lay duoc 1 bill
                             ->first();
         return $regis;
+    }
+
+    public function yes_no_registration($student_id) {
+        $yes_no = Registration::where(['regis_student'=>$student_id])->first();
+        return $yes_no;
     }
 
     

@@ -62,12 +62,12 @@ function MenuStudent() {
                 <li className="nav-item">
                     <Link to='' className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Xem thông tin cá nhân</span></Link>
+                        <span>Xem thông tin hóa đơn</span></Link>
                 </li>
                 <li className="nav-item">
                     <Link to='' className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Xem thông tin hóa đơn</span></Link>
+                        <span>Xem thông tin cá nhân</span></Link>
                 </li>
                 <li className="nav-item">
                     <Link to='/feedback' className="nav-link">

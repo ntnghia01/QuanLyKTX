@@ -62,7 +62,7 @@ function RoomInfo() {
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    
+                                    {/* {room_info_data.regis_id > 0 ?  <> */}
                                             <tr>
                                                 <td>Phòng đăng ký</td>
                                                 <td>{room_info_data.room_name}</td>
@@ -95,7 +95,7 @@ function RoomInfo() {
                                                 <td>Mã đơn đăng ký</td>
                                                 <td>{room_info_data.regis_id}</td>
                                             </tr>
-                                        
+                                        {/* </>: <div>Bạn chưa đăng ký phòng ở</div>} */}
                                 </tbody>
                             </table>
                         </div>
