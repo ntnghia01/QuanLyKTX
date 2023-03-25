@@ -69,8 +69,7 @@ Route::post('/post-registration', 'RegisterController@create_registration');
 Route::get('/get-only-registration/{regis_id}', 'RegisterController@get_only_registration');
 Route::post('/register-room/{item.room_id}', 'RegisterController@register_room');
 Route::put('/register-approve/{regis_id}', 'RegisterController@register_approve');
-Route::get('/get-student-registration/{student_id}', 'RegisterController@get_student_registration');
-Route::get('/yes-no-registration/{student_id}', 'RegisterController@yes_no_registration');
+
 
 // Feedback (Ý kiến phản hồi)
 Route::get('/get-feedback', 'FeedBackController@feedbacks');
@@ -83,6 +82,10 @@ Route::get('/get-room-bill', 'RoomBillController@room_bills');
 Route::delete('/delete-room-bill/{room_bill_id}', 'RoomBillController@delete_room_bill');
 Route::put('/pay-room-bill/{room_bill_id}', 'RoomBillController@pay_room_bill');
 
+// Room Infomation (Thông tin phòng đăng ký)
+Route::get('/get-registration-by-student/{student_id}', 'RegisterController@get_registration_by_student');
+Route::get('/yes-no-registration/{student_id}', 'RegisterController@yes_no_registration');
+Route::get('/elec-water-bill-by-room/{room_id}', 'ElecWaterBillController@elec_water_bill_by_room');
 
 
 

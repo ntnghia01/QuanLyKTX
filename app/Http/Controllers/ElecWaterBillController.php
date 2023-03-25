@@ -78,4 +78,9 @@ class ElecWaterBillController extends Controller
 
     }
 
+    public function elec_water_bill_by_room($room_id) {
+        $elec_water_bill_by_room = ElecWaterBill::where(['elec_water_bill_room'=>$room_id])->get();
+        return $elec_water_bill_by_room;
+    }
+
 }

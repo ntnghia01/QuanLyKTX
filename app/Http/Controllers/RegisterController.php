@@ -75,7 +75,7 @@ class RegisterController extends Controller
         // return response()->json($regis, 200);
     }
 
-    public function get_student_registration($student_id) {
+    public function get_registration_by_student($student_id) {
         $regis = Registration::where(['regis_student'=>$student_id])
                             ->join('users', 'registration.regis_student', '=', 'users.id')
                             ->join('rooms', 'registration.regis_room', '=', 'rooms.room_id')
