@@ -60,7 +60,7 @@ function MenuStudent() {
                         <span>Xem thông tin phòng</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='' className="nav-link">
+                    <Link to='/personal-infomation' className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Xem thông tin cá nhân</span></Link>
                 </li>

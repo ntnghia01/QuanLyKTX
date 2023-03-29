@@ -9,6 +9,8 @@ import RoomListStudent from './RoomListStudent';
 import RegisterRoom from './RegisterRoom';
 import FeedBack from './FeedBack';
 import RoomInfo from './RoomInfo';
+import PersonalInfo from './PersonalInfo';
+import PersonalEdit from './PersonalInfoEdit';
 
 
 function Student() {
@@ -42,6 +44,8 @@ function Student() {
                                 <Route path="list-room-student" element={<RoomListStudent />} ></Route>
                                 <Route path="register-room" element={<RegisterRoom />} ></Route>
                                 <Route path="room-infomation" element={<RoomInfo />} ></Route>
+                                <Route path="personal-infomation" element={<PersonalInfo />} ></Route>
+                                <Route path="edit-personal-info/:id" element={<PersonalEdit />} ></Route>
                                 <Route path="feedback" element={<FeedBack />} ></Route>
                                 
                             </Routes>

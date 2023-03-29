@@ -40,12 +40,12 @@ class RoomController extends Controller
 
     public function update_room(Request $request, $room_id) {
         $room = Room::where(['room_id'=>$room_id])->update([
-                                                                'room_name'=> $request->room_name,
-                                                                'room_range'=> $request->room_range,
-                                                                'room_type'=> $request->room_type,
-                                                                'room_quantity'=> $request->room_quantity,
-                                                                'room_status'=> $request->room_status,
-                                                                'room_desc'=> $request->room_desc
+            'room_name'=> $request->room_name,
+            'room_range'=> $request->room_range,
+            'room_type'=> $request->room_type,
+            'room_quantity'=> $request->room_quantity,
+            'room_status'=> $request->room_status,
+            'room_desc'=> $request->room_desc
         ]);
         return $room;
     }
