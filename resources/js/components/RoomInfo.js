@@ -38,6 +38,10 @@ function RoomInfo() {
 
     return (
         <>
+
+            { room_info_data.regis_status == 'Đã duyệt' ?
+
+            <>
             {/* <!-- Page Heading --> */}
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Thông Tin Phòng Sinh Viên Đã Đăng Ký</h1>
@@ -188,6 +192,13 @@ function RoomInfo() {
                 </div>
 
             </div>
+            </>
+            :
+            <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 className="h3 mb-0 text-gray-800">Bạn chưa đăng ký phòng</h1>
+            </div>
+            
+        }
 
 
         </>

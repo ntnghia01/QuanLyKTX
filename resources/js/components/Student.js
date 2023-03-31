@@ -11,6 +11,7 @@ import FeedBack from './FeedBack';
 import RoomInfo from './RoomInfo';
 import PersonalInfo from './PersonalInfo';
 import PersonalEdit from './PersonalInfoEdit';
+import Withdrawal from './Withdrawal';
 
 
 function Student() {
@@ -47,7 +48,7 @@ function Student() {
                                 <Route path="personal-infomation" element={<PersonalInfo />} ></Route>
                                 <Route path="edit-personal-info/:id" element={<PersonalEdit />} ></Route>
                                 <Route path="feedback" element={<FeedBack />} ></Route>
-                                
+                                <Route path="withdrawal" element={<Withdrawal />} ></Route>
                             </Routes>
                             {/* <!-- /.container-fluid --> */}
 

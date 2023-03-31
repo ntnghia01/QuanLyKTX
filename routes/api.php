@@ -90,6 +90,13 @@ Route::get('/room-bill-by-regis/{regis_id}', 'RoomBillController@room_bill_by_re
 Route::get('/personal-infomation/{user_id}', 'StudentController@personal_infomation');
 Route::put('/update-personal-infomation/{user_id}', 'StudentController@update_personal_infomation');
 
+// Withdrawal (Rút KTX)
+Route::post('/post-withdrawal', 'WithdrawalController@create_withdrawal');
+Route::get('/get-withdrawal', 'WithdrawalController@withdrawals');
+Route::get('/get-withdrawal-by-student/{student_id}', 'WithdrawalController@withdrawal_by_student');
+Route::put('/approve-withdrawal/{withdrawal_id}', 'WithdrawalController@approve_withdrawal');
+Route::put('/refuse-withdrawal/{withdrawal_id}', 'WithdrawalController@refuse_withdrawal');
+
 
 
 

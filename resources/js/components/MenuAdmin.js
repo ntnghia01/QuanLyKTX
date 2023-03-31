@@ -163,6 +163,13 @@ function MenuAdmin() {
                 </li>
 
                 <li className="nav-item">
+                    <Link to='list-withdrawal' className="nav-link">
+                        <i className="fas fa-fw fa-chart-area"></i>
+                        <span>Quản Lý Đơn Rút KTX</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
                     <Link to='list-account' className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Quản Lý Tài Khoản</span></Link>

@@ -70,7 +70,7 @@ function MenuStudent() {
                         <span>Sửa chữa CSVC</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='' className="nav-link">
+                    <Link to='/withdrawal' className="nav-link">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>Rút đơn ở KTX</span></Link>
                 </li>

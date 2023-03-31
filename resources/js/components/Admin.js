@@ -31,6 +31,7 @@ import FeedBackList from './FeedBackList';
 import RoomBillAdd from './RoomBillAdd';
 import RoomBillList from './RoomBillList';
 import Account from './Account';
+import WithdrawalList from './WithdrawalList';
 
 function Admin() {
     return (
@@ -88,6 +89,8 @@ function Admin() {
 
                                     <Route path="add-room-bill/:regis_id" element={<RoomBillAdd />} ></Route>
                                     <Route path="list-room-bill" element={<RoomBillList />} ></Route>
+
+                                    <Route path="list-withdrawal" element={<WithdrawalList />} ></Route>
 
                                     <Route path="list-account" element={<Account />} ></Route>
                                 </Routes>
