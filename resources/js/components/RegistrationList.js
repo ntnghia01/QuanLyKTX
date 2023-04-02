@@ -17,16 +17,16 @@ function RegistrationList() {
         }
     }, [])
 
-   
+
 
     return (
         <>
-            {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Đăng Ký Trong Hệ Thống</h1>
-            </div>
-            <div class="container-fluid">
 
+            <div class="container-fluid">
+                {/* <!-- Page Heading --> */}
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Đăng Ký Trong Hệ Thống</h1>
+                </div>
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800">Danh Sách Đơn Đăng Ký</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
@@ -65,10 +65,10 @@ function RegistrationList() {
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    {registration_data.map((item) => 
-                                        <RegistrationRow 
-                                            item = {item} 
-                                            // handleApprove= {handleApprove}
+                                    {registration_data.map((item) =>
+                                        <RegistrationRow
+                                            item={item}
+                                        // handleApprove= {handleApprove}
                                         />
                                     )}
                                 </tbody>
@@ -81,10 +81,10 @@ function RegistrationList() {
     );
 }
 
-function RegistrationRow({item} ) {
-    const [regis,setRegis] = useState(item);
+function RegistrationRow({ item }) {
+    const [regis, setRegis] = useState(item);
     const handleApprove = (approve_id, room_id, app_ref) => {
-        axios.put(`api/register-approve/${approve_id}`, { regis_status: app_ref, room_id: room_id}).then(
+        axios.put(`api/register-approve/${approve_id}`, { regis_status: app_ref, room_id: room_id }).then(
             res => {
                 setRegis(res.data)
             }
@@ -129,10 +129,14 @@ function RegistrationRow({item} ) {
                                 </span>
                                 <span class="text">Tạo hóa đơn</span>
                             </Link>
-                            :
-                            <span class="text-warning">
-                                <i class="fas fa-check"></i> Đã từ chối
-                            </span>
+                            : regis.regis_status == 'Đã rút' ?
+                                <span class="text-warning">
+                                    <i class="fas fa-check"></i> Đã rút
+                                </span>
+                                :
+                                <span class="text-warning">
+                                    <i class="fas fa-check"></i> Đã từ chối
+                                </span>
 
                     }
 

@@ -17,14 +17,14 @@ function WithdrawalList() {
 
     return (
         <>
-            {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Yêu Cầu Rút KTX Trong Hệ Thống</h1>
-            </div>
-            <div class="container-fluid">
 
+            <div class="container-fluid">
                 {/* <!-- Page Heading --> */}
-                
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Yêu Cầu Rút KTX Trong Hệ Thống</h1>
+                </div>
+                {/* <!-- Page Heading --> */}
+
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
                     href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
 
@@ -50,10 +50,10 @@ function WithdrawalList() {
                                     </tr>
                                 </thead>
                                 <tfoot>
-                                    
+
                                 </tfoot>
                                 <tbody>
-                                
+
                                     {withdrawal_data.map((item) =>
                                         <WithdrawalRow
                                             key={item.id}
@@ -119,13 +119,13 @@ function WithdrawalRow({ item }) {
                             </a>
                         </>
                         : withdrawal_new.withdrawal_status == "Đã duyệt" ?
-                        <span class="text-success">
-                            <i class="fas fa-check"></i> Đã duyệt
-                        </span>
-                        :
-                        <span class="text-danger">
-                            <i class="fas fa-check"></i> Đã từ chối
-                        </span>
+                            <span class="text-success">
+                                <i class="fas fa-check"></i> Đã duyệt
+                            </span>
+                            :
+                            <span class="text-danger">
+                                <i class="fas fa-check"></i> Đã từ chối
+                            </span>
                     }
                 </td>
             </tr>

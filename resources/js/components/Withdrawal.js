@@ -45,7 +45,7 @@ function Withdrawal() {
         axios.post('api/post-withdrawal', { withdrawal_regis, withdrawal_reason, withdrawal_status, withdrawal_approve }).then(
             res => {
                 setData(res.data);
-                alert('Gửi yêu cầu thành công');
+                alert('Gửi yêu cầu thành công!');
             }
         )
     }
@@ -112,7 +112,7 @@ function Withdrawal() {
                     </div>
                 </>
                 :
-                <div>Bạn chưa tham gia phòng nào nên chưa thể yêu cầu rút KTX</div>
+                <div className='container-fluid h1'>Bạn chưa tham gia phòng nào nên chưa thể yêu cầu rút KTX</div>
             }
         </>
     );

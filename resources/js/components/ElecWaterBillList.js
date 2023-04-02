@@ -19,24 +19,24 @@ function ElecWaterBillList() {
 
     const handleDelete = (elec_water_bill_id) => {
         axios.delete(`api/delete-elec-water-bill/${elec_water_bill_id}`).then(
-            
+
             res => {
                 // console.log(elec_water_bill_id);
                 setElecWaterBillData(elec_water_bill_data.filter(elec_water_bill_data => elec_water_bill_data.elec_water_bill_id !== elec_water_bill_id))
             }
         )
     }
-    
-    
+
+
 
     return (
         <>
-            {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Hóa Đơn Điện Nước Trong Hệ Thống</h1>
-            </div>
-            <div class="container-fluid">
 
+            <div class="container-fluid">
+                {/* <!-- Page Heading --> */}
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Hóa Đơn Điện Nước Trong Hệ Thống</h1>
+                </div>
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800">Dãy</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
@@ -102,7 +102,7 @@ function ElecWaterBillList() {
                 </div>
             </div>
 
-            
+
         </>
     );
 }
@@ -117,10 +117,10 @@ function ElecWaterBillRow({ item, handleDelete }) {
             }
         )
     }
-   
+
     const [delete_id, setDID] = useState(item.elec_water_bill_id);
     console.log(delete_id)
-    
+
 
     return (
         <>
@@ -140,38 +140,38 @@ function ElecWaterBillRow({ item, handleDelete }) {
                 <td>{elec_water_bill_new.elec_water_bill_status}</td>
                 <td>{elec_water_bill_new.created_at}</td>
                 <td>
-                    {elec_water_bill_new.elec_water_bill_status == "Chưa đóng" 
-                    ? 
-                    <>
-                        <a onClick={() => handlePay(elec_water_bill_new.elec_water_bill_id, "Đã đóng")} className="btn btn-sm btn-primary btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-check"></i>
-                            </span>
-                            <span class="text">Đã đóng</span>
-                        </a>
-                        <Link to={`../edit-elec-water-bill/${elec_water_bill_new.elec_water_bill_id}`} className="btn btn-sm btn-warning btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </span>
-                            <span class="text">Cập nhật</span>
-                        </Link>
-                    <a type="button" data-toggle="modal" data-target={"#staticBackdrop"+delete_id} className="btn btn-sm btn-danger btn-icon-split" >
-                            <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                            </span>
-                            <span class="text">Xóa</span>
-                        </a>
-                    </>
-                    :
-                    <span class="text-success">
-                        <i class="fas fa-check"></i> Đã đóng
-                    </span>
-                
-                }
-                    
+                    {elec_water_bill_new.elec_water_bill_status == "Chưa đóng"
+                        ?
+                        <>
+                            <a onClick={() => handlePay(elec_water_bill_new.elec_water_bill_id, "Đã đóng")} className="btn btn-sm btn-primary btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                <span class="text">Đã đóng</span>
+                            </a>
+                            <Link to={`../edit-elec-water-bill/${elec_water_bill_new.elec_water_bill_id}`} className="btn btn-sm btn-warning btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                                <span class="text">Cập nhật</span>
+                            </Link>
+                            <a type="button" data-toggle="modal" data-target={"#staticBackdrop" + delete_id} className="btn btn-sm btn-danger btn-icon-split" >
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-trash"></i>
+                                </span>
+                                <span class="text">Xóa</span>
+                            </a>
+                        </>
+                        :
+                        <span class="text-success">
+                            <i class="fas fa-check"></i> Đã đóng
+                        </span>
+
+                    }
+
                 </td>
             </tr>
-            <div class="modal" id={"staticBackdrop"+delete_id} data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal" id={"staticBackdrop" + delete_id} data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

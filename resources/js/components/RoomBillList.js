@@ -28,21 +28,21 @@ function RoomBillList() {
 
     return (
         <>
-            {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Hóa Đơn Tiền Phòng Trong Hệ Thống</h1>
-            </div>
-            <div class="container-fluidy">
 
+            <div class="container-fluid">
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Dãy</h1>
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Hóa Đơn Tiền Phòng Trong Hệ Thống</h1>
+                </div>
+                {/* <!-- Page Heading --> */}
+                <h1 class="h3 mb-2 text-gray-800">Hóa Đơn Tiền Phòng</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
                     href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
 
                 {/* <!-- DataTales Example --> */}
                 <div class="card shadow mb-4 border-left-primary">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Hóa Đơn Tiền Phòng</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Hóa Đơn Tiền Phòng Của Mỗi Sinh Viên</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

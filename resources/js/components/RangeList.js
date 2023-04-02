@@ -32,18 +32,18 @@ function RangeList() {
     const handleDelete = (range_id) => {
         axios.delete(`api/delete-range/${range_id}`).then(
             setRange(range.filter(range => range.range_id !== range_id))
-            
+
         )
     }
 
     return (
         <>
-            {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Dãy Trong Hệ Thống</h1>
-            </div>
-            <div class="container-fluid">
 
+            <div class="container-fluid">
+                {/* <!-- Page Heading --> */}
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Dãy Trong Hệ Thống</h1>
+                </div>
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800">Dãy</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"

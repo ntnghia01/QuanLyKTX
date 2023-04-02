@@ -144,8 +144,6 @@ function MenuAdmin() {
                             <h6 className="collapse-header">Lựa chọn:</h6>
                             <Link to='add-room-bill' className="collapse-item">Thêm hóa đơn</Link>
                             <Link to='list-room-bill' className="collapse-item">Liệt kê hóa đơn</Link>
-                            <a className="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a className="collapse-item" href="utilities-other.html">Other</a>
                         </div>
                     </div>
                 </li>

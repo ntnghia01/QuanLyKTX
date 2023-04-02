@@ -30,12 +30,13 @@ function TypeRoomAdd() {
   }
   return (
     <>
-      {/* <!-- Page Heading --> */}
-      <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Thêm Loại Phòng</h1>
-      </div>
-      <div className="container-fluid">
-        {/* <!-- Area Chart --> */}
+      <div className='container-fluid'>
+        {/* <!-- Page Heading --> */}
+        <div className="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 className="h3 mb-0 text-gray-800">Thêm Loại Phòng</h1>
+        </div>
+        <div className="container-fluid">
+          {/* <!-- Area Chart --> */}
           <div className="card shadow mb-4">
             {/* <!-- Card Header - Dropdown --> */}
             <div
@@ -59,7 +60,7 @@ function TypeRoomAdd() {
             {/* <!-- Card Body --> */}
             <div className="card-body">
               <form onSubmit={(e) => { submit(e) }}>
-              {data.type_name}
+                {data.type_name}
                 <div class="form-group">
                   <label for="type_name">Tên Loại Phòng</label>
                   <input onChange={e => { setNameType(e.target.value) }} value={type_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -117,7 +118,7 @@ function TypeRoomAdd() {
             </div>
           </div>
         </div>
-
+      </div>
       {/* <Form onSubmit={(e) => { submit(e) }}>
         <Form.Text className="text-muted">
           {data.type_name}

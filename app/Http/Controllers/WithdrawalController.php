@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Withdrawal;
 use App\Models\Room;
+use App\Models\Registration;
 
 use Carbon\Carbon;
 
@@ -57,6 +58,10 @@ class WithdrawalController extends Controller
         $room = Room::find($request->room_id);
         $room->room_quantity=$room->room_quantity-1;
         $room->save();
+
+        $registration = Registration::find($withdrawal->withdrawal_regis)->update([
+                'regis_status'=> 'Đã rút'
+        ]);
 
         return $withdrawal;
 

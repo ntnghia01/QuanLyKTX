@@ -19,12 +19,12 @@ function FeedBackList() {
 
     return (
         <>
-            {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Ý Kiến Phản Hồi Trong Hệ Thống</h1>
-            </div>
-            <div class="container-fluid">
 
+            <div class="container-fluid">
+                {/* <!-- Page Heading --> */}
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Ý Kiến Phản Hồi Trong Hệ Thống</h1>
+                </div>
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800">Ý kiến, phản hồi, sửa chữa CSVC</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
@@ -100,15 +100,7 @@ function FeedBackRow({ item }) {
                 <td>{feedback.feedback_user.user_fullname}</td>
                 <td>{feedback.feedback_title}</td>
                 <td>{feedback.feedback_content}</td>
-                <td>
-                    {feedback.feedback_status}
-                    {/* <div class="form-group">
-                        <select name="feedback_status" class="form-control" id="exampleFormControlSelect1">
-                            <option value={feedback.feedback_status}>{feedback.feedback_status}</option>
-                            <option value="Đã duyệt">Đã duyệt</option>
-                        </select>
-                    </div> */}
-                </td>
+                <td>{feedback.feedback_status}</td>
                 <td>{feedback.created_at}</td>
                 <td>{feedback.updated_at}</td>
                 <td>
@@ -134,12 +126,6 @@ function FeedBackRow({ item }) {
                             <span class="text-warning">
                                 <i class="fas fa-check"></i> Đã từ chối
                             </span>
-                            // <a className="btn btn-sm btn-primary btn-icon-split">
-                            //     <span class="icon text-white-50">
-                            //         <i class="fas fa-exclamation-triangle"></i>
-                            //     </span>
-                            //     <span class="text">Đã từ chối</span>
-                            // </a>
 
                     }
                 </td>

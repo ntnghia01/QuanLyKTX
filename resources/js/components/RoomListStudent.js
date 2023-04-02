@@ -19,21 +19,21 @@ function RoomListStudent() {
         }
         {
             axios.get('/get-session').then(
-              res => {
-                setUserID(res.data.user_id)
-              }
+                res => {
+                    setUserID(res.data.user_id)
+                }
             )
         }
     }, [])
 
     return (
         <>
-            {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Phòng Trong Hệ Thống</h1>
-            </div>
-            <div class="container-fluid">
 
+            <div class="container-fluid">
+                {/* <!-- Page Heading --> */}
+                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Phòng Trong Hệ Thống</h1>
+                </div>
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800">Phòng</h1>
                 <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
@@ -81,19 +81,19 @@ function RoomListStudent() {
                                                 {item.room_quantity == item.room_type.type_capacity
                                                     ?
                                                     <><span class="text-danger">
-                                                    <i class="fas fa-exclamation-triangle"></i> Đã đầy
-                                                </span></>
+                                                        <i class="fas fa-exclamation-triangle"></i> Đã đầy
+                                                    </span></>
                                                     : item.room_status == "Đang sửa chữa" ?
-                                                    <><span class="text-warning">
-                                                    <i class="fas fa-exclamation-triangle"></i> Đang sửa chữa
-                                                </span></>
-                                                :
-                                                    <Link to='../register-room' className="btn btn-sm btn-success btn-icon-split">
-                                                        <span class="icon text-white-50">
-                                                            <i class="fas fa-flag"></i>
-                                                        </span>
-                                                        <span class="text">Đăng ký</span>
-                                                    </Link>
+                                                        <><span class="text-warning">
+                                                            <i class="fas fa-exclamation-triangle"></i> Đang sửa chữa
+                                                        </span></>
+                                                        :
+                                                        <Link to='../register-room' className="btn btn-sm btn-success btn-icon-split">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-flag"></i>
+                                                            </span>
+                                                            <span class="text">Đăng ký</span>
+                                                        </Link>
                                                 }
                                             </td>
                                         </tr>

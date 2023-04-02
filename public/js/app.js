@@ -94950,12 +94950,12 @@ function Account() {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c T\xE0i Kho\u1EA3n Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c T\xE0i Kho\u1EA3n Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "T\xE0i Kho\u1EA3n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -95324,6 +95324,8 @@ function AreaAdd() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -95407,7 +95409,7 @@ function AreaAdd() {
     className: "fas fa-flag"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text"
-  }, " Th\xEAm khu"))))))));
+  }, " Th\xEAm khu")))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (AreaAdd);
 
@@ -95480,6 +95482,8 @@ function AreaEdit() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -95570,7 +95574,7 @@ function AreaEdit() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "C\u1EADp Nh\u1EADt D\xE3y")))))));
+  }, "C\u1EADp Nh\u1EADt D\xE3y"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (AreaEdit);
 
@@ -95621,12 +95625,12 @@ function AreaList() {
     })));
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c Khu Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c Khu Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "Khu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -96209,6 +96213,8 @@ function ElecWaterBillAdd() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -96477,7 +96483,7 @@ function ElecWaterBillAdd() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Th\xEAm h\xF3a \u0111\u01A1n")))))));
+  }, "Th\xEAm h\xF3a \u0111\u01A1n"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (ElecWaterBillAdd);
 
@@ -96615,6 +96621,8 @@ function ElecWaterBillEdit() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -96877,7 +96885,7 @@ function ElecWaterBillEdit() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "C\u1EADp Nh\u1EADt H\xF3a \u0110\u01A1n")))))));
+  }, "C\u1EADp Nh\u1EADt H\xF3a \u0110\u01A1n"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (ElecWaterBillEdit);
 
@@ -96930,12 +96938,12 @@ function ElecWaterBillList() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c H\xF3a \u0110\u01A1n \u0110i\u1EC7n N\u01B0\u1EDBc Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c H\xF3a \u0110\u01A1n \u0110i\u1EC7n N\u01B0\u1EDBc Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "D\xE3y"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -97133,6 +97141,8 @@ function FeedBack() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -97240,7 +97250,7 @@ function FeedBack() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "G\u1EEDi")))))));
+  }, "G\u1EEDi"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (FeedBack);
 
@@ -97285,12 +97295,12 @@ function FeedBackList() {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c \u0110\u01A1n \xDD Ki\u1EBFn Ph\u1EA3n H\u1ED3i Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c \u0110\u01A1n \xDD Ki\u1EBFn Ph\u1EA3n H\u1ED3i Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "\xDD ki\u1EBFn, ph\u1EA3n h\u1ED3i, s\u1EEDa ch\u1EEFa CSVC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -97363,16 +97373,8 @@ function FeedBackRow(_ref) {
     className: "text-warning"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-check"
-  }), " \u0110\xE3 t\u1EEB ch\u1ED1i")
-  // <a className="btn btn-sm btn-primary btn-icon-split">
-  //     <span class="icon text-white-50">
-  //         <i class="fas fa-exclamation-triangle"></i>
-  //     </span>
-  //     <span class="text">Đã từ chối</span>
-  // </a>
-  )));
+  }), " \u0110\xE3 t\u1EEB ch\u1ED1i"))));
 }
-
 /* harmony default export */ __webpack_exports__["default"] = (FeedBackList);
 
 /***/ }),
@@ -98182,13 +98184,7 @@ function MenuAdmin() {
   }, "Th\xEAm h\xF3a \u0111\u01A1n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
     to: "list-room-bill",
     className: "collapse-item"
-  }, "Li\u1EC7t k\xEA h\xF3a \u0111\u01A1n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "collapse-item",
-    href: "utilities-animation.html"
-  }, "Animations"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "collapse-item",
-    href: "utilities-other.html"
-  }, "Other")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "Li\u1EC7t k\xEA h\xF3a \u0111\u01A1n")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
     to: "list-registration",
@@ -98413,12 +98409,12 @@ function PersonalInfo() {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Th\xF4ng Tin Sinh Vi\xEAn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Th\xF4ng Tin Sinh Vi\xEAn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "Th\xF4ng Tin Sinh Vi\xEAn "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -98574,6 +98570,8 @@ function PersonalEdit() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -98774,7 +98772,7 @@ function PersonalEdit() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "C\u1EADp Nh\u1EADt Th\xF4ng Tin")))))));
+  }, "C\u1EADp Nh\u1EADt Th\xF4ng Tin"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (PersonalEdit);
 
@@ -98847,6 +98845,8 @@ function RangeAdd() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -98954,7 +98954,7 @@ function RangeAdd() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Th\xEAm D\xE3y")))))));
+  }, "Th\xEAm D\xE3y"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (RangeAdd);
 
@@ -99040,6 +99040,8 @@ function RangeEdit() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -99147,7 +99149,7 @@ function RangeEdit() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "C\u1EADp Nh\u1EADt D\xE3y")))))));
+  }, "C\u1EADp Nh\u1EADt D\xE3y"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (RangeEdit);
 
@@ -99222,12 +99224,12 @@ function RangeList() {
     })));
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c D\xE3y Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c D\xE3y Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "D\xE3y"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -99398,7 +99400,9 @@ function RegisterRoom() {
       navigate('../list-room-student');
     });
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status.regis_status == "Đang chờ xử lý" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, status.regis_status == "Đang chờ xử lý" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alert alert-warning",
     role: "alert"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -99591,7 +99595,7 @@ function RegisterRoom() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "\u0110\u0103ng K\xFD Ph\xF2ng"))))))));
+  }, "\u0110\u0103ng K\xFD Ph\xF2ng")))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (RegisterRoom);
 
@@ -99636,12 +99640,12 @@ function RegistrationList() {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c \u0110\u01A1n \u0110\u0103ng K\xFD Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c \u0110\u01A1n \u0110\u0103ng K\xFD Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "Danh S\xE1ch \u0110\u01A1n \u0110\u0103ng K\xFD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -99726,7 +99730,11 @@ function RegistrationRow(_ref) {
     className: "fas fa-arrow-right"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text"
-  }, "T\u1EA1o h\xF3a \u0111\u01A1n")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, "T\u1EA1o h\xF3a \u0111\u01A1n")) : regis.regis_status == 'Đã rút' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-warning"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-check"
+  }), " \u0110\xE3 r\xFAt") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-warning"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-check"
@@ -99827,6 +99835,8 @@ function RoomAdd() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -100001,7 +100011,7 @@ function RoomAdd() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Th\xEAm Ph\xF2ng")))))));
+  }, "Th\xEAm Ph\xF2ng"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (RoomAdd);
 
@@ -100358,14 +100368,14 @@ function RoomBillList() {
     })));
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c H\xF3a \u0110\u01A1n Ti\u1EC1n Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluidy"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c H\xF3a \u0110\u01A1n Ti\u1EC1n Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
-  }, "D\xE3y"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "H\xF3a \u0110\u01A1n Ti\u1EC1n Ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
   }, "B\u1EA3ng d\u1EEF li\u1EC7u d\u1EF1a v\xE0o kho d\u1EEF li\u1EC7u tr\xEAn h\u1EC7 th\u1ED1ng, n\u1EBFu c\xF3 v\u1EA5n \u0111\u1EC1 kh\xF4ng mong mu\u1ED1n x\u1EA3y ra vui l\xF2ng ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     target: "_blank",
@@ -100376,7 +100386,7 @@ function RoomBillList() {
     className: "card-header py-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
     className: "m-0 font-weight-bold text-primary"
-  }, "B\u1EA3ng D\u1EEF Li\u1EC7u H\xF3a \u0110\u01A1n Ti\u1EC1n Ph\xF2ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "B\u1EA3ng D\u1EEF Li\u1EC7u H\xF3a \u0110\u01A1n Ti\u1EC1n Ph\xF2ng C\u1EE7a M\u1ED7i Sinh Vi\xEAn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table-responsive"
@@ -100607,6 +100617,8 @@ function RoomEdit() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -100826,7 +100838,7 @@ function RoomEdit() {
     },
     className: "btn btn-primary",
     "data-dismiss": "modal"
-  }, "\u0110\xE3 hi\u1EC3u"))))));
+  }, "\u0110\xE3 hi\u1EC3u")))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (RoomEdit);
 
@@ -100892,12 +100904,12 @@ function RoomInfo() {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, room_info_data.regis_status == 'Đã duyệt' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Th\xF4ng Tin Ph\xF2ng Sinh Vi\xEAn \u0110\xE3 \u0110\u0103ng K\xFD")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Th\xF4ng Tin Ph\xF2ng Sinh Vi\xEAn \u0110\xE3 \u0110\u0103ng K\xFD")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "Th\xF4ng Tin Ph\xF2ng "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -100954,7 +100966,7 @@ function RoomInfo() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "H\u1ECDc k\u1EF3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "T\xEAn h\xF3a \u0111\u01A1n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ph\u1EA3i \u0111\xF3ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "H\u1EA1n \u0111\xF3ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y \u0111\xF3ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ghi ch\xFA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Tr\u1EA1ng th\xE1i"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tfoot", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, room_bill_info_data.map(function (i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, i.room_bill_semester), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, i.room_bill_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, i.room_bill_money), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, i.room_bill_due), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, i.room_bill_pay), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, i.room_bill_note), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, i.room_bill_status)));
   })))))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "d-sm-flex align-items-center justify-content-between mb-4"
+    className: "container-fluid d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
   }, "B\u1EA1n ch\u01B0a \u0111\u0103ng k\xFD ph\xF2ng")));
@@ -101013,12 +101025,12 @@ function RoomList() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "D\xE3y"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -101172,12 +101184,12 @@ function RoomListStudent() {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "Ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -101422,6 +101434,8 @@ function TypeRoomAdd() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -101590,7 +101604,7 @@ function TypeRoomAdd() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Th\xEAm Lo\u1EA1i Ph\xF2ng"))))));
+  }, "Th\xEAm Lo\u1EA1i Ph\xF2ng")))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (TypeRoomAdd);
 
@@ -101686,6 +101700,8 @@ function TypeRoomEdit() {
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
@@ -101856,7 +101872,7 @@ function TypeRoomEdit() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "C\u1EADp nh\u1EADt lo\u1EA1i ph\xF2ng")))))));
+  }, "C\u1EADp nh\u1EADt lo\u1EA1i ph\xF2ng"))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (TypeRoomEdit);
 
@@ -101944,12 +101960,12 @@ function TypeRoomList() {
   //     )
   // }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c Lo\u1EA1i Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "Danh S\xE1ch C\xE1c Lo\u1EA1i Ph\xF2ng Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-2 text-gray-800"
   }, "Khu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
@@ -102130,7 +102146,7 @@ function Withdrawal() {
       withdrawal_approve: withdrawal_approve
     }).then(function (res) {
       setData(res.data);
-      alert('Gửi yêu cầu thành công');
+      alert('Gửi yêu cầu thành công!');
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, regis_data.regis_status == "Đã duyệt" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -102242,7 +102258,9 @@ function Withdrawal() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "G\u1EEDi y\xEAu c\u1EA7u"))))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "B\u1EA1n ch\u01B0a tham gia ph\xF2ng n\xE0o n\xEAn ch\u01B0a th\u1EC3 y\xEAu c\u1EA7u r\xFAt KTX"));
+  }, "G\u1EEDi y\xEAu c\u1EA7u"))))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid h1"
+  }, "B\u1EA1n ch\u01B0a tham gia ph\xF2ng n\xE0o n\xEAn ch\u01B0a th\u1EC3 y\xEAu c\u1EA7u r\xFAt KTX"));
 }
 /* harmony default export */ __webpack_exports__["default"] = (Withdrawal);
 
@@ -102283,12 +102301,12 @@ function WithdrawalList() {
     }
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-sm-flex align-items-center justify-content-between mb-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "h3 mb-0 text-gray-800"
-  }, "Danh S\xE1ch C\xE1c \u0110\u01A1n Y\xEAu C\u1EA7u R\xFAt KTX Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Danh S\xE1ch C\xE1c \u0110\u01A1n Y\xEAu C\u1EA7u R\xFAt KTX Trong H\u1EC7 Th\u1ED1ng")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mb-4"
   }, "B\u1EA3ng d\u1EEF li\u1EC7u d\u1EF1a v\xE0o kho d\u1EEF li\u1EC7u tr\xEAn h\u1EC7 th\u1ED1ng, n\u1EBFu c\xF3 v\u1EA5n \u0111\u1EC1 kh\xF4ng mong mu\u1ED1n x\u1EA3y ra vui l\xF2ng ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     target: "_blank",

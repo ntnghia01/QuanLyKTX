@@ -42,12 +42,12 @@ function RoomInfo() {
             { room_info_data.regis_status == 'Đã duyệt' ?
 
             <>
-            {/* <!-- Page Heading --> */}
+            
+            <div class="container-fluid">
+{/* <!-- Page Heading --> */}
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Thông Tin Phòng Sinh Viên Đã Đăng Ký</h1>
             </div>
-            <div class="container-fluid">
-
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800">Thông Tin Phòng </h1>
                 <p class="mb-4">Dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
@@ -194,7 +194,7 @@ function RoomInfo() {
             </div>
             </>
             :
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
+            <div className="container-fluid d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Bạn chưa đăng ký phòng</h1>
             </div>
             
