@@ -11,11 +11,19 @@ function FeedBack() {
   const [feedback_status, setFeedbackStatus] = useState('Đang chờ xử lý');
   const [data, setData] = useState({});
 
+  const [feedback_data, setFeedbackData] = useState([]);
+
   useEffect(() => {
     {
       axios.get('/get-session').then(
         res => {
           setUserID(res.data.user_id)
+          axios.get(`../api/get-feedback-by-student/${res.data.user_id}`).then(
+            res => {
+                console.log(res.data);
+                setFeedbackData(res.data)
+            }
+          )
         }
       )
     }
@@ -26,6 +34,7 @@ function FeedBack() {
     axios.post('api/post-feedback', { feedback_user, feedback_type, feedback_title, feedback_content, feedback_status }).then(
       res => {
         setData(res.data);
+        alert('Gửi ý kiến thành công!');
       }
     )
   }
@@ -92,6 +101,46 @@ function FeedBack() {
           </div>
         </div>
       </div>
+      <div className='container-fluid'>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Các Ý Kiến, Phản Hồi Của Bạn</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID đơn</th>
+                                        <th>Sinh viên</th>
+                                        <th>Loại</th>
+                                        <th>Tiêu đề</th>
+                                        <th>Nội dung</th>
+                                        <th>Ngày gửi</th>
+                                        <th>Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                </tfoot>
+                                <tbody>
+                                    {feedback_data.map((item) => <>
+                                        <tr>
+                                            <td>{item.feedback_id}</td>
+                                            <td>{item.feedback_user.user_name}</td>
+                                            <td>{item.feedback_type}</td>
+                                            <td>{item.feedback_title}</td>
+                                            <td>{item.feedback_content}</td>
+                                            <td>{item.created_at}</td>
+                                            <td>{item.feedback_status}</td>
+                                        </tr>
+                                    </>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </>
   );
 }

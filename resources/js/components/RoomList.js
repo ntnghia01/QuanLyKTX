@@ -100,18 +100,27 @@ function RoomList() {
                                             <td>{item.created_at}</td>
                                             <td>{item.updated_at}</td>
                                             <td>
-                                                <Link to={`../edit-room/${item.room_id}`} className="btn btn-sm btn-warning btn-icon-split">
+                                                <Link to={`../edit-room/${item.room_id}`} className="btn btn-sm btn-warning">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-exclamation-triangle"></i>
                                                     </span>
-                                                    <span class="text">Cập nhật</span>
+                                                    <span class="text"> Cập nhật</span>
                                                 </Link>
-                                                <a type="button" onClick={() => { setDID(item.room_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger btn-icon-split" >
+                                                <a type="button" onClick={() => { setDID(item.room_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger m-1" >
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
-                                                    <span class="text">Xóa</span>
+                                                    <span class="text"> Xóa</span>
                                                 </a>
+                                                { item.room_quantity > 0 ?
+                                                    <Link to={`../add-elec-water-bill-from-room/${item.room_id}`} className="btn btn-sm btn-primary">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-plus"></i>
+                                                        </span>
+                                                        <span class="text"> Tạo điện nước</span>
+                                                    </Link>
+                                                : <></>
+                                            }
                                             </td>
                                         </tr>
                                     </>

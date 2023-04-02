@@ -95073,6 +95073,9 @@ function Admin() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderAdmin__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Routes"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_12__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "dashboard",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Dashboard__WEBPACK_IMPORTED_MODULE_12__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -95111,6 +95114,9 @@ function Admin() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "edit-room/:room_id",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RoomEdit__WEBPACK_IMPORTED_MODULE_20__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "add-elec-water-bill-from-room/:room_id",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ElecWaterBillAdd__WEBPACK_IMPORTED_MODULE_21__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "add-elec-water-bill",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ElecWaterBillAdd__WEBPACK_IMPORTED_MODULE_21__["default"], null)
@@ -96133,61 +96139,73 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function ElecWaterBillAdd() {
   var navigate = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["useNavigate"])();
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+  var _useParams = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["useParams"])(),
+    room_id = _useParams.room_id;
+  console.log(room_id);
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
     _useState2 = _slicedToArray(_useState, 2),
-    elec_water_bill_name = _useState2[0],
-    setElecWaterBillName = _useState2[1];
+    room_init = _useState2[0],
+    setRoomInit = _useState2[1];
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState4 = _slicedToArray(_useState3, 2),
-    elec_water_bill_room = _useState4[0],
-    setElecWaterBillRoom = _useState4[1];
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+    elec_water_bill_name = _useState4[0],
+    setElecWaterBillName = _useState4[1];
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(room_id),
     _useState6 = _slicedToArray(_useState5, 2),
-    elec_water_bill_month = _useState6[0],
-    setElecWaterBillMonth = _useState6[1];
+    elec_water_bill_room = _useState6[0],
+    setElecWaterBillRoom = _useState6[1];
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState8 = _slicedToArray(_useState7, 2),
-    elec_water_bill_semester = _useState8[0],
-    setElecWaterBillSemester = _useState8[1];
+    elec_water_bill_month = _useState8[0],
+    setElecWaterBillMonth = _useState8[1];
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState10 = _slicedToArray(_useState9, 2),
-    elec_water_bill_elec = _useState10[0],
-    setElecWaterBillElec = _useState10[1];
+    elec_water_bill_semester = _useState10[0],
+    setElecWaterBillSemester = _useState10[1];
   var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState12 = _slicedToArray(_useState11, 2),
-    elec_water_bill_water = _useState12[0],
-    setElecWaterBillWater = _useState12[1];
+    elec_water_bill_elec = _useState12[0],
+    setElecWaterBillElec = _useState12[1];
   var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState14 = _slicedToArray(_useState13, 2),
-    elec_water_bill_money = _useState14[0],
-    setElecWaterBillMoney = _useState14[1];
+    elec_water_bill_water = _useState14[0],
+    setElecWaterBillWater = _useState14[1];
   var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState16 = _slicedToArray(_useState15, 2),
-    elec_water_bill_due = _useState16[0],
-    setElecWaterBillDue = _useState16[1];
+    elec_water_bill_money = _useState16[0],
+    setElecWaterBillMoney = _useState16[1];
   var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState18 = _slicedToArray(_useState17, 2),
-    elec_water_bill_pay = _useState18[0],
-    setElecWaterBillPay = _useState18[1];
+    elec_water_bill_due = _useState18[0],
+    setElecWaterBillDue = _useState18[1];
   var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState20 = _slicedToArray(_useState19, 2),
-    elec_water_bill_note = _useState20[0],
-    setElecWaterBillNote = _useState20[1];
+    elec_water_bill_pay = _useState20[0],
+    setElecWaterBillPay = _useState20[1];
   var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState22 = _slicedToArray(_useState21, 2),
-    elec_water_bill_status = _useState22[0],
-    setElecWaterBillStatus = _useState22[1];
-  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+    elec_water_bill_note = _useState22[0],
+    setElecWaterBillNote = _useState22[1];
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState24 = _slicedToArray(_useState23, 2),
-    data = _useState24[0],
-    setData = _useState24[1];
-  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+    elec_water_bill_status = _useState24[0],
+    setElecWaterBillStatus = _useState24[1];
+  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
     _useState26 = _slicedToArray(_useState25, 2),
-    room_data = _useState26[0],
-    setRoomData = _useState26[1];
+    data = _useState26[0],
+    setData = _useState26[1];
+  var _useState27 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+    _useState28 = _slicedToArray(_useState27, 2),
+    room_data = _useState28[0],
+    setRoomData = _useState28[1];
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     {
-      axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('api/get-room').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_4__["default"].get("../api/get-only-room/".concat(room_id)).then(function (res) {
+        setRoomInit(res.data);
+      });
+    }
+    {
+      axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('../api/get-room').then(function (res) {
         setRoomData(res.data);
       });
     }
@@ -96195,7 +96213,7 @@ function ElecWaterBillAdd() {
   var submit = function submit(e) {
     var elec_water_bill_money = (elec_water_bill_elec * 10 + elec_water_bill_water * 5) * 1000;
     e.preventDefault();
-    axios__WEBPACK_IMPORTED_MODULE_4__["default"].post('api/post-create-elec-water-bill', {
+    axios__WEBPACK_IMPORTED_MODULE_4__["default"].post('../api/post-create-elec-water-bill', {
       elec_water_bill_name: elec_water_bill_name,
       elec_water_bill_room: elec_water_bill_room,
       elec_water_bill_month: elec_water_bill_month,
@@ -96290,8 +96308,8 @@ function ElecWaterBillAdd() {
     className: "form-control",
     id: "exampleFormControlSelect1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "1"
-  }, "-- Ch\u1ECDn Ph\xF2ng --"), room_data.map(function (item) {
+    value: room_init.room_id
+  }, room_init.room_name), room_data.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: item.room_id
     }, item.room_name));
@@ -97121,10 +97139,18 @@ function FeedBack() {
     _useState12 = _slicedToArray(_useState11, 2),
     data = _useState12[0],
     setData = _useState12[1];
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+    _useState14 = _slicedToArray(_useState13, 2),
+    feedback_data = _useState14[0],
+    setFeedbackData = _useState14[1];
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     {
       axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('/get-session').then(function (res) {
         setUserID(res.data.user_id);
+        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get("../api/get-feedback-by-student/".concat(res.data.user_id)).then(function (res) {
+          console.log(res.data);
+          setFeedbackData(res.data);
+        });
       });
     }
   }, []);
@@ -97138,6 +97164,7 @@ function FeedBack() {
       feedback_status: feedback_status
     }).then(function (res) {
       setData(res.data);
+      alert('Gửi ý kiến thành công!');
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -97250,7 +97277,26 @@ function FeedBack() {
   }, "X\xE1c nh\u1EADn d\u1EEF li\u1EC7u \u0111\xE3 nh\u1EADp")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "G\u1EEDi"))))))));
+  }, "G\u1EEDi"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card shadow mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-header py-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "m-0 font-weight-bold text-primary"
+  }, "C\xE1c \xDD Ki\u1EBFn, Ph\u1EA3n H\u1ED3i C\u1EE7a B\u1EA1n")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "table-responsive"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table table-bordered",
+    id: "dataTable",
+    width: "100%",
+    cellSpacing: 0
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID \u0111\u01A1n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Sinh vi\xEAn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Lo\u1EA1i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ti\xEAu \u0111\u1EC1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "N\u1ED9i dung"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y g\u1EEDi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Tr\u1EA1ng th\xE1i"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tfoot", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, feedback_data.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.feedback_id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.feedback_user.user_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.feedback_type), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.feedback_title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.feedback_content), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.created_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.feedback_status)));
+  }))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (FeedBack);
 
@@ -99348,31 +99394,38 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function RegisterRoom() {
-  var navigate = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["useNavigate"])();
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+  var _useParams = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["useParams"])(),
+    room_id = _useParams.room_id;
+  console.log(room_id);
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
     _useState2 = _slicedToArray(_useState, 2),
-    regis_room = _useState2[0],
-    setRegisRoom = _useState2[1];
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('Đang chờ xử lý'),
+    room_init = _useState2[0],
+    setRoomInit = _useState2[1];
+  var navigate = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["useNavigate"])();
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(room_id),
     _useState4 = _slicedToArray(_useState3, 2),
-    regis_status = _useState4[0],
-    setRegisStatus = _useState4[1];
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+    regis_room = _useState4[0],
+    setRegisRoom = _useState4[1];
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('Đang chờ xử lý'),
     _useState6 = _slicedToArray(_useState5, 2),
-    data = _useState6[0],
-    setData = _useState6[1];
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+    regis_status = _useState6[0],
+    setRegisStatus = _useState6[1];
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
     _useState8 = _slicedToArray(_useState7, 2),
-    room_data = _useState8[0],
-    setRoomData = _useState8[1];
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+    data = _useState8[0],
+    setData = _useState8[1];
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
     _useState10 = _slicedToArray(_useState9, 2),
-    regis_student = _useState10[0],
-    setUserID = _useState10[1];
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+    room_data = _useState10[0],
+    setRoomData = _useState10[1];
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
     _useState12 = _slicedToArray(_useState11, 2),
-    status = _useState12[0],
-    setStatus = _useState12[1];
+    regis_student = _useState12[0],
+    setUserID = _useState12[1];
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+    _useState14 = _slicedToArray(_useState13, 2),
+    status = _useState14[0],
+    setStatus = _useState14[1];
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     {
       axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('/get-session').then(function (res) {
@@ -99384,14 +99437,19 @@ function RegisterRoom() {
       });
     }
     {
-      axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('api/get-room').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_3__["default"].get("../api/get-only-room/".concat(room_id)).then(function (res) {
+        setRoomInit(res.data);
+      });
+    }
+    {
+      axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('../api/get-room').then(function (res) {
         setRoomData(res.data);
       });
     }
   }, []);
   var submit = function submit(e) {
     e.preventDefault();
-    axios__WEBPACK_IMPORTED_MODULE_3__["default"].post('api/post-registration', {
+    axios__WEBPACK_IMPORTED_MODULE_3__["default"].post('../api/post-registration', {
       regis_room: regis_room,
       regis_student: regis_student,
       regis_status: regis_status
@@ -99484,8 +99542,8 @@ function RegisterRoom() {
     className: "form-control",
     id: "exampleFormControlSelect1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "1"
-  }, "-- Ch\u1ECDn Ph\xF2ng --"), room_data.map(function (item) {
+    value: room_init.room_id
+  }, room_init.room_name), room_data.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: item.room_id
     }, item.room_name));
@@ -99575,8 +99633,8 @@ function RegisterRoom() {
     className: "form-control",
     id: "exampleFormControlSelect1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "1"
-  }, "-- Ch\u1ECDn Ph\xF2ng --"), room_data.map(function (item) {
+    value: room_init.room_id
+  }, room_init.room_name), room_data.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: item.room_id
     }, item.room_name));
@@ -101069,28 +101127,37 @@ function RoomList() {
       value: "\u0110ang s\u1EEDa ch\u1EEFa"
     }, "\u0110ang s\u1EEDa ch\u1EEFa")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.room_desc), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.created_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.updated_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
       to: "../edit-room/".concat(item.room_id),
-      className: "btn btn-sm btn-warning btn-icon-split"
+      className: "btn btn-sm btn-warning"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "icon text-white-50"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fas fa-exclamation-triangle"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "text"
-    }, "C\u1EADp nh\u1EADt")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }, " C\u1EADp nh\u1EADt")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       type: "button",
       onClick: function onClick() {
         setDID(item.room_id);
       },
       "data-toggle": "modal",
       "data-target": "#staticBackdrop",
-      className: "btn btn-sm btn-danger btn-icon-split"
+      className: "btn btn-sm btn-danger m-1"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "icon text-white-50"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fas fa-trash"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "text"
-    }, "X\xF3a")))));
+    }, " X\xF3a")), item.room_quantity > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+      to: "../add-elec-water-bill-from-room/".concat(item.room_id),
+      className: "btn btn-sm btn-primary"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "icon text-white-50"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "fas fa-plus"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "text"
+    }, " T\u1EA1o \u0111i\u1EC7n n\u01B0\u1EDBc")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null))));
   }))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal fade",
     id: "staticBackdrop",
@@ -101221,15 +101288,15 @@ function RoomListStudent() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fas fa-exclamation-triangle"
     }), " \u0110ang s\u1EEDa ch\u1EEFa")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-      to: "../register-room",
-      className: "btn btn-sm btn-success btn-icon-split"
+      to: "../register-room-from-list/".concat(item.room_id),
+      className: "btn btn-sm btn-success"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "icon text-white-50"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-      className: "fas fa-flag"
+      className: "far fa-hand-point-right"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "text"
-    }, "\u0110\u0103ng k\xFD")))));
+    }, " \u0110\u0103ng k\xFD")))));
   }))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (RoomListStudent);
@@ -101287,6 +101354,9 @@ function Student() {
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RoomListStudent__WEBPACK_IMPORTED_MODULE_5__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "register-room",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterRoom__WEBPACK_IMPORTED_MODULE_6__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "register-room-from-list/:room_id",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterRoom__WEBPACK_IMPORTED_MODULE_6__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "room-infomation",
@@ -101990,28 +102060,28 @@ function TypeRoomList() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID Khu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "T\xEAn Lo\u1EA1i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Gi\u1EDBi t\xEDnh"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "N\u1EA5u \u0103n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "S\u1EE9c ch\u1EE9a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "M\xF4 t\u1EA3 lo\u1EA1i ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "\u0110\u01A1n gi\xE1 ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y t\u1EA1o"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y c\u1EADp nh\u1EADt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Thao T\xE1c"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tfoot", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID Khu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "T\xEAn Lo\u1EA1i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Gi\u1EDBi t\xEDnh"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "N\u1EA5u \u0103n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "S\u1EE9c ch\u1EE9a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "M\xF4 t\u1EA3 lo\u1EA1i ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "\u0110\u01A1n gi\xE1 ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y t\u1EA1o"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y c\u1EADp nh\u1EADt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Thao T\xE1c"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, type.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.type_id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.type_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.type_gender), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.type_cook), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.type_capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.type_desc), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.type_price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.created_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.updated_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
       to: "../edit-type-room/".concat(item.type_id),
-      className: "btn btn-sm btn-warning btn-icon-split"
+      className: "btn btn-sm btn-warning"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "icon text-white-50"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-      className: "fas fa-exclamation-triangle"
+      className: "fas fa-edit"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "text"
-    }, "C\u1EADp nh\u1EADt")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }, " C\u1EADp nh\u1EADt")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       type: "button",
       onClick: function onClick() {
         setDID(item.type_id);
       },
       "data-toggle": "modal",
       "data-target": "#staticBackdrop",
-      className: "btn btn-sm btn-danger btn-icon-split"
+      className: "btn btn-sm btn-danger m-1"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "icon text-white-50"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fas fa-trash"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "text"
-    }, "X\xF3a")))));
+    }, " X\xF3a")))));
   }))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal fade",
     id: "staticBackdrop",
@@ -102125,14 +102195,22 @@ function Withdrawal() {
     _useState20 = _slicedToArray(_useState19, 2),
     withdrawal_approve = _useState20[0],
     setWithdrawalApprove = _useState20[1];
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+    _useState22 = _slicedToArray(_useState21, 2),
+    withdrawal_data = _useState22[0],
+    setWithdrawalData = _useState22[1];
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     {
       axios__WEBPACK_IMPORTED_MODULE_3__["default"].get('/get-session').then(function (res) {
         setUserID(res.data.user_id);
-        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get("../api/yes-no-registration/".concat(res.data.user_id)).then(function (res) {
+        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get("../api/get-registration-by-student/".concat(res.data.user_id)).then(function (res) {
           console.log(res.data);
           setRegistrationData(res.data);
           setWithdrawalRegis(res.data.regis_id);
+        });
+        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get("../api/get-withdrawal-by-student/".concat(res.data.user_id)).then(function (res) {
+          console.log(res.data);
+          setWithdrawalData(res.data);
         });
       });
     }
@@ -102202,7 +102280,7 @@ function Withdrawal() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "room_name"
   }, "Sinh vi\xEAn y\xEAu c\u1EA7u r\xFAt (ID)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    value: regis_student,
+    value: regis_data.user_fullname + ' ' + regis_data.user_name,
     type: "text",
     className: "form-control",
     id: "exampleInputEmail1",
@@ -102213,7 +102291,7 @@ function Withdrawal() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "room_name"
   }, "Ph\xF2ng sinh vi\xEAn mu\u1ED1n r\xFAt (ID)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    value: regis_data.regis_room,
+    value: regis_data.room_name + ' ' + '(ID: ' + regis_data.room_id + ')',
     type: "text",
     className: "form-control",
     id: "exampleInputEmail1",
@@ -102260,7 +102338,26 @@ function Withdrawal() {
     className: "btn btn-primary"
   }, "G\u1EEDi y\xEAu c\u1EA7u"))))))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container-fluid h1"
-  }, "B\u1EA1n ch\u01B0a tham gia ph\xF2ng n\xE0o n\xEAn ch\u01B0a th\u1EC3 y\xEAu c\u1EA7u r\xFAt KTX"));
+  }, "B\u1EA1n ch\u01B0a tham gia ph\xF2ng n\xE0o n\xEAn ch\u01B0a th\u1EC3 y\xEAu c\u1EA7u r\xFAt KTX"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card shadow mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-header py-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "m-0 font-weight-bold text-primary"
+  }, "C\xE1c Y\xEAu C\u1EA7u R\xFAt C\u1EE7a B\u1EA1n")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "table-responsive"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table table-bordered",
+    id: "dataTable",
+    width: "100%",
+    cellSpacing: 0
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID \u0111\u01A1n y\xEAu c\u1EA7u"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID \u0111\u01A1n \u0111\u0103ng k\xFD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Sinh vi\xEAn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ph\xF2ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "L\xFD do"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y g\u1EEDi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ng\xE0y ph\u1EA3n h\u1ED3i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Tr\u1EA1ng th\xE1i"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tfoot", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, withdrawal_data.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.withdrawal_id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.withdrawal_regis), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.user_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.room_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.withdrawal_reason), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.created_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.withdrawal_approve), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.withdrawal_status)));
+  }))))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (Withdrawal);
 

@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function ElecWaterBillAdd() {
 
   const navigate = useNavigate();
 
+  const { room_id } = useParams();
+  console.log(room_id);
+  const [room_init, setRoomInit] = useState([]);
+
+
   const [elec_water_bill_name, setElecWaterBillName] = useState('');
-  const [elec_water_bill_room, setElecWaterBillRoom] = useState('');
+  const [elec_water_bill_room, setElecWaterBillRoom] = useState(room_id);
   const [elec_water_bill_month, setElecWaterBillMonth] = useState('');
   const [elec_water_bill_semester, setElecWaterBillSemester] = useState('');
   const [elec_water_bill_elec, setElecWaterBillElec] = useState('');
@@ -23,7 +28,14 @@ function ElecWaterBillAdd() {
 
   useEffect(() => {
     {
-      axios.get('api/get-room').then(
+      axios.get(`../api/get-only-room/${room_id}`).then(
+        res => {
+          setRoomInit(res.data)
+        }
+      )
+    }
+    {
+      axios.get('../api/get-room').then(
         res => {
           setRoomData(res.data)
         }
@@ -34,7 +46,7 @@ function ElecWaterBillAdd() {
   const submit = (e) => {
     const elec_water_bill_money = (elec_water_bill_elec * 10 + elec_water_bill_water * 5) * 1000;
     e.preventDefault()
-    axios.post('api/post-create-elec-water-bill', {
+    axios.post('../api/post-create-elec-water-bill', {
       elec_water_bill_name,
       elec_water_bill_room,
       elec_water_bill_month,
@@ -94,8 +106,9 @@ function ElecWaterBillAdd() {
                   </div>
                   <div class="form-group">
                     <label for="elec_water_bill_room">Phòng</label>
+
                     <select onChange={e => { setElecWaterBillRoom(e.target.value) }} name="elec_water_bill_room" class="form-control" id="exampleFormControlSelect1">
-                      <option value="1">-- Chọn Phòng --</option>
+                      <option value={room_init.room_id}>{room_init.room_name}</option>
                       {room_data.map((item) => <>
                         <option value={item.room_id}>{item.room_name}</option>
                       </>)}

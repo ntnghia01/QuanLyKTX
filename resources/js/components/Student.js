@@ -44,6 +44,7 @@ function Student() {
                             <Routes>
                                 <Route path="list-room-student" element={<RoomListStudent />} ></Route>
                                 <Route path="register-room" element={<RegisterRoom />} ></Route>
+                                <Route path="register-room-from-list/:room_id" element={<RegisterRoom />} ></Route>
                                 <Route path="room-infomation" element={<RoomInfo />} ></Route>
                                 <Route path="personal-infomation" element={<PersonalInfo />} ></Route>
                                 <Route path="edit-personal-info/:id" element={<PersonalEdit />} ></Route>

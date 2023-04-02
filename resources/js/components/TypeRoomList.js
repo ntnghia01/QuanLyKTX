@@ -100,17 +100,17 @@ function TypeRoomList() {
                                             <td>{item.created_at}</td>
                                             <td>{item.updated_at}</td>
                                             <td>
-                                                <Link to={`../edit-type-room/${item.type_id}`} className="btn btn-sm btn-warning btn-icon-split">
+                                                <Link to={`../edit-type-room/${item.type_id}`} className="btn btn-sm btn-warning">
                                                     <span class="icon text-white-50">
-                                                        <i class="fas fa-exclamation-triangle"></i>
+                                                        <i class="fas fa-edit"></i>
                                                     </span>
-                                                    <span class="text">Cập nhật</span>
+                                                    <span class="text"> Cập nhật</span>
                                                 </Link>
-                                                <a type="button" onClick={() => { setDID(item.type_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger btn-icon-split" >
+                                                <a type="button" onClick={() => { setDID(item.type_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger m-1" >
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
-                                                    <span class="text">Xóa</span>
+                                                    <span class="text"> Xóa</span>
                                                 </a>
                                             </td>
                                         </tr>

@@ -88,11 +88,11 @@ function RoomListStudent() {
                                                             <i class="fas fa-exclamation-triangle"></i> Đang sửa chữa
                                                         </span></>
                                                         :
-                                                        <Link to='../register-room' className="btn btn-sm btn-success btn-icon-split">
+                                                        <Link to={`../register-room-from-list/${item.room_id}`} className="btn btn-sm btn-success">
                                                             <span class="icon text-white-50">
-                                                                <i class="fas fa-flag"></i>
+                                                            <i class="far fa-hand-point-right"></i>
                                                             </span>
-                                                            <span class="text">Đăng ký</span>
+                                                            <span class="text"> Đăng ký</span>
                                                         </Link>
                                                 }
                                             </td>

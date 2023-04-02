@@ -38,9 +38,12 @@ class WithdrawalController extends Controller
     }
 
     public function withdrawal_by_student($student_id) {
-        $withdrawal = Withdrawal::join('registration', 'withdrawals.withdrawal_regis', '=', 'registration.regis_id')
-                                ->join('users', 'registration.regis_student', '=', $student_id)
-                                ->first();
+        $regis = Registration::where(['regis_student'=>$student_id])->first();
+        $withdrawal = Withdrawal::where(['withdrawal_regis'=>$regis->regis_id])
+                                ->join('registration', 'withdrawals.withdrawal_regis', '=', 'registration.regis_id')
+                                ->join('users', 'registration.regis_student', '=', 'users.id')
+                                ->join('rooms', 'registration.regis_room', '=', 'rooms.room_id')
+                                ->get();
         return $withdrawal;
     }
 

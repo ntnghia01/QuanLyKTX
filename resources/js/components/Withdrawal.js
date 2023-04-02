@@ -23,16 +23,24 @@ function Withdrawal() {
     const [withdrawal_status, setWithdrawalStatus] = useState('Đang chờ xử lý');
     const [withdrawal_approve, setWithdrawalApprove] = useState('Đang chờ');
 
+    const [withdrawal_data, setWithdrawalData] = useState([]);
+
     useEffect(() => {
         {
             axios.get('/get-session').then(
                 res => {
                     setUserID(res.data.user_id)
-                    axios.get(`../api/yes-no-registration/${res.data.user_id}`).then(
+                    axios.get(`../api/get-registration-by-student/${res.data.user_id}`).then(
                         res => {
                             console.log(res.data);
                             setRegistrationData(res.data)
                             setWithdrawalRegis(res.data.regis_id)
+                        }
+                    )
+                    axios.get(`../api/get-withdrawal-by-student/${res.data.user_id}`).then(
+                        res => {
+                            console.log(res.data);
+                            setWithdrawalData(res.data)
                         }
                     )
                 }
@@ -53,7 +61,7 @@ function Withdrawal() {
         <>
             {regis_data.regis_status == "Đã duyệt" ?
                 <>
-                    
+
                     <div className="container-fluid">
                         <div className="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 className="h3 mb-0 text-gray-800">Yêu Cầu Rút KTX</h1>
@@ -84,11 +92,11 @@ function Withdrawal() {
                                     <form onSubmit={(e) => { submit(e) }}>
                                         <div class="form-group">
                                             <label for="room_name">Sinh viên yêu cầu rút (ID)</label>
-                                            <input value={regis_student} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
+                                            <input value={regis_data.user_fullname + ' ' + regis_data.user_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
                                         </div>
                                         <div class="form-group">
                                             <label for="room_name">Phòng sinh viên muốn rút (ID)</label>
-                                            <input value={regis_data.regis_room} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
+                                            <input value={regis_data.room_name + ' ' + '(ID: ' + regis_data.room_id + ')'} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
                                         </div>
                                         <div class="form-group">
                                             <label for="room_name">Mã đơn đăng ký (ID)</label>
@@ -114,6 +122,50 @@ function Withdrawal() {
                 :
                 <div className='container-fluid h1'>Bạn chưa tham gia phòng nào nên chưa thể yêu cầu rút KTX</div>
             }
+            <div className='container-fluid'>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Các Yêu Cầu Rút Của Bạn</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID đơn yêu cầu</th>
+                                        <th>ID đơn đăng ký</th>
+                                        <th>Sinh viên</th>
+                                        <th>Phòng</th>
+                                        <th>Lý do</th>
+                                        <th>Ngày gửi</th>
+                                        <th>Ngày phản hồi</th>
+                                        <th>Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                </tfoot>
+                                <tbody>
+                                    {withdrawal_data.map((item) => <>
+                                        <tr>
+                                            <td>{item.withdrawal_id}</td>
+                                            <td>{item.withdrawal_regis}</td>
+                                            <td>{item.user_name}</td>
+                                            <td>{item.room_name}</td>
+                                            <td>{item.withdrawal_reason}</td>
+                                            <td>{item.created_at}</td>
+                                            <td>{item.withdrawal_approve}</td>
+                                            <td>
+                                                {item.withdrawal_status}
+                                            </td>
+                                        </tr>
+                                    </>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }

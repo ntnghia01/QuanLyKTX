@@ -5,9 +5,13 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 function RegisterRoom() {
 
+  const { room_id } = useParams();
+  console.log(room_id);
+  const [room_init, setRoomInit] = useState([]);
+
   const navigate = useNavigate();
 
-  const [regis_room, setRegisRoom] = useState('');
+  const [regis_room, setRegisRoom] = useState(room_id);
   const [regis_status, setRegisStatus] = useState('Đang chờ xử lý');
 
 
@@ -34,7 +38,15 @@ function RegisterRoom() {
     }
 
     {
-      axios.get('api/get-room').then(
+      axios.get(`../api/get-only-room/${room_id}`).then(
+        res => {
+          setRoomInit(res.data)
+        }
+      )
+    }
+
+    {
+      axios.get('../api/get-room').then(
         res => {
           setRoomData(res.data)
         }
@@ -44,7 +56,7 @@ function RegisterRoom() {
 
   const submit = (e) => {
     e.preventDefault()
-    axios.post('api/post-registration', { regis_room, regis_student, regis_status }).then(
+    axios.post('../api/post-registration', { regis_room, regis_student, regis_status }).then(
       res => {
         setData(res.data);
         navigate('../list-room-student');
@@ -100,7 +112,7 @@ function RegisterRoom() {
                         <div class="form-group">
                           <label for="regisroom">Chọn phòng muốn đăng ký</label>
                           <select onChange={e => { setRegisRoom(e.target.value) }} name="regis_room" class="form-control" id="exampleFormControlSelect1">
-                            <option value="1">-- Chọn Phòng --</option>
+                            <option value={room_init.room_id}>{room_init.room_name}</option>
                             {room_data.map((item) => <>
                               <option value={item.room_id}>{item.room_name}</option>
                             </>)}
@@ -158,7 +170,7 @@ function RegisterRoom() {
                           <div class="form-group">
                             <label for="regisroom">Chọn phòng muốn đăng ký</label>
                             <select onChange={e => { setRegisRoom(e.target.value) }} name="regis_room" class="form-control" id="exampleFormControlSelect1">
-                              <option value="1">-- Chọn Phòng --</option>
+                              <option value={room_init.room_id}>{room_init.room_name}</option>
                               {room_data.map((item) => <>
                                 <option value={item.room_id}>{item.room_name}</option>
                               </>)}

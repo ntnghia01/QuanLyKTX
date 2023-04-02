@@ -75,6 +75,7 @@ Route::put('/register-approve/{regis_id}', 'RegisterController@register_approve'
 Route::get('/get-feedback', 'FeedBackController@feedbacks');
 Route::post('/post-feedback', 'FeedBackController@create_feedback');
 Route::put('/approve-feedback/{feedback_id}', 'FeedBackController@approve_feedback');
+Route::get('/get-feedback-by-student/{student_id}', 'FeedBackController@feedback_by_student');
 
 // Room Bill (Hóa đơn tiền phòng)
 Route::post('/post-room-bill', 'RoomBillController@create_room_bill');

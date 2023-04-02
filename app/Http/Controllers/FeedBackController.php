@@ -39,4 +39,9 @@ class FeedBackController extends Controller
         return $feedback;
 
     }
+
+    public function feedback_by_student($student_id) {
+        $feedback = FeedBack::where(['feedback_user'=>$student_id])->with('feedback_user')->get();
+        return $feedback;
+    }
 }

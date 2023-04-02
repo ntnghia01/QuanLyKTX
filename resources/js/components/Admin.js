@@ -61,6 +61,8 @@ function Admin() {
                                 {/* <!-- Begin Page Content --> */}
                                 {/* <Dashboard /> */}
                                 <Routes>
+                                    <Route path="/" element={<Dashboard />} ></Route>
+
                                     <Route path="dashboard" element={<Dashboard />} ></Route>
 
                                     <Route path="add-area" element={<AreaAdd />} ></Route>
@@ -78,6 +80,7 @@ function Admin() {
                                     <Route path="add-room" element={<RoomAdd />} ></Route>
                                     <Route path="list-room" element={<RoomList />} ></Route>
                                     <Route path="edit-room/:room_id" element={<RoomEdit />} ></Route>
+                                    <Route path="add-elec-water-bill-from-room/:room_id" element={<ElecWaterBillAdd />} ></Route>
 
                                     <Route path="add-elec-water-bill" element={<ElecWaterBillAdd />} ></Route>
                                     <Route path="list-elec-water-bill" element={<ElecWaterBillList />} ></Route>
