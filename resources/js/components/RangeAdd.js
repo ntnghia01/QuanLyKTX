@@ -36,12 +36,11 @@ function RangeAdd() {
     <>
       <div className='container-fluid'>
         {/* <!-- Page Heading --> */}
-        <div className="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 className="h3 mb-0 text-gray-800">Thêm Dãy</h1>
-        </div>
+        <h1 className="h3 mb-0 text-gray-800 text-center m-3">THÊM DÃY</h1>
         <div className="row">
           {/* <!-- Area Chart --> */}
-          <div className="col-xl-8 col-lg-7">
+          <div className="col-xl-2 col-lg-2"></div>
+          <div className="col-xl-8 col-lg-8">
             <div className="card shadow mb-4">
               {/* <!-- Card Header - Dropdown --> */}
               <div
@@ -89,11 +88,12 @@ function RangeAdd() {
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                   </div>
-                  <button type="submit" class="btn btn-primary">Thêm Dãy</button>
+                  <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Dãy</button>
                 </form>
               </div>
             </div>
           </div>
+          <div className="col-xl-2 col-lg-2"></div>
         </div>
       </div>
     </>

@@ -71,8 +71,6 @@ class RegisterController extends Controller
         // return $room->room_status;
         return $regis;
 
-        // $regis = Registration::find($regis_id)->update(['regis_status'=>$request->regis_status]);
-        // return response()->json($regis, 200);
     }
 
     public function get_registration_by_student($student_id) {

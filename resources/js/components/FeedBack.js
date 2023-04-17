@@ -33,7 +33,7 @@ function FeedBack() {
     e.preventDefault()
     axios.post('api/post-feedback', { feedback_user, feedback_type, feedback_title, feedback_content, feedback_status }).then(
       res => {
-        setData(res.data);
+        // setFeedbackData(res.data);
         alert('Gửi ý kiến thành công!');
       }
     )
@@ -42,7 +42,7 @@ function FeedBack() {
     <>
       <div className='container-fluid'>
         {/* <!-- Page Heading --> */}
-        <div className="d-sm-flex align-items-center justify-content-between mb-4">
+        <div className="d-sm-flex align-items-center justify-content-between mb-4 text-center">
           <h1 className="h3 mb-0 text-gray-800">Ý Kiến, Phản Hồi</h1>
         </div>
         <div className="row">
@@ -94,7 +94,7 @@ function FeedBack() {
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                   </div>
-                  <button type="submit" class="btn btn-primary">Gửi</button>
+                  <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gửi</button>
                 </form>
               </div>
             </div>

@@ -35,9 +35,9 @@ function RoomBillList() {
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Hóa Đơn Tiền Phòng Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Hóa Đơn Tiền Phòng</h1>
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-2 text-gray-800 text-center">HÓA ĐƠN TIỀN PHÒNG</h1>
+                
+                <Link to='' class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Thêm Hóa Đơn</Link>
 
                 {/* <!-- DataTales Example --> */}
                 <div class="card shadow mb-4 border-left-primary">
@@ -96,6 +96,8 @@ function RoomBillList() {
                         </div>
                     </div>
                 </div>
+                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
             </div>
 
 
@@ -136,11 +138,11 @@ function RoomBillRow({ item, handleDelete }) {
                     {room_bill_new.room_bill_status == "Chưa đóng"
                         ?
                         <>
-                            <a onClick={() => handlePay(room_bill_new.room_bill_id, "Đã đóng")} className="btn btn-sm btn-primary btn-icon-split">
+                            <a onClick={() => handlePay(room_bill_new.room_bill_id, "Đã đóng")} className="btn btn-sm btn-success m-1">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-check"></i>
                                 </span>
-                                <span class="text">Đã đóng</span>
+                                <span class="text"> Đã đóng</span>
                             </a>
                             {/* <Link to={`../edit-elec-water-bill/${room_bill_new.room_bill_id}`} className="btn btn-sm btn-warning btn-icon-split">
                                 <span class="icon text-white-50">
@@ -148,11 +150,11 @@ function RoomBillRow({ item, handleDelete }) {
                                 </span>
                                 <span class="text">Cập nhật</span>
                             </Link> */}
-                            <a type="button" data-toggle="modal" data-target={"#staticBackdrop" + delete_id} className="btn btn-sm btn-danger btn-icon-split" >
+                            <a type="button" data-toggle="modal" data-target={"#staticBackdrop" + delete_id} className="btn btn-sm btn-danger m-1" >
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Xóa</span>
+                                <span class="text"> Xóa</span>
                             </a>
                         </>
                         :

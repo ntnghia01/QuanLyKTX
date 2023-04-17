@@ -152,7 +152,7 @@ function RoomBillAdd() {
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Tạo hóa đơn</button>
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Tạo hóa đơn</button>
                             </form>
                         </div>
                     </div>

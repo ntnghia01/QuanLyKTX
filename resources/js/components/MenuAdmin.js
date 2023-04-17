@@ -27,8 +27,8 @@ function MenuAdmin() {
                 {/* <!-- Sidebar - Brand --> */}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img src="img/LOGOv2.png" width="80" height="80"/>
-                    </div><br/>
+                        <img src="img/LOGOv2.png" width="80" height="80" />
+                    </div><br />
                     <div className="sidebar-brand-text mx-3"> Admin <sup>{user_id}</sup></div>
                 </a>
 
@@ -52,7 +52,7 @@ function MenuAdmin() {
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <i className="fas fa-fw fa-cog"></i>
+                        <i className="fas fa-fw fa-chart-area"></i>
                         <span>Quản Lý Khu</span>
                     </a>
                     <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -68,7 +68,7 @@ function MenuAdmin() {
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTypeRoom"
                         aria-expanded="true" aria-controls="collapseTypeRoom">
-                        <i className="fas fa-fw fa-wrench"></i>
+                        <i className="fas fa-fw fa-chart-area"></i>
                         <span>Quản Lý Dãy</span>
                     </a>
                     <div id="collapseTypeRoom" className="collapse" aria-labelledby="headingUtilities"
@@ -85,7 +85,7 @@ function MenuAdmin() {
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
-                        <i className="fas fa-fw fa-table"></i>
+                        <i class="fas fa-yin-yang"></i>
                         <span>Quản Lý Loại Phòng</span>
                     </a>
                     <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities"
@@ -102,7 +102,7 @@ function MenuAdmin() {
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesFour"
                         aria-expanded="true" aria-controls="collapseUtilitiesFour">
-                        <i className="fas fa-fw fa-table"></i>
+                        <i class="fab fa-windows"></i>
                         <span>Quản Lý Phòng</span>
                     </a>
                     <div id="collapseUtilitiesFour" className="collapse" aria-labelledby="headingUtilities"
@@ -118,7 +118,7 @@ function MenuAdmin() {
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesFive"
                         aria-expanded="true" aria-controls="collapseUtilitiesFive">
-                        <i className="fas fa-fw fa-table"></i>
+                        <i class="fas fa-money-bill"></i>
                         <span>QL Hóa Đơn Điện Nước</span>
                     </a>
                     <div id="collapseUtilitiesFive" className="collapse" aria-labelledby="headingUtilities"
@@ -135,7 +135,7 @@ function MenuAdmin() {
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesSix"
                         aria-expanded="true" aria-controls="collapseUtilitiesSix">
-                        <i className="fas fa-fw fa-table"></i>
+                        <i class="fas fa-money-bill"></i>
                         <span>QL Hóa Đơn Tiền Phòng</span>
                     </a>
                     <div id="collapseUtilitiesSix" className="collapse" aria-labelledby="headingUtilities"
@@ -150,29 +150,29 @@ function MenuAdmin() {
 
                 <li className="nav-item">
                     <Link to='list-registration' className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                        <i class="fas fa-table"></i>
                         <span>Quản Lý Đơn Đăng Ký</span></Link>
                 </li>
 
                 <li className="nav-item">
                     <Link to='list-feedback' className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                        <i class="fas fa-table"></i>
                         <span>Quản Lý Ý Kiến Phản Hồi</span></Link>
                 </li>
 
                 <li className="nav-item">
                     <Link to='list-withdrawal' className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                        <i class="fas fa-table"></i>
                         <span>Quản Lý Đơn Rút KTX</span>
                     </Link>
                 </li>
 
                 <li className="nav-item">
                     <Link to='list-account' className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                        <i class="fas fa-user-alt"></i>
                         <span>Quản Lý Tài Khoản</span></Link>
                 </li>
-                
+
 
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider" />
@@ -211,11 +211,11 @@ function MenuAdmin() {
                 </li> */}
 
                 {/* <!-- Nav Item - Tables --> */}
-                    <li className="nav-item">
-                        <a className="nav-link" href="/logout/user">
-                            <i className="fas fa-fw fa-table"></i>
-                            <span>Đăng xuất</span></a>
-                    </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/logout/user">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Đăng xuất</span></a>
+                </li>
 
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider d-none d-md-block" />

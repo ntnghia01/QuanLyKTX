@@ -37,12 +37,12 @@ function RoomList() {
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Phòng Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Dãy</h1>
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-2 text-gray-800 text-center">PHÒNG</h1>
+
+                <Link to='../add-room' class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Thêm Phòng</Link>
 
                 {/* <!-- DataTales Example --> */}
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-4 border-left-primary">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Phòng</h6>
                     </div>
@@ -55,7 +55,7 @@ function RoomList() {
                                         <th>Tên Phòng</th>
                                         <th>Thuộc Dãy</th>
                                         <th>Thuộc Loại</th>
-                                        <th>Đã ở</th>
+                                        <th>Đã ở (người)</th>
                                         <th>Trạng thái</th>
                                         <th>Mô tả phòng</th>
                                         <th>Ngày Tạo</th>
@@ -100,9 +100,9 @@ function RoomList() {
                                             <td>{item.created_at}</td>
                                             <td>{item.updated_at}</td>
                                             <td>
-                                                <Link to={`../edit-room/${item.room_id}`} className="btn btn-sm btn-warning">
+                                                <Link to={`../edit-room/${item.room_id}`} className="btn btn-sm btn-warning m-1">
                                                     <span class="icon text-white-50">
-                                                        <i class="fas fa-exclamation-triangle"></i>
+                                                        <i class="fas fa-edit"></i>
                                                     </span>
                                                     <span class="text"> Cập nhật</span>
                                                 </Link>
@@ -113,7 +113,7 @@ function RoomList() {
                                                     <span class="text"> Xóa</span>
                                                 </a>
                                                 { item.room_quantity > 0 ?
-                                                    <Link to={`../add-elec-water-bill-from-room/${item.room_id}`} className="btn btn-sm btn-primary">
+                                                    <Link to={`../add-elec-water-bill-from-room/${item.room_id}`} className="btn btn-sm btn-primary m-1">
                                                         <span class="icon text-white-50">
                                                             <i class="fas fa-plus"></i>
                                                         </span>
@@ -130,6 +130,8 @@ function RoomList() {
                         </div>
                     </div>
                 </div>
+                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
             </div>
 
             <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

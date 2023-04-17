@@ -30,14 +30,6 @@ function TypeRoomList() {
             navigate('../list-type-room')
         )
     }
-    // const submit = (e) => {
-    //     e.preventDefault()
-    //     axios.post('api/area/post-create-area', { area_name, area_desc }).then(
-    //         res => {
-    //             setData(res.data);
-    //         }
-    //     )
-    // }
     return (
         <>
 
@@ -47,12 +39,11 @@ function TypeRoomList() {
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Loại Phòng Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Khu</h1>
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-2 text-gray-800 text-center">LOẠI PHÒNG</h1>
+                <Link to='../add-type-room' class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Thêm Loại Phòng</Link>
 
                 {/* <!-- DataTales Example --> */}
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-4 border-left-info">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Loại Phòng</h6>
                     </div>
@@ -100,7 +91,7 @@ function TypeRoomList() {
                                             <td>{item.created_at}</td>
                                             <td>{item.updated_at}</td>
                                             <td>
-                                                <Link to={`../edit-type-room/${item.type_id}`} className="btn btn-sm btn-warning">
+                                                <Link to={`../edit-type-room/${item.type_id}`} className="btn btn-sm btn-warning m-1">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-edit"></i>
                                                     </span>
@@ -122,6 +113,8 @@ function TypeRoomList() {
                         </div>
                     </div>
                 </div>
+                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
             </div>
 
             <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

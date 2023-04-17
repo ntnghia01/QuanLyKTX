@@ -75,11 +75,11 @@ function RoomEdit() {
         <>
             <div className='container-fluid'>
                 {/* <!-- Page Heading --> */}
-                <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 className="h3 mb-0 text-gray-800">Cập Nhật Phòng ID:{room_id}</h1>
-                </div>
+                <h1 className="h3 m-3 text-gray-800 text-center">CẬP NHẬT PHÒNG</h1>
+                <h1 className="h3 m-3 text-gray-800 text-center">ID:{room_id}</h1>
                 <div className="row">
                     {/* <!-- Area Chart --> */}
+                    <div className="col-xl-2 col-lg-2"></div>
                     <div className="col-xl-8 col-lg-7">
                         <div className="card shadow mb-4">
                             {/* <!-- Card Header - Dropdown --> */}
@@ -166,6 +166,7 @@ function RoomEdit() {
                             </div>
                         </div>
                     </div>
+                    <div className="col-xl-2 col-lg-2"></div>
                 </div>
 
                 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

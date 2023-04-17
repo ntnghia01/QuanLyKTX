@@ -38,12 +38,12 @@ function ElecWaterBillList() {
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Hóa Đơn Điện Nước Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Dãy</h1>
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-2 text-gray-800 text-center">HÓA ĐƠN ĐIỆN NƯỚC</h1>
+                
+                <Link to='../add-elec-water-bill' class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Thêm Hóa Đơn</Link>
 
                 {/* <!-- DataTales Example --> */}
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-4 border-left-secondary">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Hóa Đơn Điện Nước</h6>
                     </div>
@@ -100,6 +100,8 @@ function ElecWaterBillList() {
                         </div>
                     </div>
                 </div>
+                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
             </div>
 
 
@@ -143,23 +145,23 @@ function ElecWaterBillRow({ item, handleDelete }) {
                     {elec_water_bill_new.elec_water_bill_status == "Chưa đóng"
                         ?
                         <>
-                            <a onClick={() => handlePay(elec_water_bill_new.elec_water_bill_id, "Đã đóng")} className="btn btn-sm btn-primary btn-icon-split">
+                            <a onClick={() => handlePay(elec_water_bill_new.elec_water_bill_id, "Đã đóng")} className="btn btn-sm btn-success m-1">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-check"></i>
                                 </span>
-                                <span class="text">Đã đóng</span>
+                                <span class="text"> Đã đóng</span>
                             </a>
-                            <Link to={`../edit-elec-water-bill/${elec_water_bill_new.elec_water_bill_id}`} className="btn btn-sm btn-warning btn-icon-split">
+                            <Link to={`../edit-elec-water-bill/${elec_water_bill_new.elec_water_bill_id}`} className="btn btn-sm btn-warning m-1">
                                 <span class="icon text-white-50">
-                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <i class="fas fa-edit"></i>
                                 </span>
-                                <span class="text">Cập nhật</span>
+                                <span class="text"> Cập nhật</span>
                             </Link>
-                            <a type="button" data-toggle="modal" data-target={"#staticBackdrop" + delete_id} className="btn btn-sm btn-danger btn-icon-split" >
+                            <a type="button" data-toggle="modal" data-target={"#staticBackdrop" + delete_id} className="btn btn-sm btn-danger m-1" >
                                 <span class="icon text-white-50">
                                     <i class="fas fa-trash"></i>
                                 </span>
-                                <span class="text">Xóa</span>
+                                <span class="text"> Xóa</span>
                             </a>
                         </>
                         :

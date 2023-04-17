@@ -54,11 +54,11 @@ function TypeRoomEdit() {
         <>
             <div className='container-fluid'>
                 {/* <!-- Page Heading --> */}
-                <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 className="h3 mb-0 text-gray-800">Cập Nhật Loại Phòng ID:{type_id}</h1>
-                </div>
+                <h1 className="h3 m-3 text-gray-800 text-center">CẬP NHẬT LOẠI PHÒNG</h1>
+                <h1 className="h3 m-3 text-gray-800 text-center">ID:{type_id}</h1>
                 <div className="row">
                     {/* <!-- Area Chart --> */}
+                    <div className="col-xl-2 col-lg-2"></div>
                     <div className="col-xl-8 col-lg-7">
                         <div className="card shadow mb-4">
                             {/* <!-- Card Header - Dropdown --> */}
@@ -140,6 +140,7 @@ function TypeRoomEdit() {
                             </div>
                         </div>
                     </div>
+                    <div className="col-xl-2 col-lg-2"></div>
                 </div>
             </div>
         </>

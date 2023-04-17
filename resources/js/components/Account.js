@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 function Account() {
@@ -28,12 +26,10 @@ function Account() {
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Tài Khoản Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Tài Khoản</h1>
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-4 text-gray-800 text-center">DANH SÁCH TÀI KHOẢN</h1>
 
                 {/* <!-- DataTales Example --> */}
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-4 border-left-info">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Tài Khoản</h6>
                     </div>
@@ -93,6 +89,8 @@ function Account() {
                         </div>
                     </div>
                 </div>
+                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
             </div>
 
         </>

@@ -20,25 +20,26 @@ function AreaList() {
     const [delete_id, setDID] = useState('');
     const handleDelete = (area_id) => {
         axios.delete(`api/delete-area/${area_id}`).then(
-            
+
             setArea(area.filter(area => area.area_id !== area_id))
         )
     }
     return (
         <>
-            
+
             <div class="container-fluid">
                 {/* <!-- Page Heading --> */}
                 <div className="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Khu Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Khu</h1>
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-2 text-gray-800 text-center">KHU</h1>
+                
+
+                <Link to='../add-area' class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Thêm Khu</Link>
 
                 {/* <!-- DataTales Example --> */}
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-4 border-left-success">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Khu</h6>
                     </div>
@@ -74,17 +75,17 @@ function AreaList() {
                                             <td>{item.created_at}</td>
                                             <td>{item.updated_at}</td>
                                             <td>
-                                                <Link to={`../edit-area/${item.area_id}`} className="btn btn-sm btn-warning btn-icon-split">
+                                                <Link to={`../edit-area/${item.area_id}`} className="btn btn-sm btn-warning m-1">
                                                     <span class="icon text-white-50">
-                                                        <i class="fas fa-exclamation-triangle"></i>
+                                                        <i class="fas fa-edit"></i>
                                                     </span>
-                                                    <span class="text">Cập nhật</span>
+                                                    <span class="text"> Cập nhật</span>
                                                 </Link>
-                                                <a type="button" onClick={() => { setDID(item.area_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger btn-icon-split" >
+                                                <a type="button" onClick={() => { setDID(item.area_id) }} data-toggle="modal" data-target="#staticBackdrop" className="btn btn-sm btn-danger m-1" >
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
-                                                    <span class="text">Xóa</span>
+                                                    <span class="text"> Xóa</span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -96,6 +97,8 @@ function AreaList() {
                         </div>
                     </div>
                 </div>
+                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
             </div>
 
 

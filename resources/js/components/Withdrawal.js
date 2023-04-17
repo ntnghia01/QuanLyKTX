@@ -112,7 +112,7 @@ function Withdrawal() {
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                             <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+                                        <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gửi yêu cầu</button>
                                     </form>
                                 </div>
                             </div>

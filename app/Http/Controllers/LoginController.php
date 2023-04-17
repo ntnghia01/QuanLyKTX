@@ -41,6 +41,7 @@ class LoginController extends Controller
 
     public function logout() {
         Session::put('user_name',null);
+        Session::put('user_fullname',null);
         Session::put('user_id', null);
         Session::put('email',null);
         Session::put('user_role',null);

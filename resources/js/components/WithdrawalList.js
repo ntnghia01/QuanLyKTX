@@ -24,12 +24,10 @@ function WithdrawalList() {
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Yêu Cầu Rút KTX Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-4 text-gray-800 text-center">ĐƠN RÚT KÝ TÚC XÁ</h1>
 
                 {/* <!-- DataTales Example --> */}
-                <div class="card shadow mb-4 border-left-primary">
+                <div class="card shadow mb-4 border-left-danger">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Đơn Yêu Cầu Rút</h6>
                     </div>
@@ -66,6 +64,8 @@ function WithdrawalList() {
                         </div>
                     </div>
                 </div>
+                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
+                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
             </div>
 
 
@@ -105,17 +105,17 @@ function WithdrawalRow({ item }) {
                 <td>
                     {withdrawal_new.withdrawal_status == "Đang chờ xử lý" ?
                         <>
-                            <a onClick={() => handleApprove(withdrawal_new.withdrawal_id, withdrawal_new.room_id, "Đã duyệt")} className="btn btn-sm btn-primary btn-icon-split">
+                            <a onClick={() => handleApprove(withdrawal_new.withdrawal_id, withdrawal_new.room_id, "Đã duyệt")} className="btn btn-sm btn-success m-1">
                                 <span class="icon text-white-50">
-                                    <i class="fas fa-check"></i>
+                                <i class="far fa-check-circle"></i>
                                 </span>
-                                <span class="text">Duyệt</span>
+                                <span class="text"> Duyệt</span>
                             </a>
-                            <a onClick={() => handleRefuse(withdrawal_new.withdrawal_id, "Đã từ chối")} className="btn btn-sm btn-danger btn-icon-split" >
+                            <a onClick={() => handleRefuse(withdrawal_new.withdrawal_id, "Đã từ chối")} className="btn btn-sm btn-danger m-1" >
                                 <span class="icon text-white-50">
-                                    <i class="fas fa-trash"></i>
+                                <i class="far fa-times-circle"></i>
                                 </span>
-                                <span class="text">Từ chối</span>
+                                <span class="text"> Từ chối</span>
                             </a>
                         </>
                         : withdrawal_new.withdrawal_status == "Đã duyệt" ?

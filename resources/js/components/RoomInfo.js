@@ -49,11 +49,11 @@ function RoomInfo() {
                             <h1 className="h3 mb-0 text-gray-800">Thông Tin Phòng Sinh Viên Đã Đăng Ký</h1>
                         </div>
                         {/* <!-- Page Heading --> */}
-                        <h1 class="h3 mb-2 text-gray-800">Thông Tin Phòng </h1>
+                        <h1 class="h3 mb-2 text-gray-800 text-center">Thông Tin Phòng </h1>
                         <p class="mb-4">Dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
                             href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
                         {/* <!-- DataTales Example --> */}
-                        <div class="card shadow mb-4">
+                        <div class="card shadow mb-4 border-left-success">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Thông tin phòng</h6>
                             </div>
@@ -108,7 +108,7 @@ function RoomInfo() {
                         </div>
 
                         {/* Các hóa đơn điện nước */}
-                        <div class="card shadow mb-4">
+                        <div class="card shadow mb-4 border-left-info">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Các Hóa Đơn Điện Nước</h6>
                             </div>
@@ -152,7 +152,7 @@ function RoomInfo() {
                         </div>
 
                         {/* Hóa đơn tiền phòng */}
-                        <div class="card shadow mb-4">
+                        <div class="card shadow mb-4 border-left-secondary">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Hóa Đơn Tiền Phòng</h6>
                             </div>

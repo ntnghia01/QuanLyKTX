@@ -28,12 +28,10 @@ function RegistrationList() {
                     <h1 className="h3 mb-0 text-gray-800">Danh Sách Các Đơn Đăng Ký Trong Hệ Thống</h1>
                 </div>
                 {/* <!-- Page Heading --> */}
-                <h1 class="h3 mb-2 text-gray-800">Danh Sách Đơn Đăng Ký</h1>
-                <p class="mb-4">Bảng dữ liệu dựa vào kho dữ liệu trên hệ thống, nếu có vấn đề không mong muốn xảy ra vui lòng <a target="_blank"
-                    href="https://datatables.net">liên hệ với nhà phát triển</a>.</p>
+                <h1 class="h3 mb-4 text-gray-800 text-center">DANH SÁCH ĐƠN ĐĂNG KÝ</h1>
 
                 {/* <!-- DataTales Example --> */}
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-4 border-left-success">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Bảng Dữ Liệu Đơn Đăng Ký</h6>
                     </div>
@@ -110,24 +108,24 @@ function RegistrationRow({ item }) {
                 <td>
                     {regis.regis_status == 'Đang chờ xử lý'
                         ?
-                        <><a onClick={() => handleApprove(regis.regis_id, regis.regis_room.room_id, "Đã duyệt")} className="btn btn-sm btn-success btn-icon-split">
+                        <><a onClick={() => handleApprove(regis.regis_id, regis.regis_room.room_id, "Đã duyệt")} className="btn btn-sm btn-success m-1">
                             <span class="icon text-white-50">
-                                <i class="fas fa-check"></i>
+                            <i class="far fa-check-circle"></i>
                             </span>
-                            <span class="text">Duyệt</span>
+                            <span class="text"> Duyệt</span>
                         </a>
-                            <a onClick={() => handleApprove(regis.regis_id, regis.regis_room.room_id, "Đã từ chối")} class="btn btn-sm btn-danger btn-icon-split">
+                            <a onClick={() => handleApprove(regis.regis_id, regis.regis_room.room_id, "Đã từ chối")} class="btn btn-sm btn-danger m-1">
                                 <span class="icon text-white-50">
-                                    <i class="fas fa-exclamation-triangle"></i>
+                                <i class="far fa-times-circle"></i>
                                 </span>
-                                <span class="text">Từ chối</span>
+                                <span class="text"> Từ chối</span>
                             </a></>
                         : regis.regis_status == 'Đã duyệt' ?
-                            <Link to={`../add-room-bill/${regis.regis_id}`} className="btn btn-sm btn-primary btn-icon-split">
+                            <Link to={`../add-room-bill/${regis.regis_id}`} className="btn btn-sm btn-primary m-1">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-arrow-right"></i>
                                 </span>
-                                <span class="text">Tạo hóa đơn</span>
+                                <span class="text"> Tạo hóa đơn</span>
                             </Link>
                             : regis.regis_status == 'Đã rút' ?
                                 <span class="text-warning">

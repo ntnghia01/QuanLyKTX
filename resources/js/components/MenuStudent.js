@@ -24,7 +24,7 @@ function MenuStudent() {
                 {/* <!-- Sidebar - Brand --> */}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                    <img src="img/LOGOv2.png" width="80" height="80"/>
+                        <img src="img/LOGOv2.png" width="80" height="80" />
                     </div>
                     <div className="sidebar-brand-text mx-3"> Student <sup>{user_id}</sup></div>
                 </a>
@@ -46,22 +46,22 @@ function MenuStudent() {
                 </div>
                 <li className="nav-item">
                     <Link to='/list-room-student' className="nav-link">
-                        <i className="fas fa-fw fa-table"></i>
+                    <i class="fas fa-home"></i>
                         <span>Danh sách phòng</span></Link>
                 </li>
                 <li className="nav-item">
                     <Link to='/register-room' className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-registered"></i>
                         <span>Đăng ký ở</span></Link>
                 </li>
                 <li className="nav-item">
                     <Link to='/room-infomation' className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-info-circle"></i>
                         <span>Xem thông tin phòng</span></Link>
                 </li>
                 <li className="nav-item">
                     <Link to='/personal-infomation' className="nav-link">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-users-cog"></i>
                         <span>Xem thông tin cá nhân</span></Link>
                 </li>
                 <li className="nav-item">
@@ -71,10 +71,10 @@ function MenuStudent() {
                 </li>
                 <li className="nav-item">
                     <Link to='/withdrawal' className="nav-link">
-                        <i className="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-minus-circle"></i>
                         <span>Rút đơn ở KTX</span></Link>
                 </li>
-                
+
 
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider" />
@@ -85,10 +85,10 @@ function MenuStudent() {
                 </div>
                 <li className="nav-item">
                     <a className="nav-link" href="/logout/user">
-                        <i className="fas fa-fw fa-table"></i>
+                        <i class="fas fa-sign-out-alt"></i>
                         <span>Đăng xuất</span></a>
                 </li>
-                
+
 
                 {/* <!-- Divider --> */}
                 <hr className="sidebar-divider d-none d-md-block" />
@@ -98,10 +98,10 @@ function MenuStudent() {
                     <button className="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
 
-                
+
 
             </ul>
-            
+
         </>
     );
 }

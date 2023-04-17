@@ -20,6 +20,7 @@ function RegisterRoom() {
 
 
   const [regis_student, setUserID] = useState('');
+  const [user_name, setUserName] = useState('');
   const [status, setStatus] = useState([]);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ function RegisterRoom() {
       axios.get('/get-session').then(
         res => {
           setUserID(res.data.user_id)
+          setUserName(res.data.user_fullname)
           axios.get(`../api/yes-no-registration/${res.data.user_id}`).then(
             res => {
               console.log(res.data)
@@ -59,6 +61,7 @@ function RegisterRoom() {
     axios.post('../api/post-registration', { regis_room, regis_student, regis_status }).then(
       res => {
         setData(res.data);
+        alert('Gửi yêu cầu đăng ký thành công!');
         navigate('../list-room-student');
       }
     )
@@ -105,8 +108,8 @@ function RegisterRoom() {
                     <div className="card-body">
                       <form onSubmit={(e) => { submit(e) }}>
                         <div class="form-group">
-                          <label for="room_name">Sinh viên đăng ký (ID)</label>
-                          <input value={regis_student} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
+                          <label for="room_name">Sinh viên đăng ký :</label>
+                          <input value={user_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
                         </div>
 
                         <div class="form-group">
@@ -124,7 +127,7 @@ function RegisterRoom() {
                           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                           <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Đăng Ký Phòng</button>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-registered"></i> Đăng Ký Phòng</button>
                       </form>
                     </div>
                   </div>
@@ -164,7 +167,7 @@ function RegisterRoom() {
                         <form onSubmit={(e) => { submit(e) }}>
                           <div class="form-group">
                             <label for="room_name">Sinh viên đăng ký (ID)</label>
-                            <input value={regis_student} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
+                            <input value={user_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
                           </div>
 
                           <div class="form-group">
@@ -182,7 +185,7 @@ function RegisterRoom() {
                             <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                             <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                           </div>
-                          <button type="submit" class="btn btn-primary">Đăng Ký Phòng</button>
+                          <button type="submit" class="btn btn-primary"><i class="fas fa-registered"></i> Đăng Ký Phòng</button>
                         </form>
                       </div>
                     </div>
