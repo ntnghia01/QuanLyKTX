@@ -22,6 +22,7 @@ function PersonalEdit() {
     const [personal_birthday, setPersonalBirthday] = useState('');
     const [personal_class, setPersonalClass] = useState('');
     const [personal_course, setPersonalCourse] = useState('');
+    const [personal_gender, setPersonalGender] = useState('');
 
     const [personal_data, setPersonalInfoData] = useState([]);
 
@@ -43,6 +44,7 @@ function PersonalEdit() {
                             setPersonalBirthday(res.data.user_birthday)
                             setPersonalClass(res.data.user_class)
                             setPersonalCourse(res.data.user_course)
+                            setPersonalGender(res.data.user_gender)
                         }
                     )
                 }
@@ -69,24 +71,33 @@ function PersonalEdit() {
             personal_phone,
             personal_birthday,
             personal_class,
-            personal_course
+            personal_course,
+            personal_gender
         }).then(
             res => {
-                console.log(res)
-                navigate('../personal-infomation');
+                // console.log(res)
+                alert('Chỉnh sửa thông tin thành công!');
+                navigate('../personal-information');
             }
         )
     }
+
+    const handleCancel = () => {
+        navigate('../personal-information');
+        // alert("Are you sure?");
+    }
+
     return (
         <>
             <div className='container-fluid'>
                 {/* <!-- Page Heading --> */}
-                <div className="d-sm-flex align-items-center justify-content-between mb-4">
+                <div className="d-sm-flex align-items-center justify-content-center mb-4">
                     <h1 className="h3 mb-0 text-gray-800">Cập Nhật Thông Tin Cá Nhân ID:{user_id}</h1>
                 </div>
                 <div className="row">
                     {/* <!-- Area Chart --> */}
-                    <div className="col-xl-8 col-lg-7">
+                    <div className='col-xl-2 col-lg-2'></div>
+                    <div className="col-xl-8 col-lg-8">
                         <div className="card shadow mb-4">
                             {/* <!-- Card Header - Dropdown --> */}
                             <div
@@ -118,6 +129,11 @@ function PersonalEdit() {
                                     <div class="form-group">
                                         <label for="area_name">Họ tên</label>
                                         <input onChange={e => { setPersonalName(e.target.value) }} value={personal_name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                        <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area_name">Giới tính</label>
+                                        <input onChange={e => { setPersonalGender(e.target.value) }} value={personal_gender} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                         <small id="emailHelp" class="form-text text-muted">Vui lòng kiểm tra dữ liệu nhập trước khi xác nhận.</small>
                                     </div>
                                     <div class="form-group">
@@ -160,11 +176,13 @@ function PersonalEdit() {
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                         <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Cập Nhật Thông Tin</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i> Cập Nhật Thông Tin</button>
+                                    <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    <div className='col-xl-2 col-lg-2'></div>
                 </div>
 
             </div>

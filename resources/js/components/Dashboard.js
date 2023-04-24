@@ -12,9 +12,9 @@ function Dashboard() {
 
                 {/* <!-- Page Heading --> */}
                 <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
+                    <h1 className="h3 mb-0 text-gray-800">Tổng Quan</h1>
                     <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                        className="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        className="fas fa-download fa-sm text-white-50"></i> Tạo báo cáo</a>
                 </div>
 
                 {/* <!-- Content Row --> */}
@@ -27,8 +27,8 @@ function Dashboard() {
                                 <div className="row no-gutters align-items-center">
                                     <div className="col mr-2">
                                         <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Earnings (Monthly)</div>
-                                        <div className="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                            Tổng số phòng</div>
+                                        <div className="h5 mb-0 font-weight-bold text-gray-800">30</div>
                                     </div>
                                     <div className="col-auto">
                                         <i className="fas fa-calendar fa-2x text-gray-300"></i>
@@ -45,11 +45,11 @@ function Dashboard() {
                                 <div className="row no-gutters align-items-center">
                                     <div className="col mr-2">
                                         <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                            Earnings (Annual)</div>
-                                        <div className="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                            Tổng số sinh viên đang ở</div>
+                                        <div className="h5 mb-0 font-weight-bold text-gray-800">98</div>
                                     </div>
                                     <div className="col-auto">
-                                        <i className="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <i className="fas fa-clipboard-sign fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -61,19 +61,10 @@ function Dashboard() {
                         <div className="card border-left-info shadow h-100 py-2">
                             <div className="card-body">
                                 <div className="row no-gutters align-items-center">
-                                    <div className="col mr-2">
-                                        <div className="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                        </div>
-                                        <div className="row no-gutters align-items-center">
-                                            <div className="col-auto">
-                                                <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                            </div>
-                                            <div className="col">
-                                                <div className="progress progress-sm mr-2">
-                                                    <div className="progress-bar bg-info a1" role="progressbar"></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div className="col mr-2">
+                                        <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Tổng số hóa đơn hiện tại</div>
+                                        <div className="h5 mb-0 font-weight-bold text-gray-800">66</div>
                                     </div>
                                     <div className="col-auto">
                                         <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -90,7 +81,7 @@ function Dashboard() {
                                 <div className="row no-gutters align-items-center">
                                     <div className="col mr-2">
                                         <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Pending Requests</div>
+                                            Ý kiến từ sinh viên</div>
                                         <div className="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                     </div>
                                     <div className="col-auto">
@@ -112,7 +103,7 @@ function Dashboard() {
                             {/* <!-- Card Header - Dropdown --> */}
                             <div
                                 className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 className="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                <h6 className="m-0 font-weight-bold text-primary">Tổng quan về lượng sinh viên đăng ký qua từng tháng</h6>
                                 <div className="dropdown no-arrow">
                                     <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -143,7 +134,7 @@ function Dashboard() {
                             {/* <!-- Card Header - Dropdown --> */}
                             <div
                                 className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 className="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                <h6 className="m-0 font-weight-bold text-primary">Thống kê nam/nữ</h6>
                                 <div className="dropdown no-arrow">
                                     <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -166,13 +157,13 @@ function Dashboard() {
                                 </div>
                                 <div className="mt-4 text-center small">
                                     <span className="mr-2">
-                                        <i className="fas fa-circle text-primary"></i> Direct
+                                        <i className="fas fa-circle text-primary"></i> Nam
                                     </span>
                                     <span className="mr-2">
-                                        <i className="fas fa-circle text-success"></i> Social
+                                        <i className="fas fa-circle text-success"></i> Nữ
                                     </span>
                                     <span className="mr-2">
-                                        <i className="fas fa-circle text-info"></i> Referral
+                                        <i className="fas fa-circle text-info"></i> Khác
                                     </span>
                                 </div>
                             </div>
@@ -192,28 +183,28 @@ function Dashboard() {
                                 <h6 className="m-0 font-weight-bold text-primary">Projects</h6>
                             </div>
                             <div className="card-body">
-                                <h4 className="small font-weight-bold">Server Migration <span
-                                    className="float-right">20%</span></h4>
+                                <h4 className="small font-weight-bold">Khu <span
+                                    className="float-right">10</span></h4>
                                 <div className="progress mb-4">
                                     <div className="progress-bar bg-danger a2" role="progressbar"></div>
                                 </div>
-                                <h4 className="small font-weight-bold">Sales Tracking <span
-                                    className="float-right">40%</span></h4>
+                                <h4 className="small font-weight-bold">Dãy <span
+                                    className="float-right">20</span></h4>
                                 <div className="progress mb-4">
                                     <div className="progress-bar bg-warning a3" role="progressbar"></div>
                                 </div>
-                                <h4 className="small font-weight-bold">Customer Database <span
-                                    className="float-right">60%</span></h4>
+                                <h4 className="small font-weight-bold">Loại phòng <span
+                                    className="float-right">30</span></h4>
                                 <div className="progress mb-4">
                                     <div className="progress-bar a4" role="progressbar"></div>
                                 </div>
-                                <h4 className="small font-weight-bold">Payout Details <span
-                                    className="float-right">80%</span></h4>
+                                <h4 className="small font-weight-bold">Phòng <span
+                                    className="float-right">40</span></h4>
                                 <div className="progress mb-4">
                                     <div className="progress-bar bg-info a5" role="progressbar"></div>
                                 </div>
-                                <h4 className="small font-weight-bold">Account Setup <span
-                                    className="float-right">Complete!</span></h4>
+                                <h4 className="small font-weight-bold">Đơn đăng ký <span
+                                    className="float-right">40</span></h4>
                                 <div className="progress">
                                     <div className="progress-bar bg-success a6" role="progressbar"></div>
                                 </div>
@@ -295,17 +286,16 @@ function Dashboard() {
                         {/* <!-- Illustrations --> */}
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
-                                <h6 className="m-0 font-weight-bold text-primary">Illustrations</h6>
+                                <h6 className="m-0 font-weight-bold text-primary">Mô tả hệ thống</h6>
                             </div>
                             <div className="card-body">
                                 <div className="text-center">
                                     <img className="img-fluid px-3 px-sm-4 mt-3 mb-4 a7"
                                         src="img/undraw_posting_photo.svg" alt="..." />
                                 </div>
-                                <p>Add some quality, svg illustrations to your project courtesy of <a
-                                    target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                    constantly updated collection of beautiful svg images that you can use
-                                    completely free and without attribution!</p>
+                                <p>Hệ thống được xây dựng dựa trên nền web có thể truy cập mọi lúc mọi nơi, phù hợp với nhiều loại thiết bị từ trình duyệt máy tính đến tablet và điện thoại thông minh <a
+                                    target="_blank" rel="nofollow" href="https://undraw.co/">Hệ thống</a>, a
+                                    cam kết an toàn và tiện dụng cho người dùng</p>
                                 <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
                                     unDraw &rarr;</a>
                             </div>

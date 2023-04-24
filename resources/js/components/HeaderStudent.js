@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -11,14 +11,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function HeaderStudent() {
   const [fullname, setUser] = useState('');
+  const isMountedRef = useRef(true);
     useEffect(() => {
         {
             axios.get('/get-session').then(
                 res => {
+                  if(isMountedRef.current) {
                     setUser(res.data.user_fullname)
+                  }
+                    
                 }
             )
         }
+        // update state if component is still mounted
+    // if (isMountedRef.current) {
+    //   setMyState('some value');
+    // }
+
+    return () => {
+      // set the flag to false when component is unmounting
+      isMountedRef.current = false;
+    };
     }, [])
   return (
     <>
@@ -223,6 +236,7 @@ function HeaderStudent() {
         </ul>
 
       </nav>
+      
     </>
   );
 }

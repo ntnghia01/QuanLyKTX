@@ -39,10 +39,17 @@ function RoomAdd() {
     axios.post('api/post-create-room', { room_name, room_range, room_type, room_quantity, room_status, room_desc }).then(
       res => {
         setData(res.data);
+        alert('Thêm phòng mới thành công!')
         navigate('../list-room');
       }
     )
   }
+
+  const handleCancel = () => {
+    navigate('../list-room');
+    // alert("Are you sure?");
+  }
+
   return (
     <>
       <div className='container-fluid'>
@@ -133,6 +140,7 @@ function RoomAdd() {
                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                   </div>
                   <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Phòng</button>
+                  <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                 </form>
               </div>
             </div>

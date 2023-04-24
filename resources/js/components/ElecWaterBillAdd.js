@@ -61,10 +61,17 @@ function ElecWaterBillAdd() {
     }).then(
       res => {
         setData(res.data);
+        alert('Thêm hóa đơn điện nước thành công!')
         navigate('../list-elec-water-bill');
       }
     )
   }
+
+  const handleCancel = () => {
+    navigate('../list-elec-water-bill');
+    // alert("Are you sure?");
+  }
+
   return (
     <>
       <div className='container-fluid'>
@@ -194,6 +201,7 @@ function ElecWaterBillAdd() {
                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                   </div>
                   <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm hóa đơn</button>
+                  <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                 </form>
               </div>
             </div>

@@ -22,10 +22,17 @@ function TypeRoomAdd() {
     axios.post('api/post-create-type-room', { type_name, type_gender, type_cook, type_capacity, type_desc, type_price }).then(
       res => {
         setData(res.data);
+        alert('Thêm loại phòng mới thành công!')
         navigate('../list-type-room');
       }
     )
   }
+
+  const handleCancel = () => {
+    navigate('../list-type-room');
+    // alert("Are you sure?");
+  }
+
   return (
     <>
       <div className='container-fluid'>
@@ -112,6 +119,7 @@ function TypeRoomAdd() {
                       <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                     </div>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Loại Phòng</button>
+                    <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                   </form>
                 </div>
               </div>

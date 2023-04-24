@@ -30,7 +30,8 @@ class User extends Authenticatable
         'user_phone',
         'user_birthday',
         'user_class',
-        'user_course'
+        'user_course',
+        'user_gender'
     ];
 
     /**

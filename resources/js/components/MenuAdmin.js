@@ -45,7 +45,7 @@ function MenuAdmin() {
 
                 {/* <!-- Heading --> */}
                 <div className="sidebar-heading">
-                    Interface
+                    Các quản lý
                 </div>
 
                 {/* <!-- Nav Item - Pages Collapse Menu --> */}
@@ -179,7 +179,7 @@ function MenuAdmin() {
 
                 {/* <!-- Heading --> */}
                 <div className="sidebar-heading">
-                    Addons
+                    Di chuyển
                 </div>
 
                 {/* <!-- Nav Item - Pages Collapse Menu --> */}

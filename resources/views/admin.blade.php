@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/png" href="img/LOGOicon.png"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Hệ thống quản lý KTX - ADMIN</title>
+    <title>Hệ thống quản lý ký túc xá</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     

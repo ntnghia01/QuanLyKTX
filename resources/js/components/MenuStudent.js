@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import SplitButton from 'react-bootstrap/SplitButton';
@@ -8,14 +8,21 @@ import axios from 'axios';
 
 function MenuStudent() {
     const [user_id, setUserID] = useState('');
+    const isMountedRef = useRef(true);
     useEffect(() => {
         {
             axios.get('/get-session').then(
                 res => {
-                    setUserID(res.data.user_id)
+                    if(isMountedRef.current){
+                        setUserID(res.data.user_id)
+                    }
                 }
             )
         }
+        return () => {
+            // set the flag to false when component is unmounting
+            isMountedRef.current = false;
+          };
     }, [])
     return (
         <>
@@ -60,7 +67,7 @@ function MenuStudent() {
                         <span>Xem thông tin phòng</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='/personal-infomation' className="nav-link">
+                    <Link to='/personal-information' className="nav-link">
                     <i class="fas fa-users-cog"></i>
                         <span>Xem thông tin cá nhân</span></Link>
                 </li>

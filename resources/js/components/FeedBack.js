@@ -34,7 +34,7 @@ function FeedBack() {
     axios.post('api/post-feedback', { feedback_user, feedback_type, feedback_title, feedback_content, feedback_status }).then(
       res => {
         // setFeedbackData(res.data);
-        alert('Gửi ý kiến thành công!');
+        alert('Gửi yêu cầu thành công!');
       }
     )
   }
@@ -42,12 +42,13 @@ function FeedBack() {
     <>
       <div className='container-fluid'>
         {/* <!-- Page Heading --> */}
-        <div className="d-sm-flex align-items-center justify-content-between mb-4 text-center">
-          <h1 className="h3 mb-0 text-gray-800">Ý Kiến, Phản Hồi</h1>
+        <div className="d-sm-flex align-items-center justify-content-center mb-4 text-center">
+          <h1 className="h3 mb-0 text-gray-800">Ý Kiến, Phản Hồi, Sửa chữa CSVC</h1>
         </div>
         <div className="row">
           {/* <!-- Area Chart --> */}
-          <div className="col-xl-8 col-lg-7">
+          <div className="col-xl-2 col-lg-2"></div>
+          <div className="col-xl-8 col-lg-8">
             <div className="card shadow mb-4">
               {/* <!-- Card Header - Dropdown --> */}
               <div
@@ -99,6 +100,7 @@ function FeedBack() {
               </div>
             </div>
           </div>
+          <div className="col-xl-2 col-lg-2"></div>
         </div>
       </div>
       <div className='container-fluid'>

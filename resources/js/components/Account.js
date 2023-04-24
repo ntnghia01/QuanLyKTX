@@ -49,6 +49,7 @@ function Account() {
                                         <th>Ngày sinh</th>
                                         <th>Lớp</th>
                                         <th>Khóa</th>
+                                        <th>Giới tính</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -64,6 +65,7 @@ function Account() {
                                         <th>Ngày sinh</th>
                                         <th>Lớp</th>
                                         <th>Khóa</th>
+                                        <th>Giới tính</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -80,6 +82,7 @@ function Account() {
                                             <td>{item.user_birthday}</td>
                                             <td>{item.user_class}</td>
                                             <td>{item.user_course}</td>
+                                            <td>{item.user_gender}</td>
                                         </tr>
                                     </>
                                     )}

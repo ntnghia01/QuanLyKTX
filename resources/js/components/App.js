@@ -7,10 +7,10 @@ import Admin from './Admin';
 import axios from 'axios';
 
 export default class App extends Component {
-    
+
     constructor() {
         super();
-        this.state = {user_id: '', user_role: ''}
+        this.state = { user_id: '', user_role: '' }
     }
 
     componentDidMount() {
@@ -29,7 +29,7 @@ export default class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                {this.state.user_role==1 ?(<Admin />):(<Student />)}
+                {this.state.user_role == 1 ? (<Admin />) : (<Student />)}
             </BrowserRouter>
 
         );

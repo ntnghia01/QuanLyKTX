@@ -59,6 +59,7 @@ function RoomBillAdd() {
         }).then(
             res => {
                 setCreatedData(res.data)
+                alert('Tạo hóa đơn tiền phòng thành công!')
                 navigate('../list-room-bill');
             }
         )
@@ -66,12 +67,13 @@ function RoomBillAdd() {
     return (
         <>
             {/* <!-- Page Heading --> */}
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Thêm Hóa Đơn Phòng ID:{regis_id}</h1>
+            <div className="d-sm-flex align-items-center justify-content-center mb-4">
+                <h1 className="h3 mb-0 text-gray-800">Thêm Hóa Đơn Tiền Phòng ID:{regis_id}</h1>
             </div>
             <div className="row">
                 {/* <!-- Area Chart --> */}
-                <div className="col-xl-8 col-lg-7">
+                <div className='col-xl-2 col-lg-2'></div>
+                <div className="col-xl-8 col-lg-8">
                     <div className="card shadow mb-4">
                         {/* <!-- Card Header - Dropdown --> */}
                         <div
@@ -119,7 +121,7 @@ function RoomBillAdd() {
                                     <input value={room} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
                                 </div>
                                 <div class="form-group">
-                                    <label for="room_name">Đơn giá</label>
+                                    <label for="room_name">Phải đóng</label>
                                     <input value={room_bill_money*5} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly />
                                 </div>
                                 <div class="form-group">
@@ -157,6 +159,7 @@ function RoomBillAdd() {
                         </div>
                     </div>
                 </div>
+                <div className='col-xl-2 col-lg-2'></div>
             </div>
 
 

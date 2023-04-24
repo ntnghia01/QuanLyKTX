@@ -56,6 +56,10 @@ function PersonalInfo() {
                                         <td>{personal_info_data.user_fullname}</td>
                                     </tr>
                                     <tr>
+                                        <td>Giới tính</td>
+                                        <td>{personal_info_data.user_gender}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Email</td>
                                         <td>{personal_info_data.email}</td>
                                     </tr>

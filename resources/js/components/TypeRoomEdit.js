@@ -46,10 +46,17 @@ function TypeRoomEdit() {
             res => {
                 // res.data;
                 console.log(res)
+                alert('Cập nhật loại phòng thành công!')
                 navigate('../list-type-room');
             }
         )
     }
+
+    const handleCancel = () => {
+        navigate('../list-type-room');
+        // alert("Are you sure?");
+    }
+
     return (
         <>
             <div className='container-fluid'>
@@ -135,7 +142,8 @@ function TypeRoomEdit() {
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                         <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Cập nhật loại phòng</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i> Cập nhật loại phòng</button>
+                                    <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                                 </form>
                             </div>
                         </div>

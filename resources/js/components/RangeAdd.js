@@ -28,10 +28,17 @@ function RangeAdd() {
     axios.post('api/post-create-range', { range_name, range_area, range_desc }).then(
       res => {
         setData(res.data);
+        alert('Thêm dãy mới thành công!')
         navigate('../list-range');
       }
     )
   }
+
+  const handleCancel = () => {
+    navigate('../list-range');
+    // alert("Are you sure?");
+  }
+
   return (
     <>
       <div className='container-fluid'>
@@ -89,6 +96,7 @@ function RangeAdd() {
                     <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                   </div>
                   <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Dãy</button>
+                  <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                 </form>
               </div>
             </div>

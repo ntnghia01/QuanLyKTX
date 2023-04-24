@@ -34,7 +34,8 @@ class AdminController extends Controller
             'user_phone'    => $req->user_phone,
             'user_birthday' => $req->user_birthday,
             'user_class'    => $req->user_class,
-            'user_course'   => $req->user_course
+            'user_course'   => $req->user_course,
+            'user_gender'   => $req->user_gender
         ]);
         return $user;
     }

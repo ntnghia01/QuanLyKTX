@@ -16,10 +16,18 @@ function AreaAdd() {
     axios.post('api/post-create-area', { area_name, area_desc }).then(
       res => {
         setData(res.data);
+        alert("Thêm khu mới thành công!")
         navigate('../list-area');
       }
     )
   }
+
+  const handleCancel = () => {
+    navigate('../list-area');
+    // alert("Are you sure?");
+  }
+
+
   return (
     <div>
       <div className='container-fluid'>
@@ -71,10 +79,10 @@ function AreaAdd() {
                       Vui lòng kiểm tra trước khi nhấn thêm.
                     </Form.Text>
                   </Form.Group>
-                  <Button variant="primary" type='submit' class="btn btn-primary btn-icon-split">
-
-                    <span class="text"><i class="fas fa-plus"></i> Thêm khu</span>
+                  <Button variant="primary" type='submit' className="btn btn-primary btn-icon-split">
+                    <span className="text"><i className="fas fa-plus"></i> Thêm khu</span>
                   </Button>
+                  <Button onClick={() => handleCancel()} type="button" className="btn btn-danger m-1"><i className="fas fa-times"></i> Hủy</Button>
                 </Form>
               </div>
             </div>

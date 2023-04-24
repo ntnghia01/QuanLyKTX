@@ -37,11 +37,18 @@ function AreaEdit() {
         e.preventDefault()
         axios.put(`../api/update-area/${area_id}`, { area_name, area_desc }).then(
             res => {
+                alert('Cập nhật khu thành công!')
                 navigate('../list-area');
                 console.log(res)
             }
         )
     }
+
+    const handleCancel = () => {
+        navigate('../list-area');
+        // alert("Are you sure?");
+    }
+
     return (
         <>
             <div className='container-fluid'>
@@ -90,7 +97,8 @@ function AreaEdit() {
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                         <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Cập Nhật Dãy</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i> Cập Nhật Khu</button>
+                                    <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                                 </form>
                             </div>
                         </div>

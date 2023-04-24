@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function TypeRoomList() {
     const [type_name, setTypeName] = useState('');
     const [type_gender, setTypeGender] = useState('');
@@ -27,7 +27,9 @@ function TypeRoomList() {
     const handleDelete = (type_room_id) => {
         axios.delete(`api/delete-type-room/${type_room_id}`).then(
 
-            navigate('../list-type-room')
+            // navigate('../list-type-room')
+        ).catch(
+            alert('Xóa thất bại')
         )
     }
     return (
@@ -40,7 +42,7 @@ function TypeRoomList() {
                 </div>
                 {/* <!-- Page Heading --> */}
                 <h1 class="h3 mb-2 text-gray-800 text-center">LOẠI PHÒNG</h1>
-                <Link to='../add-type-room' class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Thêm Loại Phòng</Link>
+                <Link to='../add-type-room' className="btn btn-primary mb-3"><i className="fas fa-plus"></i> Thêm Loại Phòng</Link>
 
                 {/* <!-- DataTales Example --> */}
                 <div class="card shadow mb-4 border-left-info">

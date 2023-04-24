@@ -12,6 +12,8 @@ import RoomInfo from './RoomInfo';
 import PersonalInfo from './PersonalInfo';
 import PersonalEdit from './PersonalInfoEdit';
 import Withdrawal from './Withdrawal';
+import Welcome from './Welcome';
+import Footer from './Footer';
 
 
 function Student() {
@@ -42,16 +44,19 @@ function Student() {
                             {/* <!-- Begin Page Content --> */}
                             {/* <Dashboard /> */}
                             <Routes>
+                                <Route path="" element={<Welcome />} ></Route>
+                                <Route path="welcome" element={<Welcome />} ></Route>
                                 <Route path="list-room-student" element={<RoomListStudent />} ></Route>
                                 <Route path="register-room" element={<RegisterRoom />} ></Route>
                                 <Route path="register-room-from-list/:room_id" element={<RegisterRoom />} ></Route>
                                 <Route path="room-infomation" element={<RoomInfo />} ></Route>
-                                <Route path="personal-infomation" element={<PersonalInfo />} ></Route>
+                                <Route path="personal-information" element={<PersonalInfo />} ></Route>
                                 <Route path="edit-personal-info/:id" element={<PersonalEdit />} ></Route>
                                 <Route path="feedback" element={<FeedBack />} ></Route>
                                 <Route path="withdrawal" element={<Withdrawal />} ></Route>
                             </Routes>
                             {/* <!-- /.container-fluid --> */}
+                            <Footer />
 
                         </div>
                         {/* <!-- End of Main Content --> */}
@@ -60,7 +65,7 @@ function Student() {
                         <footer className="sticky-footer bg-white">
                             <div className="container my-auto">
                                 <div className="copyright text-center my-auto">
-                                    <span>Copyright &copy; nguyentrungnghia26112001@gmail.com</span>
+                                    <span>Copyright &copy; nguyentrungnghia26112001@gmail.com 2023</span>
                                 </div>
                             </div>
                         </footer>
@@ -98,6 +103,22 @@ function Student() {
                 </div>
 
             </div>
+            {/* <!-- Bootstrap core JavaScript--> */}
+  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  {/* <!-- Core plugin JavaScript--> */}
+  <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+  {/* <!-- Custom scripts for all pages--> */}
+  <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+
+  {/* <!-- Page level plugins --> */}
+  <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+
+  {/* <!-- Page level custom scripts --> */}
+  <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+  <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
         </>
     );
 }

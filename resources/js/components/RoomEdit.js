@@ -71,6 +71,12 @@ function RoomEdit() {
             setLoading(false)
         })
     }
+
+    const handleCancel = () => {
+        navigate('../list-room');
+        // alert("Are you sure?");
+    }
+
     return (
         <>
             <div className='container-fluid'>
@@ -161,7 +167,8 @@ function RoomEdit() {
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                         <label class="form-check-label" for="exampleCheck1">Xác nhận dữ liệu đã nhập</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Cập Nhật Phòng</button>
+                                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-edit"></i> Cập Nhật Phòng</button>
+                                    <button onClick={() => handleCancel()} type="button" class="btn btn-danger m-1"><i class="fas fa-times"></i> Hủy</button>
                                 </form>
                             </div>
                         </div>
