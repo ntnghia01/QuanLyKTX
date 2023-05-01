@@ -22,8 +22,8 @@ function TypeRoomAdd() {
     axios.post('api/post-create-type-room', { type_name, type_gender, type_cook, type_capacity, type_desc, type_price }).then(
       res => {
         setData(res.data);
-        alert('Thêm loại phòng mới thành công!')
         navigate('../list-type-room');
+        alert('Thêm loại phòng mới thành công!')
       }
     )
   }

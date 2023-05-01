@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use App\Models\Registration;
 
 class RoomController extends Controller
 {
@@ -53,6 +54,11 @@ class RoomController extends Controller
     public function delete_room($room_id) {
         $room = Room::where(['room_id'=>$room_id])->delete();
         return $room;
+    }
+
+    public function student_in_room($room_id) {
+        $registration = Registration::where(['regis_room' => $room_id])->where(['regis_status' => 'Đã duyệt'])->with('regis_room')->with('regis_student')->get();
+        return $registration;
     }
 
 }

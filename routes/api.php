@@ -49,6 +49,7 @@ Route::post('/post-create-room', 'RoomController@create_room');
 Route::get('/get-only-room/{room_id}', 'RoomController@get_only_room');
 Route::put('/update-room/{room_id}', 'RoomController@update_room');
 Route::delete('/delete-room/{room_id}', 'RoomController@delete_room');
+Route::get('/student-in-room/{room_id}', 'RoomController@student_in_room');
 
 // Electricity Water Bill (Hóa đơn điện nước)
 Route::get('/get-elec-water-bill', 'ElecWaterBillController@elec_water_bills');
@@ -69,6 +70,7 @@ Route::post('/post-registration', 'RegisterController@create_registration');
 Route::get('/get-only-registration/{regis_id}', 'RegisterController@get_only_registration');
 Route::post('/register-room/{item.room_id}', 'RegisterController@register_room');
 Route::put('/register-approve/{regis_id}', 'RegisterController@register_approve');
+Route::put('/register-deny/{regis_id}', 'RegisterController@register_deny');
 
 
 // Feedback (Ý kiến phản hồi)

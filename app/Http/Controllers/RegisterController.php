@@ -73,6 +73,28 @@ class RegisterController extends Controller
 
     }
 
+    public function register_deny($regis_id, Request $request) {
+
+        $regis = Registration::with('regis_room')->with('regis_student')->find($regis_id);
+        $regis->regis_status=$request->regis_status;
+        $regis->save();
+
+        // $room = Room::find($request->room_id);
+        // $room->room_quantity=$room->room_quantity-1;
+        // $room->save();
+
+        // $type_room = TypeRoom::find($room->room_type);
+        // $room = Room::find($request->room_id);
+        // if ($room->room_quantity == $type_room->type_capacity) {
+        //     $room->room_status = "Đã đầy";
+        // }
+        // $room->save();
+        // return response()->json(($room->room_quantity == $type_room->type_capacity), 200);
+        // return $room->room_status;
+        return $regis;
+
+    }
+
     public function get_registration_by_student($student_id) {
         $regis = Registration::where(['regis_student'=>$student_id])
                             ->join('users', 'registration.regis_student', '=', 'users.id')

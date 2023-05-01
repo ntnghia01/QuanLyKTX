@@ -28,6 +28,16 @@ function RoomList() {
         )
     }
 
+    const [student_in_room, setSIR] = useState('');
+    const [student_data, setStudentData] = useState([]);
+    const getStudentList = (room_id) => {
+        axios.get(`api/student-in-room/${room_id}`).then(
+            res => {
+                setStudentData(res.data)
+            }
+        )
+    }
+
     return (
         <>
 
@@ -112,13 +122,19 @@ function RoomList() {
                                                     </span>
                                                     <span class="text"> Xóa</span>
                                                 </a>
-                                                { item.room_quantity > 0 ?
+                                                { item.room_quantity > 0 ?<>
                                                     <Link to={`../add-elec-water-bill-from-room/${item.room_id}`} className="btn btn-sm btn-primary m-1">
                                                         <span class="icon text-white-50">
                                                             <i class="fas fa-plus"></i>
                                                         </span>
                                                         <span class="text"> Tạo điện nước</span>
                                                     </Link>
+                                                <a type="button" onClick={() => { setSIR(item.room_id), getStudentList(item.room_id) }} data-toggle="modal" data-target="#studentInRoom" className="btn btn-sm btn-success m-1" >
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-info"></i>
+                                                    </span>
+                                                    <span class="text"> Chi tiết</span>
+                                                </a></>
                                                 : <></>
                                             }
                                             </td>
@@ -150,6 +166,29 @@ function RoomList() {
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
                             <button type="button" onClick={() => { handleDelete(delete_id) }} class="btn btn-danger" data-dismiss="modal">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="studentInRoom" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Danh sách các sinh viên đang ở trong phòng</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            PHÒNG ID: {student_in_room}
+                            <ul>
+                                {student_data.map((student) => 
+                                    <li>{student.regis_student.user_name} {student.regis_student.user_fullname}</li>
+                                )}
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Đã hiểu</button>
                         </div>
                     </div>
                 </div>

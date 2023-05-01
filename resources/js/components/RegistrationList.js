@@ -65,6 +65,7 @@ function RegistrationList() {
                                 <tbody>
                                     {registration_data.map((item) =>
                                         <RegistrationRow
+                                        key={item.regis_id}
                                             item={item}
                                         // handleApprove= {handleApprove}
                                         />
@@ -88,8 +89,15 @@ function RegistrationRow({ item }) {
             }
         )
     }
+    const handleDeny = (deny_id, room_id, app_ref) => {
+        axios.put(`api/register-deny/${deny_id}`, { regis_status: app_ref, room_id: room_id }).then(
+            res => {
+                setRegis(res.data)
+            }
+        )
+    }
     return (
-        <>
+        // <>
             <tr>
                 <td>{regis.regis_id}</td>
                 <td>{regis.regis_student.user_name}</td>
@@ -114,7 +122,7 @@ function RegistrationRow({ item }) {
                             </span>
                             <span class="text"> Duyệt</span>
                         </a>
-                            <a onClick={() => handleApprove(regis.regis_id, regis.regis_room.room_id, "Đã từ chối")} class="btn btn-sm btn-danger m-1">
+                            <a onClick={() => handleDeny(regis.regis_id, regis.regis_room.room_id, "Đã từ chối")} class="btn btn-sm btn-danger m-1">
                                 <span class="icon text-white-50">
                                 <i class="far fa-times-circle"></i>
                                 </span>
@@ -141,7 +149,7 @@ function RegistrationRow({ item }) {
 
                 </td>
             </tr>
-        </>
+        // </>
     )
 }
 

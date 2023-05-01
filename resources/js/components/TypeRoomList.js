@@ -26,10 +26,10 @@ function TypeRoomList() {
     const [delete_id, setDID] = useState('');
     const handleDelete = (type_room_id) => {
         axios.delete(`api/delete-type-room/${type_room_id}`).then(
-
-            // navigate('../list-type-room')
+            setType(type.filter(type => type.type_id !== type_room_id)),
+            alert('Xóa thành công')
         ).catch(
-            alert('Xóa thất bại')
+            // alert('Xóa thất bại')
         )
     }
     return (
@@ -81,8 +81,8 @@ function TypeRoomList() {
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    {type.map((item) => <>
-                                        <tr>
+                                    {type.map((item) =>
+                                        <tr key={item.type_id}>
                                             <td>{item.type_id}</td>
                                             <td>{item.type_name}</td>
                                             <td>{item.type_gender}</td>
@@ -107,7 +107,6 @@ function TypeRoomList() {
                                                 </a>
                                             </td>
                                         </tr>
-                                    </>
                                     )}
 
                                 </tbody>

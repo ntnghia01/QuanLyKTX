@@ -20,8 +20,8 @@ function AreaList() {
     const [delete_id, setDID] = useState('');
     const handleDelete = (area_id) => {
         axios.delete(`api/delete-area/${area_id}`).then(
-
-            setArea(area.filter(area => area.area_id !== area_id))
+            setArea(area.filter(area => area.area_id !== area_id)),
+            alert('Xóa thành công')
         )
     }
     return (
