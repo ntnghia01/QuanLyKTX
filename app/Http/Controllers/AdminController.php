@@ -44,7 +44,8 @@ class AdminController extends Controller
         return response()->json([
             'user_id' => Session::get('user_id'),
             'user_fullname' => Session::get('user_fullname'),
-            'user_role' => Session::get('user_role')
+            'user_role' => Session::get('user_role'),
+            'user_gender' => Session::get('user_gender')
         ]);
     }
 

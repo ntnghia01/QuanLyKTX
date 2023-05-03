@@ -30,6 +30,7 @@ class LoginController extends Controller
             Session::put('user_id', $user->id);
             Session::put('email',$user->email);
             Session::put('user_role',$user->user_role);
+            Session::put('user_gender', $user->user_gender);
             // $req->session()->put('user_name', $user->user_name);
             // $req
             // $req->session()->put('email', $user->email);
@@ -45,6 +46,7 @@ class LoginController extends Controller
         Session::put('user_id', null);
         Session::put('email',null);
         Session::put('user_role',null);
+        Session::put('user_gender', null);
         return redirect('login');
     }
 

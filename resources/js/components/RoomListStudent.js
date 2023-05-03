@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 function RoomListStudent() {
 
     const [student, setUserID] = useState('');
+    const [gender, setGender] = useState('');
 
     const [room_data, setRoomData] = useState([]);
 
@@ -21,6 +22,7 @@ function RoomListStudent() {
             axios.get('/get-session').then(
                 res => {
                     setUserID(res.data.user_id)
+                    setGender(res.data.user_gender)
                 }
             )
         }
@@ -63,8 +65,8 @@ function RoomListStudent() {
                                 <tfoot>
                                 </tfoot>
                                 <tbody>
-                                    {room_data.map((item) => <>
-                                        <tr>
+                                    {room_data.map((item) =>
+                                        <tr key={item.room_id}>
                                             <td>{item.room_name}</td>
                                             <td>{item.room_range.range_name}</td>
                                             <td>{item.room_type.type_gender}</td>
@@ -85,17 +87,23 @@ function RoomListStudent() {
                                                         <><span class="text-warning">
                                                             <i class="fas fa-exclamation-triangle"></i> Đang sửa chữa
                                                         </span></>
-                                                        :
+                                                    : item.room_type.type_gender == gender ?
                                                         <Link to={`../register-room-from-list/${item.room_id}`} className="btn btn-sm btn-success">
                                                             <span class="icon text-white-50">
                                                             <i class="far fa-hand-point-right"></i>
                                                             </span>
                                                             <span class="text"> Đăng ký</span>
                                                         </Link>
+                                                    :
+                                                    <Link to={`../register-room-from-list/${item.room_id}`} className="btn btn-sm btn-success disabled">
+                                                        <span class="icon text-white-50">
+                                                        <i class="far fa-hand-point-right"></i>
+                                                        </span>
+                                                        <span class="text"> Đăng ký (không phù hợp)</span>
+                                                    </Link>
                                                 }
                                             </td>
                                         </tr>
-                                    </>
                                     )}
                                 </tbody>
                             </table>
